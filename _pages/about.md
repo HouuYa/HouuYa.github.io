@@ -204,19 +204,21 @@ Study on the lower power communications and networking techniques for Massively 
 
 * AGI
  
-*  Integration Platform as a Service (iPaaS) :  Workflow Automation
+* Integration Platform as a Service (iPaaS) :  Workflow Automation
 
 * Certification/validation Framework for reliable/Safety AI products/architecture
 * Smart Manufacturing(Industrie 4.0)
 
 * Mobile(cellular) / wireless communication Protocol
+
 * IoT, Ubiquitous communication techniques, wireless sensor networks 
 
 * Statistics
+
 * Information theory
 
-PKM(Personal Knowledge Management)
-- Obsidian
+* PKM(Personal Knowledge Management)
+  * Obsidian
 
 
 ## SPECIALTIES
