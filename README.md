@@ -1,9 +1,13 @@
-# Bae Seungho
 
-AI Product Safety & Governance Architect
 
-This repository powers my personal website: https://houuya.github.io
+# AI Product Safety & Governance Architect
 
-👉 Featured Project:
-- AI Product Safety Monitoring & Governance System  
-  https://github.com/houuya/ai-product-safety-monitoring-system
+Personal website documenting real-world AI systems  
+for product safety, regulation, and operational governance.
+
+This site focuses on:
+- how AI is embedded into public decision systems,
+- how risks are identified and mitigated before harm occurs,
+- and how accountability is maintained after deployment.
+
+📌 Website: https://houuya.github.io
