@@ -7,6 +7,29 @@ last_modified_at: 2025-09-30T13:30:26-04:00
 author_profile: true
 ---
 
+## Positioning (TL;DR)
+
+I work at the boundary where **AI systems meet real-world regulation**.
+
+My focus is not model performance, but:
+- how AI is embedded into public decision systems,
+- how risks are identified before harm occurs,
+- and how accountability is maintained after deployment.
+
+
+## Selected Work
+
+### AI-based Product Safety & Recall Information System (2025)
+
+- Context: National market surveillance and product safety regulation
+- Focus: AI-enabled data collection, risk detection, and operational deployment
+- Status: Deployed and used in real government operations
+
+📄 Detailed performance report (PDF):  
+[2025 AI-based Product Safety System – Performance Report](/assets/pdfs/2025-ai-product-safety-performance.pdf)
+
+
+
 ## EDUCATION: 
 
 ### Gwangju Institute of Science and Technology (GIST), Korea, 2004 – 2006
