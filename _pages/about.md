@@ -28,6 +28,8 @@ My focus is not model performance, but:
 
 <br>
 
+----
+
 ## EDUCATION: 
 
 ### Gwangju Institute of Science and Technology (GIST), Korea, 2004 – 2006
@@ -175,7 +177,11 @@ Electronics & Information Standards Division(전저정보표준과)
   - 3GPP RAN5(Radio Assess Network 5) Standardization
   - Protocol testing and Certification
 
+
+
 <br>
+
+----
 
 ## RESEARCH PROJECTS<em>(to be updated) </em>
 
@@ -200,7 +206,9 @@ Study on the lower power communications and networking techniques for Massively 
   - Keywords: Wireless Sensor networks, Distributed detection, fusion techniques, data fusion algorithms
 
 
+
 <br>
+----
 
 ## CURRENT INTERESTS 
 
@@ -223,7 +231,9 @@ Study on the lower power communications and networking techniques for Massively 
   * Obsidian
 
 
+
 <br>
+----
 
 
 ## SPECIALTIES
@@ -242,7 +252,9 @@ Study on the lower power communications and networking techniques for Massively 
 * Tennis🎾(🙂intermediate level)
 
 
+
 <br>
+----
 
 ## PERSONAL PARTICULARS
 
@@ -257,7 +269,9 @@ Study on the lower power communications and networking techniques for Massively 
 *	Military Service: Completed with honorable discharge from Republic of Korea Army (26 months)
 
 
+
 <br>
+----
 
 ## HONORS AND AWARDS 
 
@@ -275,8 +289,11 @@ Study on the lower power communications and networking techniques for Massively 
 * A series of 5 merit-based scholarships (Ajou University, August 2001 – July 2003)
 
 
+
+
 <br>
 
+----
 
 ## PUBLICATIONS AND PRESENTATIONS
 
