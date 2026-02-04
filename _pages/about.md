@@ -49,16 +49,21 @@ My focus is not model performance, but:
 
 Product Safety Information Division(제품안전정보과) 
 
-> 제품안전 정보시스템 고도화
-> AI기반 제품안전 관리업무 자동화
-> 제품안전 정보 오픈포럼 구성 및 운영
-> 제품 사고조사   
+> 제품안전 정보 포털 시스템 고도화,
+> 
+> AI기반 제품안전 관리업무 자동화,
+> 
+> 제품안전 정보 오픈포럼(민관 협업) 구성 및 운영,
+> 
+> 제품 사고조사 etc   
 
 
 Product Safety Surveillance Division (제품시장관리과)
 
 > 불법제품 조사 정책
+> 
 > 리콜 사업자 이행 지원 정책
+> 
 > 불법, 불량제품 유통 모니터링 정책
 
 * Cowork with civil society groups, autority agency and product retailers [Press Release](https://www.motie.go.kr/motie/ne/presse/press2/bbs/bbsView.do?bbs_seq_n=166668&bbs_cd_n=81&currentPage=1&search_key_n=user_nm_v&cate_n=&dept_v=&search_val_v=%EB%B0%B0%EC%8A%B9%ED%98%B8)
@@ -83,11 +88,12 @@ Product Safety Surveillance Division (제품시장관리과)
 Technical Regulation Policy Division(기술규제정책과)
 
 > 해외 기술규제(TBT) 정보시스템 운영 및 고도화
+> 
 > 해외 기술규제 정책 지원
 
 * Overhaul TBT[^1] information system(www.knowTBT.kr, operated from 2008) and then secured implementation budget(<em>Ministry of Science and ICT ‘Digital Public Service Innovation Project’, ***1,560 million won***</em>), December 2021
 
-* 전세계 기술규제(인증제도, 기술기준 등) 맵 서비스 개시
+* 전세계 기술규제(인증제도, 기술기준 등) 맵 서비스 구축
 
 
 [^1]: TBT (무역기술장벽, Technical Barriers to   Trade) : technical regulations, standards, and conformity assessment procedures creating unnecessary obstacles to trade
@@ -97,9 +103,12 @@ Technical Regulation Policy Division(기술규제정책과)
 
 Metrology & Measurement Division (계량측정제도과)
 
-> 법정 계량 정보시스템 운영 및 고도화 
+> 법정 계량 정보시스템 운영 및 고도화
+> 
 > 스마트미터링(융복합 계량 시스템) 대응 및 포럼 구축
+> 
 > 가스미터 안전기준 운영
+> 
 > 법정 단위 정책 
 
 * Organized ‘Smart Metering Forum’ with participation of overt 100 industry, academia, and research institutes as a private voluntary forum, July 2017, [Press Release](https://www.motie.go.kr/motie/ne/presse/press2/bbs/bbsView.do?bbs_seq_n=159457&bbs_cd_n=81&currentPage=11&search_key_n=user_nm_v&cate_n=1&dept_v=&search_val_v=%EB%B0%B0%EC%8A%B9%ED%98%B8)
@@ -117,8 +126,10 @@ Metrology & Measurement Division (계량측정제도과)
 Electronics & Information Standards Division(전저정보표준과)
 
 > 국제(공적), 국가 표준화 정책
-> 	스마트 공장(제조)
-> 	스마트 의료  
+> 
+> 	스마트 공장(제조) 표준화
+> 
+> 	스마트 의료 표준화
 >
 * Establishment of the Standardization Strategies 
   - ‘The National Standardization Strategy for Health Informatics’, June 2014,  [Press Release](https://www.motie.go.kr/motie/ne/presse/press2/bbs/bbsView.do?bbs_seq_n=156561&bbs_cd_n=81&currentPage=11&search_key_n=user_nm_v&cate_n=&dept_v=&search_val_v=%EB%B0%B0%EC%8A%B9%ED%98%B8)
@@ -135,9 +146,12 @@ Electronics & Information Standards Division(전저정보표준과)
 
 ### TTA (Telecommunications Technology Associations)
 
-> 이동통신분야 
+> 이동통신분야 시험, 검증 및 인증
+> 
 > 	표준화(standardization)
-> 	장비 및 시험규격  검증(validation) 
+> 
+> 	장비 및 시험규격  검증(validation)
+> 
 > 	단말,기지국 인증(certificaton)
 
 <strong> Senior Research Engineer </Strong>(선임연구원), April 2006 - February 2013
@@ -225,14 +239,21 @@ PKM(Personal Knowledge Management)
 ## PERSONAL PARTICULARS
 
 *	Date of Birth: December 19, 1978
+
 *	Citizenship: Korea
+
 *	Gender: Male
+
 *	Marital Status: Married
+
 *	Military Service: Completed with honorable discharge from Republic of Korea Army (26 months)
 
 
 
 ## HONORS AND AWARDS 
+
+* Exemplary Case of Proactive Public Administration (Ministry of Trade, Industry and Resources, January 2026)
+  * *Recognized for deploying AI-based product safety and recall information systems in real regulatory operations.*
 
 * Commendation for the Exemplary Official of the year 2021(The Prime Minister’s Office, June 2021)
 
@@ -242,7 +263,7 @@ PKM(Personal Knowledge Management)
 
 * Government scholarship of 2 years of M.S. course (Ministry of Science and Technology, March 2004 – February 2006)
 
-* A series of 5 merit-based scholarships (Ajou university, August 2001 – July 2003)
+* A series of 5 merit-based scholarships (Ajou University, August 2001 – July 2003)
 
 
 
