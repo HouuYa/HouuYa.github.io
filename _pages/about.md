@@ -24,7 +24,8 @@ My focus is not model performance, but:
 - Focus: AI-enabled data collection, risk detection, and operational deployment
 - Status: Deployed and used in real government operations
 
-📄 Detailed performance report (PDF):  [2025 AI-based Product Safety System – Performance Report](/assets/pdfs/2025-ai-product-safety-performance.pdf)
+📄 Detailed performance report (PDF, 한글):  
+  - [2025 AI-based Product Safety System – Performance Report](/assets/pdfs/2025-ai-product-safety-performance.pdf)
 
 <br>
 
