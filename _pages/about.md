@@ -29,6 +29,27 @@ My focus is not model performance, but:
 📄 Detailed performance report (PDF, 한글):  
   - [2025 AI-based Product Safety System – Performance Report](/assets/pdfs/2025-ai-product-safety-performance.pdf)
 
+### Selected Projects (GitHub)
+
+- **AI Product Safety Automation**  
+  Design and implementation of an AI-assisted system to collect, structure, and analyze product safety and recall information for regulatory and market surveillance environments.  
+  This project emphasizes practical system design, traceability, and real-world applicability over model-centric experimentation.  
+  Repository: https://github.com/HouuYa/ai-product-safety-automation
+
+- **Vibe-Coded Regulatory Document Parsing (Advanced MVP)**  
+  Experiments on transforming complex regulatory and standard documents into structured, machine-readable data using document parsing pipelines.  
+  The focus is on enabling downstream AI systems to reliably consume policy and technical texts.  
+  Repository: https://github.com/HouuYa/upstage-docuparse-adv.-mvpv0.1
+
+- **Vibe-Coded Rule-based RAG System (Tennis Mate)**  
+  An end-to-end prototype built on Supabase that integrates structured domain rules with Retrieval-Augmented Generation (RAG).  
+  The project explores *vibe coding* as a way to rapidly iterate from domain intuition to working systems, using formal rule documents as a stand-in for legal and regulatory texts.  
+  Repositories:  
+  - Application & data layer (Supabase-based): https://github.com/HouuYa/tennis-mate  
+  - Rule-focused RAG experiments: https://github.com/HouuYa/Tennis_Rules_RAG
+
+
+
 <br>
 
 ----
