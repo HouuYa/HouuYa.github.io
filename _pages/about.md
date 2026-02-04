@@ -1,11 +1,13 @@
 ---
 permalink: /about/
 title: About
-excerpt: Minimal Mistakes is a flexible two-column Jekyll theme.
+description: AI governance and product safety systems in real-world regulatory environments
+excerpt: Work at the intersection of AI systems, regulation, and product safety
 layout: single
-last_modified_at: 2025-09-30T13:30:26-04:00
+last_modified_at: 2026-02-04T15:18:00+09:00
 author_profile: true
 ---
+
 
 ## Positioning (TL;DR)
 
