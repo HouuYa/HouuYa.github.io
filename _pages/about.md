@@ -17,9 +17,9 @@ My focus is not model performance, but:
 - and how accountability is maintained after deployment.
 
 
-## Selected Work
+### Selected Work
 
-### AI-based Product Safety & Recall Information System (2025)
+#### AI-based Product Safety & Recall Information System (2025)
 
 - Context: National market surveillance and product safety regulation
 - Focus: AI-enabled data collection, risk detection, and operational deployment
