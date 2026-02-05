@@ -15,13 +15,13 @@
 minimal_mistakes_skin    : "dark" #"default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "ko-KR"
+locale                   : "en-US"
 title                    : "HouuYa's Blog"
 title_separator          : "-"
 subtitle                 : "AI Regulation & Product Safety Insights"
 name                     : "Seungho Bae"
 description              : "Exploring AI regulation, product safety, technology standards, and knowledge management"
-url                      : "https://HouuYa.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://houuYa.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # "/assets/images/seungho.jpg" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -90,7 +90,7 @@ og_image                 : # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
+  type                   : Person # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
 
@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Seungho Bae"
   avatar           : "/assets/images/seungho1.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Deputy Director at **KATS** | AI Regulation & Product Safety Expert | Lifelong Learner"
+  bio              : "Deputy Director at KATS | AI governance, product safety systems, and regulatory risk management | Lifelong Learner"
   location         : "South Korea"
   email            :
   links:
@@ -230,6 +230,8 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-seo-tag
+
 
 # mimic GitHub Pages with --safe
 whitelist:
