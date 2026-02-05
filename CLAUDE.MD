@@ -198,7 +198,7 @@ permalink: /page-url/
 1. **커스텀 스타일**: `assets/css/main.scss`에서만 추가
 2. **테마 파일 수정 금지**: `_sass/minimal-mistakes/` 직접 수정 지양
 3. **이미지 최적화**: WebP 포맷 권장, 적절한 크기로 리사이징
-4. **Liquid 문법**: `{% %}` 태그 사용 시 공백 주의
+4. **Liquid 문법**: `{ %` ` % }` 태그 사용 시 공백 주의 (Jekyll 파싱 방지 위해 분리 표기)
 5. **YAML Front Matter**: 들여쓰기 2칸 사용
 
 ---
@@ -211,4 +211,4 @@ permalink: /page-url/
 
 ---
 
-*마지막 업데이트: 2026-02-05 (Premium Dark UI 적용)*
+*마지막 업데이트: 2026-02-05 (Liquid 오류 수정 및 Premium Dark UI 적용)*
