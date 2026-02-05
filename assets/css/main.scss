@@ -1,9 +1,4 @@
----
-# Only the main Sass file needs front matter (the dashes are enough)
-search: false
----
-
-@charset "utf-8";
+--- # Only the main Sass file needs front matter (the dashes are enough) search: false --- @charset "utf-8";
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
@@ -45,22 +40,24 @@ $accent-dark: #0088a3;
 }
 
 // ============================================================================
-// FEATURE ROW - Cards with FULL titles (no truncation)
+// FEATURE ROW - Flexbox layout for fluid cards
 // ============================================================================
 .feature__wrapper {
-  margin-bottom: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3em;
   padding-bottom: 1em;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-// CRITICAL: Override title truncation with high specificity
-.feature__wrapper .feature__item .archive__item .archive__item-body .archive__item-title,
-.feature__item .archive__item .archive__item-title,
-.feature__item .archive__item-title {
-  overflow: visible !important;
-  text-overflow: clip !important;
-  white-space: normal !important;
-  display: block !important;
+// Override theme title truncation
+.feature__wrapper .archive__item-title {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  display: block;
   font-size: 1.25em;
   font-weight: 700;
   line-height: 1.35;
@@ -71,23 +68,18 @@ $accent-dark: #0088a3;
   background-clip: text;
 }
 
-.feature__wrapper {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: space-between !important;
-  gap: 2rem !important;
-  margin-bottom: 3em !important;
-  padding-bottom: 1em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
+
 
 .feature__item {
-  flex: 1 1 300px !important; /* Grow, shrink, min-width */
+  flex: 1 1 300px;
+  /* Grow, shrink, min-width */
   margin-bottom: 1em;
-  max-width: none !important; /* Allow expansion */
+  max-width: none;
+  /* Allow expansion beyond theme defaults */
 
   .archive__item {
-    background: rgba(30, 34, 45, 0.6); /* Darker semi-transparent */
+    background: rgba(30, 34, 45, 0.6);
+    /* Darker semi-transparent */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -115,7 +107,7 @@ $accent-dark: #0088a3;
       transform: translateY(-5px) scale(1.01);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba($accent, 0.15);
       border-color: rgba($accent, 0.4);
-      
+
       &::before {
         opacity: 1;
       }
@@ -145,13 +137,14 @@ $accent-dark: #0088a3;
     padding: 0.6em 1.2em;
     font-size: 0.9em;
     border-radius: 6px;
-    width: 100%; /* Full width button on smaller cards looks good */
+    width: 100%;
+    /* Full width button on smaller cards looks good */
     text-align: center;
     font-weight: 600;
     transition: all 0.3s ease;
-    
+
     &:hover {
-      box-shadow: 0 0 15px rgba($accent, 0.4); 
+      box-shadow: 0 0 15px rgba($accent, 0.4);
     }
   }
 }
@@ -312,12 +305,10 @@ code.highlighter-rouge {
 // ============================================================================
 // WIDE SCREENS - Use more space
 // ============================================================================
-// ============================================================================
-// WIDE SCREENS - Use more space
-// ============================================================================
 @media (min-width: 1400px) {
   .page {
-    max-width: 1400px; /* Reduced specific padding issues */
+    max-width: 1400px;
+    /* Reduced specific padding issues */
     width: 90%;
   }
 
@@ -329,7 +320,8 @@ code.highlighter-rouge {
 
 @media (min-width: 1800px) {
   .page {
-    max-width: 1700px; /* Much wider for large screens */
+    max-width: 1700px;
+    /* Much wider for large screens */
   }
 }
 
