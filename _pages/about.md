@@ -97,8 +97,8 @@ Product Safety Surveillance Division (제품시장관리과)
 * Cowork with local government [Press Release](https://www.motie.go.kr/motie/ne/presse/press2/bbs/bbsView.do?bbs_seq_n=167451&bbs_cd_n=81&currentPage=1&search_key_n=user_nm_v&cate_n=&dept_v=&search_val_v=%EB%B0%B0%EC%8A%B9%ED%98%B8)
 
 * 국내 주요 15개 온라인쇼핑몰 협의체 운영
-  * 자발적 위해제품 유통 관리 역량 지원(콜센터 구축, 전문 교육 체계 구축)
-  * 매월 예상 불법제품 유통 정보 제공
+  * 자발적 위해제품 유통 관리 역량 지원(전용 콜센터 및 전문 교육 체계 구축)
+  * 매월 증가예상 불법제품 유통 정보 제공
 
 * 과태료 부과 등 행정조치에 대한 사업자의 이의제기 대응(과태료 재판 등)
     * 법률자문을 통해, 대응논리 마련
