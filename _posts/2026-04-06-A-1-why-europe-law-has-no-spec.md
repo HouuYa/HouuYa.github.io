@@ -1,6 +1,5 @@
 ---
 title: "[A-1] 법이 침묵할 때, 기업은 무엇을 하는가"
-description: 유럽이 40년에 걸쳐 설계한 제품안전 체계 NLF의 탄생 배경과 논리를 추적한다.
 categories:
   - EU제품안전
   - NLF
@@ -21,6 +20,7 @@ last_modified_at: 2026-04-06T10:49:00
 # 법이 침묵할 때, 기업은 무엇을 하는가
 
 **— 신뢰는 어떻게 설계되는가**
+description: 유럽이 40년에 걸쳐 설계한 제품안전 체계 NLF의 탄생 배경과 논리를 추적한다.
 
 _Series A. EU 제품안전 기초: NLF(New Legislative Framework)를 해부한다 | A-1_ _다음 글: [A-1-1] 같은 것처럼 보이는 세 단어: New Approach, Global Approach, NLF_
 
