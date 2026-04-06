@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EU 적합성 평가 모듈 시스템</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #0f1117;
+    color: #e8e8f0;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .title-block {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .title-block h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    color: #6ee7b7;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .title-block h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #f0f0ff;
+    margin-bottom: 0.4rem;
+  }
+
+  .title-block p {
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  /* Axis labels */
+  .axis-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding: 0 0.25rem;
+  }
+
+  .axis-label {
+    font-size: 0.7rem;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.1em;
+    color: #aaa;
+    text-transform: uppercase;
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Module cards */
+  .module-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .module-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+
+  .module-label {
+    width: 52px;
+    min-width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    color: #fff;
+  }
+
+  .card {
+    flex: 1;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border: 1px solid transparent;
+    transition: border-color 0.2s, transform 0.15s;
+    cursor: default;
+  }
+
+  .card:hover {
+    transform: translateX(4px);
+    border-color: rgba(255,255,255,0.2);
+  }
+
+  .card-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .card-en {
+    font-size: 0.68rem;
+    font-family: 'Space Mono', monospace;
+    opacity: 0.6;
+    margin-bottom: 0.4rem;
+  }
+
+  .card-desc {
+    font-size: 0.78rem;
+    color: #ccc;
+    line-height: 1.5;
+  }
+
+  .card-who {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-size: 0.65rem;
+    font-family: 'Space Mono', monospace;
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    font-weight: 700;
+  }
+
+  /* Risk level colors */
+  .risk-low    { background: #0d2b1f; border-color: #1a4a33; }
+  .risk-low    .module-label { background: #166534; }
+  .risk-low    .card-who { background: #166534; color: #d1fae5; }
+
+  .risk-mid    { background: #1a2535; border-color: #2d4060; }
+  .risk-mid    .module-label { background: #1e40af; }
+  .risk-mid    .card-who { background: #1e40af; color: #dbeafe; }
+
+  .risk-high   { background: #2a1a0d; border-color: #5c3a1a; }
+  .risk-high   .module-label { background: #92400e; }
+  .risk-high   .card-who { background: #92400e; color: #fde68a; }
+
+  .risk-max    { background: #2a0d0d; border-color: #6b1c1c; }
+  .risk-max    .module-label { background: #991b1b; }
+  .risk-max    .card-who { background: #991b1b; color: #fecaca; }
+
+  /* Risk scale sidebar */
+  .risk-scale {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0 1.5rem;
+    padding: 0 0.25rem;
+  }
+
+  .scale-bar {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right, #166534, #1e40af, #92400e, #991b1b);
+  }
+
+  .scale-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.3rem;
+    font-size: 0.65rem;
+    color: #888;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* Combo badges */
+  .combo-section {
+    margin-top: 2rem;
+    border: 1px solid #2a2a3a;
+    border-radius: 12px;
+    padding: 1.2rem;
+    background: #13131f;
+  }
+
+  .combo-section h3 {
+    font-size: 0.75rem;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.15em;
+    color: #6ee7b7;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .combo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .combo-card {
+    background: #1c1c2e;
+    border-radius: 8px;
+    padding: 0.75rem;
+    border: 1px solid #2d2d42;
+  }
+
+  .combo-badge {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #6ee7b7;
+    margin-bottom: 0.3rem;
+  }
+
+  .combo-use {
+    font-size: 0.72rem;
+    color: #aaa;
+    line-height: 1.4;
+  }
+
+  /* Footnote */
+  .footnote {
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+    color: #666;
+    line-height: 1.6;
+    border-top: 1px solid #222;
+    padding-top: 0.75rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="title-block">
+    <h1>Conformity Assessment Modules</h1>
+    <h2>EU 적합성 평가 모듈 시스템</h2>
+    <p>Decision No 768/2008/EC 기반 · 위험도에 비례한 인증 경로 선택 체계</p>
+  </div>
+
+  <div style="display:flex; gap:0.5rem; margin-bottom:0.4rem; padding:0 0 0 60px;">
+    <div class="axis-label">설계(Design) 단계 검증</div>
+    <div class="axis-label">생산(Production) 단계 감시</div>
+    <div class="axis-label">적용 상황</div>
+  </div>
+
+  <div class="module-grid">
+
+    <!-- Module A -->
+    <div class="module-row risk-low">
+      <div class="module-label risk-low">A</div>
+      <div class="card risk-low">
+        <div class="card-title">내부 생산 관리</div>
+        <div class="card-en">Internal Production Control</div>
+        <div class="card-desc">기업이 기술 문서 작성·자체 검증·적합성 선언(DoC) 발행. 외부 인증기관 개입 없음.</div>
+        <span class="card-who">제조사 자체</span>
+      </div>
+      <div class="card risk-low">
+        <div class="card-title">자체 관리</div>
+        <div class="card-desc">설계와 생산 모두 제조사 책임. NB 불필요.</div>
+        <span class="card-who">자기적합성선언</span>
+      </div>
+      <div class="card risk-low">
+        <div class="card-title">저위험 단순 제품</div>
+        <div class="card-desc">단순한 설계·생산, 낮은 공중 위험. 규제 부담 최소화.</div>
+      </div>
+    </div>
+
+    <!-- Module B -->
+    <div class="module-row risk-mid">
+      <div class="module-label risk-mid">B</div>
+      <div class="card risk-mid">
+        <div class="card-title">EU 형식 검사</div>
+        <div class="card-en">EU Type Examination</div>
+        <div class="card-desc">대표 시제품(Type)과 기술 문서를 NB에 제출. NB가 설계 충족 여부 심사 후 인증서 발급.</div>
+        <span class="card-who">NB 개입</span>
+      </div>
+      <div class="card risk-mid" style="background:#1e2030; border:1px dashed #4a5a80;">
+        <div class="card-title">⚠ 단독 사용 불가</div>
+        <div class="card-desc">반드시 생산 모듈(C·D·E·F)과 조합해야 함. 설계 검증이 목적.</div>
+      </div>
+      <div class="card risk-mid">
+        <div class="card-title">중·고위험 제품의 출발점</div>
+        <div class="card-desc">복잡한 설계 또는 높은 위험도. 이후 생산 모듈 조합.</div>
+      </div>
+    </div>
+
+    <!-- Module B+C -->
+    <div class="module-row risk-mid">
+      <div class="module-label risk-mid" style="font-size:0.75rem;">B+C</div>
+      <div class="card risk-mid">
+        <div class="card-title">형식 합치</div>
+        <div class="card-en">Conformity to Type</div>
+        <div class="card-desc">B에서 승인받은 설계대로 생산됨을 제조사가 선언.</div>
+        <span class="card-who">NB(설계) + 자체(생산)</span>
+      </div>
+      <div class="card risk-mid">
+        <div class="card-title">생산 자체 보증</div>
+        <div class="card-desc">생산 단계 NB 개입 없음. 제조사 자체 선언으로 대체.</div>
+      </div>
+      <div class="card risk-mid">
+        <div class="card-title">중위험 대량 생산</div>
+        <div class="card-desc">설계는 검증받되, 생산 관리는 내부화.</div>
+      </div>
+    </div>
+
+    <!-- Module B+D -->
+    <div class="module-row risk-high">
+      <div class="module-label risk-high" style="font-size:0.75rem;">B+D</div>
+      <div class="card risk-high">
+        <div class="card-title">생산 품질 보증</div>
+        <div class="card-en">Production Quality Assurance</div>
+        <div class="card-desc">B로 설계 검증 후, 생산 공정의 QMS(ISO 9001)를 NB가 심사·정기 감사.</div>
+        <span class="card-who">NB(설계+QMS 감사)</span>
+      </div>
+      <div class="card risk-high">
+        <div class="card-title">시스템 신뢰</div>
+        <div class="card-desc">제품 하나하나가 아니라 생산 시스템 전체를 NB가 신뢰. 대량 생산에 효율적.</div>
+      </div>
+      <div class="card risk-high">
+        <div class="card-title">고위험 대량 생산의 표준 조합</div>
+        <div class="card-desc">AI 시스템, 계량기, 의료기기 등. 가장 널리 쓰이는 고위험 조합.</div>
+      </div>
+    </div>
+
+    <!-- Module B+F -->
+    <div class="module-row risk-high">
+      <div class="module-label risk-high" style="font-size:0.75rem;">B+F</div>
+      <div class="card risk-high">
+        <div class="card-title">제품 검증</div>
+        <div class="card-en">Product Verification</div>
+        <div class="card-desc">B로 설계 검증 후, NB가 공장 방문해 생산된 제품을 전수 또는 통계적 샘플 검사.</div>
+        <span class="card-who">NB(설계+생산 검사)</span>
+      </div>
+      <div class="card risk-high">
+        <div class="card-title">제품 직접 검사</div>
+        <div class="card-desc">QMS 없이도 NB가 직접 검사. ISO 9001 미구축 기업에 유리.</div>
+      </div>
+      <div class="card risk-high">
+        <div class="card-title">소량 생산 고위험</div>
+        <div class="card-desc">품질 시스템 구축 비용 없이 NB 검사로 대체. 스타트업, 초기 생산에 적합.</div>
+      </div>
+    </div>
+
+    <!-- Module G -->
+    <div class="module-row risk-high">
+      <div class="module-label risk-high">G</div>
+      <div class="card risk-high">
+        <div class="card-title">단위 검증</div>
+        <div class="card-en">Unit Verification</div>
+        <div class="card-desc">설계+생산 모두를 제품 1개마다 NB가 직접 검사. 대량 생산 불가.</div>
+        <span class="card-who">NB(전수 1:1 검사)</span>
+      </div>
+      <div class="card risk-high">
+        <div class="card-title">개별 검증</div>
+        <div class="card-desc">모든 제품이 동일하지 않은 맞춤형 기기. 표준화된 생산 없음.</div>
+      </div>
+      <div class="card risk-high">
+        <div class="card-title">소량·맞춤 제작</div>
+        <div class="card-desc">대형 산업용 기계, 특수 계량 시스템 등 표준 생산이 불가능한 경우.</div>
+      </div>
+    </div>
+
+    <!-- Module H / H1 -->
+    <div class="module-row risk-max">
+      <div class="module-label risk-max" style="font-size:0.78rem;">H·H1</div>
+      <div class="card risk-max">
+        <div class="card-title">완전 품질 보증</div>
+        <div class="card-en">Full Quality Assurance</div>
+        <div class="card-desc">설계+생산 전체 QMS를 NB가 심사. H1은 여기에 핵심 설계 NB 별도 검사 추가.</div>
+        <span class="card-who">NB(전체 시스템 인증)</span>
+      </div>
+      <div class="card risk-max">
+        <div class="card-title">시스템 전체 인증</div>
+        <div class="card-desc">Module B 없이 설계부터 생산까지 통합 QMS 인증. 가장 포괄적 경로.</div>
+      </div>
+      <div class="card risk-max">
+        <div class="card-title">최고 위험·대기업·AI</div>
+        <div class="card-desc">AI Act 고위험 AI 시스템, 고도 의료기기 등. H1이 가장 엄격한 모듈.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Risk scale -->
+  <div style="margin: 1.5rem 0 0.3rem; padding: 0 0 0 60px;">
+    <div class="scale-bar"></div>
+    <div class="scale-labels">
+      <span>저위험 · 자체 관리</span>
+      <span>중위험 · 부분 NB</span>
+      <span>고위험 · NB 심층 관여</span>
+      <span>최고 위험 · 전체 시스템</span>
+    </div>
+  </div>
+
+  <!-- Common combos -->
+  <div class="combo-section">
+    <h3>실무에서 자주 쓰이는 조합</h3>
+    <div class="combo-grid">
+      <div class="combo-card">
+        <div class="combo-badge">A</div>
+        <div class="combo-use">저위험 소비재, 단순 산업재. 빠른 시장 출시. 자기 책임 전담.</div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-badge">B + D</div>
+        <div class="combo-use">고위험 대량 생산의 표준. AI 시스템, 계량기(MI-001~010) 전반에 사용.</div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-badge">B + F</div>
+        <div class="combo-use">소량 생산 또는 QMS 미구축 기업. 전수 검사로 품질 보완.</div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-badge">H1</div>
+        <div class="combo-use">설계·생산 역량 모두 갖춘 대기업. AI Act 고위험 AI 시스템 주요 경로.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footnote">
+    ※ 출처: Decision No 768/2008/EC (Annex II), Blue Guide 2022 (Section 5.1), H. Stolz, PTB 2014 (slides 19–31)<br>
+    ※ 각 제품군 법령(AI Act, Machinery Regulation 등)이 허용 모듈을 사전 지정함. 기업은 허용 목록 내에서만 선택 가능.
+  </div>
+
+</div>
+</body>
+</html>
