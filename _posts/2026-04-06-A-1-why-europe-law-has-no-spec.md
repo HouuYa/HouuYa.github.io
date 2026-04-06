@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "[A-1] 법이 침묵할 때, 기업은 무엇을 하는가"
 description: 유럽이 40년에 걸쳐 설계한 제품안전 체계 NLF의 탄생 배경과 논리를 추적한다.
 categories:
