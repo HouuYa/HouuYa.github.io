@@ -184,7 +184,6 @@ Notified Body는 심판이다.
 ⁶ 형사재판 결과: 마르세유 형사법원(2013), 엑상프로방스 항소법원(2016), 프랑스 대법원(2018) 모두 TÜV를 PIP 사기의 피해자로 인정. 출처: TÜV Rheinland 공식 보도자료 (2023). https://www.tuv.com/press/en/press-releases/tuev-rheinland-pip-implant-case-decisions-french-supreme-court.html
 ⁷ EU 의료기기 규정(MDR) Regulation (EU) 2017/745, OJ L 117, 5.5.2017. PIP 스캔들이 MDR 전면 개정의 주요 계기가 되었음. 출처: MassDevice, ibid.
 
-**그림 사용 안내**
-본문 이미지(`eu_cab_ecosystem.png`)는 Jekyll 프로젝트의 `assets/images/` 폴더에 저장 후, 위 front matter 기준 경로로 참조하세요.
+
 
 **태그:** #EU규제 #제품안전 #NLF #NotifiedBody #인증기관 #CE마킹 #PIP스캔들
