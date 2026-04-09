@@ -356,9 +356,18 @@ code.highlighter-rouge {
 // KOREAN LINE BREAK CONTROL
 // ============================================================================
 
+// 기본 본문, 리스트, 표 안의 텍스트
 .page__content p,
-.page__content li {
-  word-break: keep-all;
+.page__content li,
+.page__content td,
+.page__content th,
+// 블로그 홈/목록의 카드 형태 요약본 및 본문 (스크린샷 부분)
+.archive__item-excerpt,
+.archive__item-body p,
+.archive__item-title,
+// 각종 제목들
+h1, h2, h3, h4, h5, h6 {
+  word-break: keep-all !important; /* 한글 단어 단위로 줄바꿈 */
+  overflow-wrap: break-word !important; /* 긴 영문/URL이 영역을 뚫고 나가는 것 방지 */
   line-break: strict;
-  overflow-wrap: break-word;
 }
