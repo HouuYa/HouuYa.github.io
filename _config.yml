@@ -281,14 +281,22 @@ compress_html:
 
 # Defaults
 defaults:
-  # _posts
+  # 1. 모든 포스트(_posts 폴더 내 파일들) 설정
   - scope:
       path: ""
       type: posts
     values:
       layout: single
-      author_profile: false
+      author_profile: false # 여기서 true를 false로 바꿉니다.
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
+
+  # 2. 포스트가 아닌 일반 페이지(Categories, Tags, Search, About 등) 설정 추가
+  - scope:
+      path: "" # 모든 경로를 대상으로 하되
+      # type: posts가 없으므로 일반 페이지들이 해당됩니다.
+    values:
+      layout: single
+      author_profile: false # 기본적으로 프로필을 끕니다.
