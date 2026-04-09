@@ -5,7 +5,7 @@ description: AI governance and product safety systems in real-world regulatory e
 excerpt: Work at the intersection of AI systems, regulation, and product safety
 layout: single
 last_modified_at: 2026-02-04T15:18:00+09:00
-author_profile: true
+author_profile: false
 ---
 
 
