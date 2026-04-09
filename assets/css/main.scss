@@ -1,4 +1,7 @@
---- # Only the main Sass file needs front matter (the dashes are enough) search: false --- @charset "utf-8";
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
@@ -68,18 +71,13 @@ $accent-dark: #0088a3;
   background-clip: text;
 }
 
-
-
 .feature__item {
   flex: 1 1 300px;
-  /* Grow, shrink, min-width */
   margin-bottom: 1em;
   max-width: none;
-  /* Allow expansion beyond theme defaults */
 
   .archive__item {
     background: rgba(30, 34, 45, 0.6);
-    /* Darker semi-transparent */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -138,7 +136,6 @@ $accent-dark: #0088a3;
     font-size: 0.9em;
     border-radius: 6px;
     width: 100%;
-    /* Full width button on smaller cards looks good */
     text-align: center;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -308,11 +305,8 @@ code.highlighter-rouge {
 @media (min-width: 1400px) {
   .page {
     max-width: 1400px;
-    /* Reduced specific padding issues */
     width: 90%;
   }
-
-  /* Ensure rows expand to fill container */
   .page__content {
     width: 100%;
   }
@@ -321,7 +315,6 @@ code.highlighter-rouge {
 @media (min-width: 1800px) {
   .page {
     max-width: 1700px;
-    /* Much wider for large screens */
   }
 }
 
@@ -352,45 +345,42 @@ code.highlighter-rouge {
   background: rgba($accent, 0.3);
 }
 
-
 // ============================================================================
 // TYPOGRAPHY & KOREAN LINE BREAK (가독성 및 한글 단어 단위 줄바꿈 완벽 적용)
 // ============================================================================
 
 /* 1. 사이트 내 모든 텍스트에 한글 단어 단위 줄바꿈 강제 적용 */
 body, p, span, a, li, td, th, h1, h2, h3, h4, h5, h6, div, blockquote {
-  word-break: keep-all !important;      /* 한글 단어가 반으로 쪼개지는 것 방지 */
-  overflow-wrap: break-word !important; /* 긴 영어 단어나 URL이 화면 밖으로 나가는 것 방지 */
+  word-break: keep-all !important;
+  overflow-wrap: break-word !important;
   line-break: strict !important;
 }
 
 /* 2. 본문(Markdown) 가독성 개선 (크기, 줄간격, 자간) */
 .page__content {
   p, li, td {
-    font-size: 15px !important;       /* 너무 큰 기본 폰트를 단정하게 축소 (16px) */
-    line-height: 1.75 !important;     /* 글자가 작아진 만큼 줄 간격을 넉넉하게 띄움 */
-    letter-spacing: -0.03em;          /* 한글 자간을 살짝 좁혀서 쫀쫀하게 보이게 함 */
-    color: rgba(255, 255, 255, 0.85); /* 100% 흰색 대신 살짝 투명도를 주어 눈 피로 감소 */
-    margin-bottom: 1.4em;             /* 문단 간 여백 설정 */
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.4em;
   }
 
-  /* 인용문 (>) 스타일 */
   blockquote {
-    font-size: 14px !important;       /* 본문보다 살짝 작게 */
+    font-size: 15px !important;
     line-height: 1.7;
     letter-spacing: -0.02em;
     color: rgba(255, 255, 255, 0.75);
-    border-left: 4px solid $accent;   /* 테마 포인트 컬러 사용 */
+    border-left: 4px solid $accent;
     padding-left: 1.25em;
     margin-bottom: 1.5em;
-    background: rgba(255, 255, 255, 0.03); /* 배경에 살짝 음영을 주어 구분감 향상 */
+    background: rgba(255, 255, 255, 0.03);
     padding: 1em 1em 1em 1.25em;
     border-radius: 0 8px 8px 0;
 
     p { margin-bottom: 0; }
   }
 
-  /* 소제목 (##, ###) 스타일 */
   h2 {
     font-size: 1.4em !important;
     margin-top: 2em;
