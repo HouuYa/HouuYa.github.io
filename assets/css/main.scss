@@ -381,7 +381,7 @@ h1, h2, h3, h4, h5, h6 {
 .page__content p,
 .page__content li,
 .page__content td {
-  font-size: 16px !important;       /* 기본 폰트 크기 (15px~16px이 읽기 좋습니다. 필요시 수정) */
+  font-size: 15px !important;       /* 기본 폰트 크기 (15px~16px이 읽기 좋습니다. 필요시 수정) */
   line-height: 1.75 !important;     /* 줄 간격 (위아래 줄이 겹쳐보이지 않게 1.7~1.8 추천) */
   letter-spacing: -0.03em;          /* 한글은 자간을 아주 살짝 좁히면 글이 단단해 보이고 가독성이 오릅니다 */
   color: rgba(255, 255, 255, 0.85); /* 100% 흰색(#fff)보다 살짝 투명도를 주어 눈부심 방지 */
@@ -390,7 +390,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 인용문(Blockquote - 스크린샷의 청록색 세로선 부분) 스타일링 */
 .page__content blockquote {
-  font-size: 15px !important;       /* 인용문은 본문보다 살짝 작게 설정하면 구분이 잘 됩니다 */
+  font-size: 14px !important;       /* 인용문은 본문보다 살짝 작게 설정하면 구분이 잘 됩니다 */
   line-height: 1.7;
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.75); /* 본문보다 살짝 더 어둡게 처리 */
