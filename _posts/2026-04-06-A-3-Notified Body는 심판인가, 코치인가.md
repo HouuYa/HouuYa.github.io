@@ -1,5 +1,5 @@
 ---
-title: "[A-3] Notified Body는 심판인가, 코치인가"
+title: "[A-3] Notified Body는 심판인가, 코치인가 — EU 인증 체계의 핵심 행위자를 해부한다"
 description:
 categories:
   - EU-product-safety
@@ -16,16 +16,20 @@ tags:
 last_modified_at: 2026-04-06T13:01:00
 ---
 
-**— EU 인증 체계의 핵심 행위자를 해부한다**
+****
 
-*Series A. EU 제품안전 기초: NLF를 해부한다 | A-3*
+*Series A. EU 제품안전 기초: NLF를 해부한다 : A-3*
+
 *이전 글: [A-2] 인증 모듈(A~H)은 기업 맞춤 메뉴판이다*
+
 *다음 글: [A-4] 제품이 팔린 뒤가 더 무섭다*
+
 *보충편: [A-3-1] NB는 어떻게 탄생하는가 — Accreditation에서 NANDO까지*
 
->EU 인증 체계의 핵심 행위자 Notified Body의 역할과 구조적 한계를 실무자 시각으로 분석한다.
-
 ---
+
+## EU 인증 체계의 핵심 행위자 Notified Body의 역할과 구조적 한계를 실무자 시각으로 분석한다.
+
 
 스포츠에는 두 종류의 전문가가 있다.
 
