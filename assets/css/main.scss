@@ -1,0 +1,399 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+/* ==========================================================================
+   HouuYa's Blog - Custom Styles v4.0
+   Clean, compact layout with proper card titles
+   ========================================================================== */
+
+// Variables
+$accent: #00adb5;
+$accent-light: #00c9d3;
+$accent-dark: #0088a3;
+
+// ============================================================================
+// HERO SECTION - Reduce excessive padding
+// ============================================================================
+.page__hero--overlay {
+  padding: 2em 0;
+  margin-bottom: 0;
+
+  .page__title,
+  .page__lead,
+  .page__meta {
+    margin-bottom: 0.5em;
+  }
+}
+
+// ============================================================================
+// MAIN CONTENT - Tighter spacing
+// ============================================================================
+.page__content {
+  padding-top: 0;
+}
+
+.initial-content,
+.page__content {
+  margin-top: 0;
+}
+
+// ============================================================================
+// FEATURE ROW - Flexbox layout for fluid cards
+// ============================================================================
+.feature__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+// Override theme title truncation
+.feature__wrapper .archive__item-title {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  display: block;
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 0.75em;
+  background: linear-gradient(135deg, #fff 0%, $accent-light 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.feature__item {
+  flex: 1 1 300px;
+  margin-bottom: 1em;
+  max-width: none;
+
+  .archive__item {
+    background: rgba(30, 34, 45, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1.5em;
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba($accent, 0.5), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba($accent, 0.15);
+      border-color: rgba($accent, 0.4);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  .archive__item-excerpt {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: rgba(234, 234, 234, 0.8);
+  }
+
+  .archive__item-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+
+    p:last-child {
+      margin-top: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  .btn {
+    margin-top: 1.25em;
+    padding: 0.6em 1.2em;
+    font-size: 0.9em;
+    border-radius: 6px;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 0 15px rgba($accent, 0.4);
+    }
+  }
+}
+
+// Center intro section
+.feature__item--center {
+  .archive__item {
+    background: rgba($accent, 0.05);
+    border-color: rgba($accent, 0.2);
+    padding: 1.5em 2em;
+  }
+
+  .archive__item-excerpt {
+    font-size: 1em;
+    line-height: 1.6;
+    color: rgba(234, 234, 234, 0.85);
+  }
+}
+
+// ============================================================================
+// ARCHIVE / POST LIST - Compact cards
+// ============================================================================
+.archive__subtitle {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #fff;
+  margin: 1em 0 0.75em;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid rgba($accent, 0.3);
+}
+
+.list__item .archive__item,
+.archive .archive__item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 1em 1.25em;
+  margin-bottom: 0.75em;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba($accent, 0.3);
+  }
+
+  .archive__item-title {
+    font-size: 1.05em;
+    margin-bottom: 0.25em;
+  }
+
+  .archive__item-excerpt {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-top: 0.5em;
+    color: rgba(234, 234, 234, 0.7);
+  }
+
+  .page__meta {
+    font-size: 0.8em;
+    margin-top: 0.5em;
+  }
+}
+
+// ============================================================================
+// SIDEBAR / AUTHOR PROFILE
+// ============================================================================
+.sidebar {
+  padding-right: 1em;
+}
+
+.author__avatar img {
+  border: 2px solid rgba($accent, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.author__content {
+  padding-left: 0;
+}
+
+// ============================================================================
+// NAVIGATION
+// ============================================================================
+.masthead {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba($accent, 0.2);
+}
+
+.greedy-nav a:hover {
+  color: $accent-light;
+}
+
+// ============================================================================
+// BUTTONS
+// ============================================================================
+.btn--primary {
+  background: linear-gradient(135deg, $accent 0%, $accent-dark 100%);
+  border: none;
+
+  &:hover {
+    background: linear-gradient(135deg, $accent-light 0%, $accent 100%);
+  }
+}
+
+// ============================================================================
+// PAGE TITLE
+// ============================================================================
+.page__title {
+  background: linear-gradient(135deg, $accent 0%, $accent-light 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// ============================================================================
+// LINKS
+// ============================================================================
+.archive__item-title a {
+  color: #fff;
+
+  &:hover {
+    color: $accent-light;
+  }
+}
+
+// ============================================================================
+// CODE
+// ============================================================================
+code.highlighter-rouge {
+  background: rgba($accent, 0.1);
+  border: 1px solid rgba($accent, 0.15);
+  border-radius: 3px;
+  padding: 0.1em 0.3em;
+}
+
+// ============================================================================
+// PAGINATION
+// ============================================================================
+.pagination {
+  margin-top: 1.5em;
+
+  .current {
+    background: $accent;
+    border-color: $accent;
+  }
+}
+
+// ============================================================================
+// FOOTER
+// ============================================================================
+.page__footer {
+  margin-top: 2em;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+// ============================================================================
+// WIDE SCREENS - Use more space
+// ============================================================================
+@media (min-width: 1400px) {
+  .page {
+    max-width: 1400px;
+    width: 90%;
+  }
+  .page__content {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1800px) {
+  .page {
+    max-width: 1700px;
+  }
+}
+
+// ============================================================================
+// SCROLLBAR
+// ============================================================================
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba($accent, 0.3);
+  border-radius: 4px;
+
+  &:hover {
+    background: rgba($accent, 0.5);
+  }
+}
+
+// ============================================================================
+// SELECTION
+// ============================================================================
+::selection {
+  background: rgba($accent, 0.3);
+}
+
+// ============================================================================
+// TYPOGRAPHY & KOREAN LINE BREAK (가독성 및 한글 단어 단위 줄바꿈 완벽 적용)
+// ============================================================================
+
+/* 1. 사이트 내 모든 텍스트에 한글 단어 단위 줄바꿈 강제 적용 */
+body, p, span, a, li, td, th, h1, h2, h3, h4, h5, h6, div, blockquote {
+  word-break: keep-all !important;
+  overflow-wrap: break-word !important;
+  line-break: strict !important;
+}
+
+/* 2. 본문(Markdown) 가독성 개선 (크기, 줄간격, 자간) */
+.page__content {
+  p, li, td {
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.4em;
+  }
+
+  blockquote {
+    font-size: 15px !important;
+    line-height: 1.7;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.75);
+    border-left: 4px solid $accent;
+    padding-left: 1.25em;
+    margin-bottom: 1.5em;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1em 1em 1em 1.25em;
+    border-radius: 0 8px 8px 0;
+
+    p { margin-bottom: 0; }
+  }
+
+  h2 {
+    font-size: 1.4em !important;
+    margin-top: 2em;
+    margin-bottom: 0.8em;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+  }
+
+  h3 {
+    font-size: 1.2em !important;
+    margin-top: 1.8em;
+    margin-bottom: 0.6em;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
