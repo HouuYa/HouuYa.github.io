@@ -349,11 +349,30 @@ code.highlighter-rouge {
 // TYPOGRAPHY & KOREAN LINE BREAK (가독성 및 한글 단어 단위 줄바꿈 완벽 적용)
 // ============================================================================
 
-/* 1. 사이트 내 모든 텍스트에 한글 단어 단위 줄바꿈 강제 적용 */
-body, p, span, a, li, td, th, h1, h2, h3, h4, h5, h6, div, blockquote {
+// ============================================================================
+// 1. KOREAN LINE BREAK (단어 단위 줄바꿈 - 본문 및 리스트에만 안전하게 적용)
+// ============================================================================
+/* 이전의 body, div 등 너무 넓은 범위를 빼고, 필요한 본문 요소에만 족집게 적용 */
+.page__content p, .page__content li, .page__content td, .page__content th,
+.page__content h1, .page__content h2, .page__content h3, .page__content h4, .page__content h5, .page__content h6,
+.page__content blockquote,
+.archive__item-excerpt, .archive__item-title {
   word-break: keep-all !important;
   overflow-wrap: break-word !important;
   line-break: strict !important;
+}
+
+// ============================================================================
+// 2. SIDEBAR SCROLL (사이드바 고정 해제 - 자연스럽게 위로 스크롤되도록)
+// ============================================================================
+/* 사이드바가 스크롤을 따라오지 않고 본문과 함께 올라가도록 강제 설정 */
+.sidebar,
+.sidebar.sticky,
+.author__urls-wrapper {
+  position: relative !important;
+  top: auto !important;
+  height: auto !important;
+  z-index: 1; /* 글과 겹치지 않게 */
 }
 
 /* 2. 본문(Markdown) 가독성 개선 (크기, 줄간격, 자간) */
