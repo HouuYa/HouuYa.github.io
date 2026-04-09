@@ -352,69 +352,58 @@ code.highlighter-rouge {
   background: rgba($accent, 0.3);
 }
 
-// ============================================================================
-// KOREAN LINE BREAK CONTROL
-// ============================================================================
-
-// 기본 본문, 리스트, 표 안의 텍스트
-.page__content p,
-.page__content li,
-.page__content td,
-.page__content th,
-// 블로그 홈/목록의 카드 형태 요약본 및 본문 (스크린샷 부분)
-.archive__item-excerpt,
-.archive__item-body p,
-.archive__item-title,
-// 각종 제목들
-h1, h2, h3, h4, h5, h6 {
-  word-break: keep-all !important; /* 한글 단어 단위로 줄바꿈 */
-  overflow-wrap: break-word !important; /* 긴 영문/URL이 영역을 뚫고 나가는 것 방지 */
-  line-break: strict;
-}
-
 
 // ============================================================================
-// TYPOGRAPHY & READABILITY (본문 가독성 개선)
+// TYPOGRAPHY & KOREAN LINE BREAK (가독성 및 한글 단어 단위 줄바꿈 완벽 적용)
 // ============================================================================
 
-/* 본문(단락), 리스트 형태의 기본 글꼴 설정 */
-.page__content p,
-.page__content li,
-.page__content td {
-  font-size: 15px !important;       /* 기본 폰트 크기 (15px~16px이 읽기 좋습니다. 필요시 수정) */
-  line-height: 1.75 !important;     /* 줄 간격 (위아래 줄이 겹쳐보이지 않게 1.7~1.8 추천) */
-  letter-spacing: -0.03em;          /* 한글은 자간을 아주 살짝 좁히면 글이 단단해 보이고 가독성이 오릅니다 */
-  color: rgba(255, 255, 255, 0.85); /* 100% 흰색(#fff)보다 살짝 투명도를 주어 눈부심 방지 */
-  margin-bottom: 1.3em;             /* 문단 사이의 여백 */
+/* 1. 사이트 내 모든 텍스트에 한글 단어 단위 줄바꿈 강제 적용 */
+body, p, span, a, li, td, th, h1, h2, h3, h4, h5, h6, div, blockquote {
+  word-break: keep-all !important;      /* 한글 단어가 반으로 쪼개지는 것 방지 */
+  overflow-wrap: break-word !important; /* 긴 영어 단어나 URL이 화면 밖으로 나가는 것 방지 */
+  line-break: strict !important;
 }
 
-/* 인용문(Blockquote - 스크린샷의 청록색 세로선 부분) 스타일링 */
-.page__content blockquote {
-  font-size: 14px !important;       /* 인용문은 본문보다 살짝 작게 설정하면 구분이 잘 됩니다 */
-  line-height: 1.7;
-  letter-spacing: -0.02em;
-  color: rgba(255, 255, 255, 0.75); /* 본문보다 살짝 더 어둡게 처리 */
-  padding-left: 1.25em;             
-  border-left: 4px solid $accent;   /* 기존보다 왼쪽 선을 약간 얇고 깔끔하게 */
-  margin-bottom: 1.5em;
-}
+/* 2. 본문(Markdown) 가독성 개선 (크기, 줄간격, 자간) */
+.page__content {
+  p, li, td {
+    font-size: 15px !important;       /* 너무 큰 기본 폰트를 단정하게 축소 (16px) */
+    line-height: 1.75 !important;     /* 글자가 작아진 만큼 줄 간격을 넉넉하게 띄움 */
+    letter-spacing: -0.03em;          /* 한글 자간을 살짝 좁혀서 쫀쫀하게 보이게 함 */
+    color: rgba(255, 255, 255, 0.85); /* 100% 흰색 대신 살짝 투명도를 주어 눈 피로 감소 */
+    margin-bottom: 1.4em;             /* 문단 간 여백 설정 */
+  }
 
-/* 인용문 안의 p 태그 여백 제거 (불필요한 공백 방지) */
-.page__content blockquote p {
-  margin-bottom: 0;
-}
+  /* 인용문 (>) 스타일 */
+  blockquote {
+    font-size: 14px !important;       /* 본문보다 살짝 작게 */
+    line-height: 1.7;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.75);
+    border-left: 4px solid $accent;   /* 테마 포인트 컬러 사용 */
+    padding-left: 1.25em;
+    margin-bottom: 1.5em;
+    background: rgba(255, 255, 255, 0.03); /* 배경에 살짝 음영을 주어 구분감 향상 */
+    padding: 1em 1em 1em 1.25em;
+    border-radius: 0 8px 8px 0;
 
-/* 소제목(h2, h3, h4) 크기 및 여백 조정 */
-.page__content h2 {
-  font-size: 1.4em !important;      /* 제목 크기 조절 */
-  margin-top: 2em;                  /* 이전 문단과의 간격 (넓게) */
-  margin-bottom: 0.8em;             /* 제목과 다음 문단의 간격 */
-  letter-spacing: -0.04em;
-}
+    p { margin-bottom: 0; }
+  }
 
-.page__content h3 {
-  font-size: 1.2em !important;
-  margin-top: 1.8em;
-  margin-bottom: 0.6em;
-  letter-spacing: -0.03em;
+  /* 소제목 (##, ###) 스타일 */
+  h2 {
+    font-size: 1.4em !important;
+    margin-top: 2em;
+    margin-bottom: 0.8em;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+  }
+
+  h3 {
+    font-size: 1.2em !important;
+    margin-top: 1.8em;
+    margin-bottom: 0.6em;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.95);
+  }
 }
