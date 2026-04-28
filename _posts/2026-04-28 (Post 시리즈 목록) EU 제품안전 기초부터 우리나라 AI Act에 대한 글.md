@@ -1,8 +1,26 @@
-시리즈 전체 목록
-
-> 블로그명: 규제 읽는 사람 / 정책과 기술 사이 발행 주기: 월 2회 (격주) 태그: #EU규제 #AI_Act #제품안전 #NLF #한국규제비교
-
 ---
+title: " (글 목록) EU 제품안전 기초부터 우리나라 AI Act에 대한 글.md"
+categories:
+  - EU제품안전
+  - NLF
+  - AI Regulation
+  - Product Safety
+tags:
+  - EU규제
+  - 제품안전
+  - NLF
+  - CE마킹
+  - 규제설계
+  - AI규제
+  - EU/AI_Act
+  - AI
+  - 규제설계
+last_modified_at: 2026-04-28T13:49:00
+---
+
+
+
+
 
 ## Series A. EU 제품안전 기초: NLF를 해부한다
 
