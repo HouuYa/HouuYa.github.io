@@ -97,5 +97,7 @@ Blue Guide는 **법령은 아니지만 EU 제품규제라는 도시의 공식 "�
 ---
 
 주석:
+
 [^1]: The 'Blue Guide' on the implementation of EU product rules 2022, Commission Notice, OJ C 247, 29.6.2022.
+
 [^2]: Blue Guide 2022는 AI Act 이전 발행이라 AI Act 직접 해설은 없으나, AI Act가 NLF 위에 설계되어 NLF 공통구조 이해에 필수.
