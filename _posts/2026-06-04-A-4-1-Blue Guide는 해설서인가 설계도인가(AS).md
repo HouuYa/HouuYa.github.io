@@ -16,7 +16,7 @@ last_modified_at: 2026-06-04T15:00:00+09:00
 
 
 
-# [A-4-1] Blue Guide는 해설서인가, 설계도인가 (update 2026-06-04)
+# [A-4-1](<2026-04-28-A-4-1-Blue Guide는 해설서인가 설계도인가.md>) Blue Guide는 해설서인가, 설계도인가 (update 2026-06-04)
 
 > Series A 보충편. A 시리즈 전반에서 반복 인용된 [[blue-guide-2022|Blue Guide]]의 정체·법적 성격·구성을 정리한 원문(에세이)의 위키 요약.
 
