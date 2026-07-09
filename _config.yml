@@ -300,3 +300,5 @@ defaults:
     values:
       layout: single
       author_profile: false # 기본적으로 프로필을 끕니다.
+  
+  future: true
