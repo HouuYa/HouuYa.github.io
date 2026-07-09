@@ -157,7 +157,5 @@ _→ 다음 글: [A-1-1](<2026-04-06-A-1-1-New Approach, Global Approach, NLF.md
 **주석** 
 
 [^1]: Blue Guide on the implementation of EU product rules 2022, OJ C 247, 29.6.2022, Section 1.1.1. 법정계량(legal metrology) 분야에서는 Old Approach 하에서 공공기관이 직접 적합성 증명서를 발급한 사례가 있었음을 명시. PTB, H. Stolz, slide 24 교차 확인 
-
 [^2]: Blue Guide 2022, Section 1.1.3. 조화 표준 준수 시 법적 요건을 충족한 것으로 추정하는 원칙. PTB, H. Stolz, slide 8 교차 확인.
-
 [^3]: Blue Guide 2022, Section 1.2. NLF는 Decision 768/2008/EC(적합성 평가 모듈), Regulation 765/2008/EC(인정 및 시장감시), Regulation 764/2008/EC(비조화 제품 상호인정)로 구성됨. PTB, H. Stolz, slide 33 교차 확인
