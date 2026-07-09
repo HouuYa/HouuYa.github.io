@@ -59,7 +59,7 @@ Notified Body는 특정 EU 법령 하에서 **적합성 평가(Conformity Assess
 
 아래 그림은 NB가 EU 전체 적합성평가 생태계에서 어떤 위치를 차지하는지 보여준다.
 
-![EU 적합성평가 생태계 — 기관 관계도](assets/eu_cab_l2_l4_fixed.svg)
+![EU 적합성평가 생태계 — 기관 관계도](/assets/eu_cab_l2_l4_fixed.svg)
 
 *EU 적합성평가 생태계. L0(정책·입법층)부터 L3(실무 CAB 기관)까지, 그리고 AI Act 레이어와 한국 대응 구조를 포함한다. NB(통보기관)는 L2 공적 평가·감독층에 위치한다.*
 
