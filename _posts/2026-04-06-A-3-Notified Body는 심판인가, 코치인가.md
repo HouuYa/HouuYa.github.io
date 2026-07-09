@@ -16,13 +16,11 @@ tags:
 last_modified_at: 2026-07-09T09:00:00+09:00
 ---
 
-****
-
 *Series A. EU 제품안전 기초: NLF를 해부한다 : A-3*
 
-*이전 글: [A-2](<2026-04-06-A-2-인증 모듈(A~H)은 기업 맞춤 메뉴판이다.md>) 인증 모듈(A~H)은 기업 맞춤 메뉴판이다*
+*이전 글: [A-2](<03-02-01 Resources 업무 국내/AI 규제 - 복사본(digesting with Claude code)/blog/posts/2026-04-06-A-2-인증 모듈(A~H)은 기업 맞춤 메뉴판이다.md>) 인증 모듈(A~H)은 기업 맞춤 메뉴판이다*
 
-*다음 글: [A-4](<2026-04-06-A-4-제품이 팔린 뒤가 더 무섭다.md>) 제품이 팔린 뒤가 더 무섭다*
+*다음 글: [A-4](<03-02-01 Resources 업무 국내/AI 규제 - 복사본(digesting with Claude code)/blog/posts/2026-04-06-A-4-제품이 팔린 뒤가 더 무섭다.md>) 제품이 팔린 뒤가 더 무섭다*
 
 *보충편: [A-3-1](<2026-04-28-A-3-1-NB는 어떻게 탄생하는가.md>) NB는 어떻게 탄생하는가 — Accreditation에서 NANDO까지*
 
@@ -59,7 +57,7 @@ Notified Body는 특정 EU 법령 하에서 **적합성 평가(Conformity Assess
 
 아래 그림은 NB가 EU 전체 적합성평가 생태계에서 어떤 위치를 차지하는지 보여준다.
 
-![EU 적합성평가 생태계 — 기관 관계도](/assets/eu_cab_l2_l4_fixed.svg)
+![EU 적합성평가 생태계 — 기관 관계도](assets/eu_cab_l2_l4_fixed.svg)
 
 *EU 적합성평가 생태계. L0(정책·입법층)부터 L3(실무 CAB 기관)까지, 그리고 AI Act 레이어와 한국 대응 구조를 포함한다. NB(통보기관)는 L2 공적 평가·감독층에 위치한다.*
 
@@ -174,16 +172,15 @@ Notified Body는 심판이다.
 
 ---
 
-*→ 다음 글: [A-4](<2026-04-06-A-4-제품이 팔린 뒤가 더 무섭다.md>) 제품이 팔린 뒤가 더 무섭다*
+*→ 다음 글: [A-4](<03-02-01 Resources 업무 국내/AI 규제 - 복사본(digesting with Claude code)/blog/posts/2026-04-06-A-4-제품이 팔린 뒤가 더 무섭다.md>) 제품이 팔린 뒤가 더 무섭다*
 
 *→ 보충편: [A-3-1](<2026-04-28-A-3-1-NB는 어떻게 탄생하는가.md>) NB는 어떻게 탄생하는가 — Accreditation에서 NANDO까지*
 
-*← 이전 글: [A-2](<2026-04-06-A-2-인증 모듈(A~H)은 기업 맞춤 메뉴판이다.md>) 인증 모듈(A~H)은 기업 맞춤 메뉴판이다*
+*← 이전 글: [A-2](<03-02-01 Resources 업무 국내/AI 규제 - 복사본(digesting with Claude code)/blog/posts/2026-04-06-A-2-인증 모듈(A~H)은 기업 맞춤 메뉴판이다.md>) 인증 모듈(A~H)은 기업 맞춤 메뉴판이다*
 
 ---
 
 **주석**
-
 [^1]: Blue Guide 2022, Section 5.2.1. Notified bodies carry out tasks when a third party is required under applicable technical harmonisation legislation.
 [^2]: Blue Guide 2022, Section 5.2.2. "Notified bodies are and must remain third parties independent of their clients and other interested parties."
 [^3]: PIP 스캔들 개요: EU PIP breast implant withdrawal, *Regulatory Rapporteur* (2023). https://www.regulatoryrapporteur.org/cpd-supplements/eu-pip-breast-implant-withdrawal/111.article / 타임라인: MassDevice, "PIP breast implant scandal: A story that triggered change" (2018). https://www.massdevice.com/pip-breast-implant-scandal-story-triggered-change/
