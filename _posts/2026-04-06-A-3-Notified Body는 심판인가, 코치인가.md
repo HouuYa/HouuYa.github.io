@@ -183,6 +183,7 @@ Notified Body는 심판이다.
 ---
 
 **주석**
+
 [^1]: Blue Guide 2022, Section 5.2.1. Notified bodies carry out tasks when a third party is required under applicable technical harmonisation legislation.
 [^2]: Blue Guide 2022, Section 5.2.2. "Notified bodies are and must remain third parties independent of their clients and other interested parties."
 [^3]: PIP 스캔들 개요: EU PIP breast implant withdrawal, *Regulatory Rapporteur* (2023). https://www.regulatoryrapporteur.org/cpd-supplements/eu-pip-breast-implant-withdrawal/111.article / 타임라인: MassDevice, "PIP breast implant scandal: A story that triggered change" (2018). https://www.massdevice.com/pip-breast-implant-scandal-story-triggered-change/
