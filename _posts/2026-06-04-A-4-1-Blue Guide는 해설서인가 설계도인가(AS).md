@@ -1,5 +1,5 @@
 ---
-title: A-4-1-Blue Guide는 해설서인가 설계도인가(AS)
+title: "[A-4-1] Blue Guide는 해설서인가 설계도인가(AS)"
 description: Blue Guide는 법령은 아니지만 EU 제품규제라는 도시의 공식 지도
 categories:
   - 한국-EU비교
