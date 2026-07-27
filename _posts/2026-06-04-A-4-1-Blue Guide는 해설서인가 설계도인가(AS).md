@@ -1,6 +1,7 @@
 ---
-title: A-4-1-Blue Guide는 해설서인가 설계도인가(AS)
+title: "[A-4-1] Blue Guide는 해설서인가 설계도인가(AS)"
 description: Blue Guide는 법령은 아니지만 EU 제품규제라는 도시의 공식 지도
+permalink: /a-4-1-blue-guide는-해설서인가-설계도인가-as/
 categories:
   - 한국-EU비교
   - AI Regulation
@@ -16,9 +17,15 @@ last_modified_at: 2026-06-04T15:00:00+09:00
 
 
 
-# [A-4-1](<2026-04-28-A-4-1-Blue Guide는 해설서인가 설계도인가.md>) Blue Guide는 해설서인가, 설계도인가 (update 2026-06-04)
+# [A-4-1](/a-4-1-blue-guide는-해설서인가-설계도인가/) Blue Guide는 해설서인가, 설계도인가 (update 2026-06-04)
 
-> Series A 보충편. A 시리즈 전반에서 반복 인용된 [[blue-guide-2022|Blue Guide]]의 정체·법적 성격·구성을 정리한 원문(에세이)의 위키 요약.
+> Series A 보충편. A 시리즈 전반에서 반복 인용된 Blue Guide의 정체·법적 성격·구성을 정리한 원문(에세이)의 위키 요약.
+
+*Series A. EU 제품안전 기초: NLF를 해부한다 : A-4 보충편 (A-4-1, 수정판)*
+
+*이전 글: [A-4](/a-4-제품이-팔린-뒤가-더-무섭다/) 제품이 팔린 뒤가 더 무섭다*
+
+*다음 글: [A-5](/a-5-위험을-재는-저울-feat-a-시리즈를-마치며/) 위험을 재는 저울*
 
 ---
 
@@ -32,7 +39,7 @@ Blue Guide는 **법령은 아니지만 EU 제품규제라는 도시의 공식 "�
 
 - 정식명: *The 'Blue Guide' on the implementation of EU product rules 2022*
 - 발행: EU 집행위원회(European Commission), EU 관보에 **Commission Notice(위원회 공고)**로 게재
-- 현행판: **2022년 6월 29일자, OJ C 247** (약 120페이지)¹
+- 현행판: **2022년 6월 29일자, OJ C 247** (약 120페이지)[^1]
 - 내용: EU 조화 입법 하에서 제품이 시장에 출시되기까지의 전 과정 해설
 
 ---
@@ -40,7 +47,7 @@ Blue Guide는 **법령은 아니지만 EU 제품규제라는 도시의 공식 "�
 ## 2. 법인가, 해설서인가 — 핵심 쟁점
 
 - **법령이 아니다.** Regulation·Directive 같은 구속력은 없음. 법원이 Blue Guide 조항을 직접 인용해 판결하지 않음.
-- **단순 참고자료도 아니다.** EU 3자(집행위·이사회·의회)가 [[NLF]] 설계 시 공통 참조하고, 각국 시장감시당국·인정기구·[[Notified-Body|NB]]가 실무 기준으로 따름.
+- **단순 참고자료도 아니다.** EU 3자(집행위·이사회·의회)가 NLF 설계 시 공통 참조하고, 각국 시장감시당국·인정기구·NB가 실무 기준으로 따름.
 - **비유**: 헌법–법률–시행령–시행규칙 어디에도 속하지 않으나, *실무자가 매일 펼치는 문서는 법전이 아니라 Blue Guide*. 한국 법제처 "법령해석 사례집"과 비슷하되, 개별 질의응답이 아니라 **체계 전체를 하나의 서사로 설명**한다는 점에서 다름.
 
 ---
@@ -64,7 +71,7 @@ Blue Guide는 **법령은 아니지만 EU 제품규제라는 도시의 공식 "�
 ## 4. 왜 Blue Guide가 중요한가
 
 - **개별 법령은 "나무", Blue Guide는 "숲".** 기계류 규정·MDR 등은 각 제품군만 다루지만, 공통구조(필수요구사항·모듈·NB·인정·시장감시)를 종합 설명하는 문서는 Blue Guide뿐.
-- **[[decision-768-2008-ec|Decision 768/2008]]의 실질적 해설서.** 모든 조화법령의 "공통 문법"인 Decision 768은 법조문이라 난해 → Blue Guide가 실무 언어로 풀어씀.
+- **Decision 768/2008의 실질적 해설서.** 모든 조화법령의 "공통 문법"인 Decision 768은 법조문이라 난해 → Blue Guide가 실무 언어로 풀어씀.
 
 ---
 
@@ -72,7 +79,7 @@ Blue Guide는 **법령은 아니지만 EU 제품규제라는 도시의 공식 "�
 
 - EU는 복잡한 규제를 만들고 **그 체계를 설명하는 종합 해설서까지 공식 문서로 관보에 게재**한다. 체계를 만든 자가 설명까지 책임지는 구조("self-explanatory capacity").
 - 한국 대비: 전기생활용품안전법·제품안전기본법·각종 고시는 있으나, **체계 전체의 설계논리를 하나의 서사로 설명하는 공식 문서**는 찾기 어려움.
-- 함의: 규제 대상(특히 EU 역외 한·중·미 기업)이 이해하지 못하면 준수율이 떨어짐 → Blue Guide는 접근 장벽을 크게 낮추는 장치. AI 기업이 "어디부터 읽느냐"고 물으면 답은 **"Blue Guide부터"**.²
+- 함의: 규제 대상(특히 EU 역외 한·중·미 기업)이 이해하지 못하면 준수율이 떨어짐 → Blue Guide는 접근 장벽을 크게 낮추는 장치. AI 기업이 "어디부터 읽느냐"고 물으면 답은 **"Blue Guide부터"**.[^2]
 
 ---
 
@@ -85,14 +92,14 @@ Blue Guide는 **법령은 아니지만 EU 제품규제라는 도시의 공식 "�
 
 ## 관련 문서
 
-- [[blue-guide-2022]] — 2022년판 본문 9장 전체 요약(모듈표·AI Act 대응표 포함)
-- [[NLF]] · [[decision-768-2008-ec]] · [[필수요구사항]] · [[조화표준]]
-- [[CE마킹]] · [[EU-DoC]] · [[인증-모듈]] · [[Notified-Body]] · [[시장감시]]
-- [[NLF-Blue-Guide-AI-Act-연계분석]] — Blue Guide가 AI Act 이해의 전제 지식인 이유
-- [[series-A-목록]] — Series A 전체 색인
+- blue-guide-2022 — 2022년판 본문 9장 전체 요약(모듈표·AI Act 대응표 포함)
+- NLF · decision-768-2008-ec · 필수요구사항 · 조화표준
+- CE마킹 · EU-DoC · 인증-모듈 · Notified-Body · 시장감시
+- NLF-Blue-Guide-AI-Act-연계분석 — Blue Guide가 AI Act 이해의 전제 지식인 이유
+- series-A-목록 — Series A 전체 색인
 
 ---
 
-주석:
+주석 :
 [^1]: The 'Blue Guide' on the implementation of EU product rules 2022, Commission Notice, OJ C 247, 29.6.2022.
 [^2]: Blue Guide 2022는 AI Act 이전 발행이라 AI Act 직접 해설은 없으나, AI Act가 NLF 위에 설계되어 NLF 공통구조 이해에 필수.
