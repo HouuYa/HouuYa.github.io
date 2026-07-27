@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+---
+
+<BaseLayout title="검색 — Search" description="HouuYa's Blog 포스트 검색">
+  <Nav currentPath="/search" />
+
+  <main class="search-page">
+    <div class="search-container">
+      <header class="search-header">
+        <h1 class="search-title">Search</h1>
+        <p class="search-subtitle">블로그 내 전체 포스트 및 콘텐츠를 검색합니다.</p>
+      </header>
+
+      <div id="search"></div>
+    </div>
+  </main>
+</BaseLayout>
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script src="/pagefind/pagefind-ui.js" is:inline></script>
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.PagefindUI) {
+      new window.PagefindUI({
+        element: '#search',
+        showSubResults: true,
+        showImages: false,
+        translations: {
+          placeholder: '검색어를 입력하세요 (예: AI Act, 규제, 표준...)',
+          clear_search: '초기화',
+          load_more: '결과 더 보기',
+          search_label: '블로그 검색',
+          filters_label: '필터',
+          zero_results: '"[SEARCH_TERM]"에 대한 검색 결과가 없습니다.',
+          many_results: '"[SEARCH_TERM]"에 대한 [COUNT]개의 검색 결과',
+          one_result: '"[SEARCH_TERM]"에 대한 1개의 검색 결과',
+          alt_search: '검색 결과가 없습니다. [SEARCH_TERM] 대신 검색하시겠습니까?',
+          search_suggestion: '검색 결과가 없습니다. 다음 검색어를 시도해 보세요:',
+          searching: '검색 중...'
+        }
+      });
+    }
+  });
+</script>
+
+<style lang="scss">
+  @use '../styles/tokens' as *;
+
+  .search-page {
+    min-height: calc(100vh - 200px);
+    padding: $spacing-xxl $spacing-lg;
+    background-color: $color-canvas;
+
+    @media (max-width: 768px) {
+      padding: $spacing-xl $spacing-md;
+    }
+  }
+
+  .search-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .search-header {
+    margin-bottom: $spacing-xxl;
+    text-align: center;
+
+    .search-title {
+      font-family: $font-display;
+      font-size: $text-display-md-size;
+      color: $color-ink;
+      margin-bottom: $spacing-xs;
+      font-weight: 400;
+    }
+
+    .search-subtitle {
+      font-family: $font-body;
+      font-size: $text-body-md-size;
+      color: $color-muted;
+    }
+  }
+</style>

@@ -6,12 +6,14 @@
   "description": "HouuYa's Blog — AI Regulation & Product Safety Insights",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && npx pagefind --site dist",
     "build:search": "astro build && npx pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "@pagefind/default-ui": "^1.3.0",
     "astro": "^5.0.0"
   },
   "devDependencies": {

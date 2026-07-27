@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 — HouuYa's Blog</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>페이지를 찾을 수 없습니다 — HouuYa's Blog</title>
+  <script>
+    // Jekyll URL 마이그레이션 호환 리다이렉터
+    (function() {
+      var path = window.location.pathname;
+      // 레거시 카테고리/포스트 패턴 처리
+      if (path.startsWith('/category/') || path.startsWith('/tag/')) {
+        window.location.replace('/posts/');
+        return;
+      }
+      // 일반적인 레거시 포스트 URL 리다이렉션 시도
+      if (path !== '/' && !path.startsWith('/posts/') && !path.startsWith('/assets/')) {
+        var cleanPath = path.replace(/\/$/, '');
+        var segments = cleanPath.split('/');
+        var lastSegment = segments[segments.length - 1];
+        if (lastSegment) {
+          window.location.replace('/posts/' + lastSegment + '/');
+          return;
+        }
+      }
+    })();
+  </script>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
-      background: #faf9f5;
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #faf9f5;
       color: #141413;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      height: 100vh;
       margin: 0;
       text-align: center;
+      padding: 20px;
     }
-    .wrap { max-width: 480px; padding: 2rem; }
-    h1 { font-size: 4rem; font-weight: 400; margin: 0 0 1rem; }
-    p { color: #6c6a64; margin: 0 0 2rem; }
+    h1 { font-size: 3rem; margin-bottom: 0.5rem; color: #cc785c; }
+    p { font-size: 1.25rem; color: #66635c; margin-bottom: 2rem; }
     a {
-      background: #cc785c;
-      color: #fff;
-      padding: 12px 20px;
+      display: inline-block;
+      background-color: #cc785c;
+      color: #faf9f5;
+      padding: 12px 24px;
       border-radius: 8px;
       text-decoration: none;
-      font-size: 14px;
       font-weight: 500;
     }
-    a:hover { background: #a9583e; }
+    a:hover { background-color: #a9583e; }
   </style>
-  <script>
-    // Jekyll URL 패턴 → Astro URL 리다이렉트
-    // e.g. /2024/01/01/post-title/ → /posts/2024-01-01-post-title/
-    const path = window.location.pathname;
-    const jekyllPost = path.match(/^\/(\d{4})\/(\d{2})\/(\d{2})\/(.+?)\/?$/);
-    if (jekyllPost) {
-      const [, y, m, d, slug] = jekyllPost;
-      window.location.replace(`/posts/${y}-${m}-${d}-${slug}/`);
-    }
-  </script>
 </head>
 <body>
-  <div class="wrap">
-    <h1>404</h1>
-    <p>페이지를 찾을 수 없습니다.</p>
-    <a href="/">홈으로 돌아가기</a>
-  </div>
+  <h1>404</h1>
+  <p>요청하신 페이지를 찾을 수 없습니다.</p>
+  <a href="/">메인으로 돌아가기</a>
 </body>
 </html>
