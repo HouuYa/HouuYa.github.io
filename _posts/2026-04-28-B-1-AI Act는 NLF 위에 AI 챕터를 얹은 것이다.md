@@ -276,6 +276,7 @@ EU가 AI Act를 빠르게 구현할 수 있는 이유는, 40년간 기초를 다
 ---
 
 주석 :
+
 [^1]: EU AI Act Article 49. 고위험 AI 시스템에 CE 마킹 부착 의무.
 [^2]: Regulation (EU) 2024/1689, OJ L 2024-07-12. 2024년 8월 1일 발효, 단계적 시행.
 [^3]: AI Act는 NLF 개념을 정의 없이 참조. Blue Guide 2022 (OJ C 247)가 이 개념들의 실질적 해설서. 위키 분석 NLF-Blue-Guide-AI-Act-연계분석 참조.
