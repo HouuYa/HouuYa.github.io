@@ -221,10 +221,12 @@ EU의 이 체계를 한국과 나란히 놓으면 무엇이 보이는가. 같은
 ---
 
 주석 :
+
 [^1]: AI Act Article 64. European AI Office 설립 근거. 2024년 8월 1일(AI Act 발효)과 함께 출범.
 [^2]: DG CNECT = Directorate-General for Communications Networks, Content and Technology. EU 집행위원회 내 AI 정책 주관 총국.
 [^3]: AI Act Article 88-94. GPAI 모델에 대한 AI Office의 직접 집행 권한. 정보 요청·평가·시정조치·과징금 부과.
 [^4]: AI Act Article 65-66 (AI Board), Article 67 (Advisory Forum). UPCN(Union Product Compliance Network, Reg 2019/1020 Art.29-33)의 AI 확장판.
 [^5]: EU 제품안전 역사에서 중앙 집행 선례: EMA(European Medicines Agency, 의약품), ECHA(European Chemicals Agency, 화학물질). NLF 체계 내에서는 AI Office가 최초에 가까운 중앙 집행 사례.
 [^6]: AI Act Article 51-55 (Chapter V). GPAI 모델 규율. NLF에 대응 개념 없음.
-[^7]: AI Act Article 51(2). 시스템적 리스크 GPAI 기준: 누적
+[^7]: AI Act Article 51(2). 시스템적 리스크 GPAI로 추정되는 기준: 모델 훈련에 사용된 누적 연산량이 10^25 FLOPs를 초과하는 경우(또는 European Commission이 별도로 지정하는 경우, Article 51(1)(b)). 한국 인공지능기본법 법 제32조·시행령 제24조의 프론티어 기준(10^26 FLOPs)보다 10배 낮음. 상세는 한국AI기본법-EU-AI-Act-조문대응 §5 참조.
+[^8]: 인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 제12조(인공지능안전연구소)·제32조(프론티어 안전성 확보). 법 제12조제2항 및 시행령 제10조제1항이 정한 임무는 AI 위험 정의·분석, 평가 기준·방법 연구, 법 제32조 이행결과 접수·평가 지원 등 연구·평가·자문 중심이며, AI Office(AI Act Article 88-94)의 정보 요청·시정조치·과징금 부과 같은 직접 집행권은 법령에 명시되어 있지 않음. 상세는 인공지능안전연구소 참조.

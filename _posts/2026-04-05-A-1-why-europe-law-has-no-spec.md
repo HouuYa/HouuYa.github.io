@@ -155,7 +155,7 @@ _→ 다음 글: [A-1-1](/a-1-1-new-approach-global-approach-nlf/) 같은 것처
 
 ---
 
-**주석** 
+주석 :
 
 [^1]: Blue Guide on the implementation of EU product rules 2022, OJ C 247, 29.6.2022, Section 1.1.1. 법정계량(legal metrology) 분야에서는 Old Approach 하에서 공공기관이 직접 적합성 증명서를 발급한 사례가 있었음을 명시. PTB, H. Stolz, slide 24 교차 확인 
 [^2]: Blue Guide 2022, Section 1.1.3. 조화 표준 준수 시 법적 요건을 충족한 것으로 추정하는 원칙. PTB, H. Stolz, slide 8 교차 확인.
