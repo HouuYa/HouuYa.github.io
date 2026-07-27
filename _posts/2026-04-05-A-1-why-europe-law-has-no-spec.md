@@ -1,5 +1,6 @@
 ---
 title: "[A-1] 법이 침묵할 때, 기업은 무엇을 하는가 — 신뢰는 어떻게 설계되는가"
+permalink: /a-1-why-europe-law-has-no-spec/
 categories:
   - EU제품안전
   - NLF
@@ -21,7 +22,7 @@ last_modified_at: 2026-04-06T10:49:00
 
 _Series A. EU 제품안전 기초: NLF(New Legislative Framework)를 해부한다 | A-1_ 
 
-_다음 글: [A-1-1](<2026-04-06-A-1-1-New Approach, Global Approach, NLF.md>) 같은 것처럼 보이는 세 단어: New Approach, Global Approach, NLF_
+_다음 글: [A-1-1](/a-1-1-new-approach-global-approach-nlf/) 같은 것처럼 보이는 세 단어: New Approach, Global Approach, NLF_
 
 ---
 
@@ -98,7 +99,7 @@ _"어떻게 만들어야 하는가"를 법에 쓰는 것이 아니라, "무엇�
 
 이 두 질문에 대한 답이 **Global Approach(1989년)**와 **NLF(2008년)**로 이어진다. 
 
-이 세 개념의 정확한 구별은 이 글의 다음 편 [A-1-1](<2026-04-06-A-1-1-New Approach, Global Approach, NLF.md>)에서 자세히 다룬다. New Approach, Global Approach, NLF — 비슷해 보이지만 각각 다른 질문에 대한 다른 답이다.
+이 세 개념의 정확한 구별은 이 글의 다음 편 [A-1-1](/a-1-1-new-approach-global-approach-nlf/)에서 자세히 다룬다. New Approach, Global Approach, NLF — 비슷해 보이지만 각각 다른 질문에 대한 다른 답이다.
 
 ---
 
@@ -150,7 +151,7 @@ CE 마크는 그 설계의 결과물이다. 작은 두 글자 안에, 40년에 �
 
 ---
 
-_→ 다음 글: [A-1-1](<2026-04-06-A-1-1-New Approach, Global Approach, NLF.md>) 같은 것처럼 보이는 세 단어: New Approach, Global Approach, NLF_ _→→ 이후: [A-2](<2026-04-06-A-2-인증 모듈(A~H)은 기업 맞춤 메뉴판이다.md>) 인증 모듈(A~H)은 기업 맞춤 메뉴판이다_
+_→ 다음 글: [A-1-1](/a-1-1-new-approach-global-approach-nlf/) 같은 것처럼 보이는 세 단어: New Approach, Global Approach, NLF_ _→→ 이후: [A-2](/a-2-인증-모듈-a-h-은-기업-맞춤-메뉴판이다/) 인증 모듈(A~H)은 기업 맞춤 메뉴판이다_
 
 ---
 
