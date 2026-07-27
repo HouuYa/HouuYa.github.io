@@ -4,13 +4,35 @@ import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
+
+  const normalizeSlug = (value: string) => value
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9가-힣\-_/]+/gi, '')
+    .replace(/-+/g, '-')
+    .replace(/^\//, '')
+    .replace(/\/$/, '');
+
+  const getRoutePath = (post: any) => {
+    const permalink = post.data.permalink;
+    if (typeof permalink === 'string' && permalink.trim()) {
+      return permalink.replace(/^\//, '').replace(/\/$/, '');
+    }
+
+    const explicitSlug = post.data.slug;
+    if (typeof explicitSlug === 'string' && explicitSlug.trim()) {
+      return normalizeSlug(explicitSlug);
+    }
+
+    return normalizeSlug(post.id);
+  };
+
   return posts.map(post => ({
-    params: { slug: post.id },
-    props: { post },
+    params: { slug: getRoutePath(post) },
+    props: { post, routePath: getRoutePath(post) },
   }));
 }
 
-const { post } = Astro.props;
+const { post, routePath } = Astro.props;
 const { Content } = await render(post);
 ---
 
@@ -22,6 +44,7 @@ const { Content } = await render(post);
   categories={post.data.categories}
   tags={post.data.tags}
   toc={post.data.toc ?? false}
+  routePath={routePath}
 >
   <Content />
 </PostLayout>

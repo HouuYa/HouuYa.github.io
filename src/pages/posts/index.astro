@@ -36,6 +36,7 @@ const posts = allPosts
           <PostCard
             title={post.data.title}
             slug={post.id}
+            href={post.data.permalink ? post.data.permalink : undefined}
             pubDate={post.data.pubDate}
             categories={post.data.categories}
             description={post.data.description}

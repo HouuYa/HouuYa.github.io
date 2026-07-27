@@ -111,6 +111,18 @@
             "null"
           ]
         },
+        "slug": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "permalink": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "layout": {
           "type": [
             "string",

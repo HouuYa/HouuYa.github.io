@@ -12,9 +12,14 @@ interface Props {
   categories?: string[];
   tags?: string[];
   toc?: boolean;
+  routePath?: string;
 }
 
-const { title, description, pubDate, lastModified, categories = [], tags = [], toc = false } = Astro.props;
+const { title, description, pubDate, lastModified, categories = [], tags = [], toc = false, routePath } = Astro.props;
+
+const canonicalPath = routePath ? `/${routePath}/` : Astro.url.pathname;
+const publishedTime = pubDate ? new Date(pubDate).toISOString() : undefined;
+const modifiedTime = lastModified ? new Date(lastModified).toISOString() : undefined;
 
 function formatDate(d: Date | string | null | undefined): string {
   if (!d) return '';
@@ -26,7 +31,14 @@ function formatDate(d: Date | string | null | undefined): string {
 const dateStr = formatDate(pubDate) || formatDate(lastModified);
 ---
 
-<BaseLayout title={title} description={description ?? undefined} type="article">
+<BaseLayout
+  title={title}
+  description={description ?? undefined}
+  type="article"
+  canonicalUrl={canonicalPath}
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+>
   <div class="post-page">
     <div class="container">
       <div class="post-layout" class:list={[toc && 'post-layout--toc']}>

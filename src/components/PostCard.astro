@@ -5,12 +5,14 @@ import { slugify } from '../utils/slugify';
 interface Props {
   title: string;
   slug: string;
+  href?: string;
   pubDate?: Date | string | null;
   categories?: string[];
   description?: string | null;
 }
 
-const { title, slug, pubDate, categories = [], description } = Astro.props;
+const { title, slug, href, pubDate, categories = [], description } = Astro.props;
+const linkHref = href || `/posts/${slug}/`;
 
 function formatDate(d: Date | string | null | undefined): string {
   if (!d) return '';
@@ -24,7 +26,7 @@ const primaryCat = categories[0];
 ---
 
 <article class="post-card">
-  <a href={`/posts/${slug}/`} class="post-card__link" tabindex="-1" aria-hidden="true"></a>
+  <a href={linkHref} class="post-card__link" tabindex="-1" aria-hidden="true"></a>
   <div class="post-card__meta">
     {primaryCat && (
       <a href={`/categories/${slugify(primaryCat)}/`} class="post-card__badge">{primaryCat}</a>
@@ -32,7 +34,7 @@ const primaryCat = categories[0];
     {dateStr && <time class="post-card__date">{dateStr}</time>}
   </div>
   <h3 class="post-card__title">
-    <a href={`/posts/${slug}/`}>{title}</a>
+    <a href={linkHref}>{title}</a>
   </h3>
   {description && <p class="post-card__desc">{description}</p>}
 </article>
