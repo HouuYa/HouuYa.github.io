@@ -191,7 +191,6 @@ _← 이전 글: [A-1](<2026-04-05-A-1-why-europe-law-has-no-spec.md>) 법이 �
 ---
 
 **주석** 
-
 [^1]: H. Stolz, PTB, "Notification of MID and NAWID Conformity Assessment Bodies," 2014, slide 8. 
 [^2]: H. Stolz, PTB, ibid., slide 9, 19. Global Approach 모듈 흐름도(설계 단계-생산 단계 분리 구조) 참조. 
 [^3]: H. Stolz, PTB, ibid., slide 33. NLF 3개 규정 도식. Blue Guide 2022, Section 1.2 교차 확인. 

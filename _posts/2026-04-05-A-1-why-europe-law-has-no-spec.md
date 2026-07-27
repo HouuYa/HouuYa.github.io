@@ -21,7 +21,7 @@ last_modified_at: 2026-04-06T10:49:00
 
 _Series A. EU 제품안전 기초: NLF(New Legislative Framework)를 해부한다 | A-1_ 
 
-_다음 글: [A-1-1]({% post_url 2026-04-06-A-1-1-New Approach, Global Approach, NLF %}) 같은 것처럼 보이는 세 단어: New Approach, Global Approach, NLF_
+_다음 글: [A-1-1](<2026-04-06-A-1-1-New Approach, Global Approach, NLF.md>) 같은 것처럼 보이는 세 단어: New Approach, Global Approach, NLF_
 
 ---
 
@@ -98,7 +98,7 @@ _"어떻게 만들어야 하는가"를 법에 쓰는 것이 아니라, "무엇�
 
 이 두 질문에 대한 답이 **Global Approach(1989년)**와 **NLF(2008년)**로 이어진다. 
 
-이 세 개념의 정확한 구별은 이 글의 다음 편 [A-1-1]({% post_url 2026-04-06-A-1-1-New Approach, Global Approach, NLF %})에서 자세히 다룬다. New Approach, Global Approach, NLF — 비슷해 보이지만 각각 다른 질문에 대한 다른 답이다.
+이 세 개념의 정확한 구별은 이 글의 다음 편 [A-1-1](<2026-04-06-A-1-1-New Approach, Global Approach, NLF.md>)에서 자세히 다룬다. New Approach, Global Approach, NLF — 비슷해 보이지만 각각 다른 질문에 대한 다른 답이다.
 
 ---
 

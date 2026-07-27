@@ -117,7 +117,7 @@ NLF의 적합성 평가(사전)와 시장감시(사후) 이중 구조가 AI Act�
 
 Article 43이 사전 적합성 평가를, Article 74-79가 사후 시장감시를 규정한다. 
 
-[A-2](<2026-04-06-A-2-인증 모듈(A~H)은 기업 맞춤 메뉴판이다.md>)%EC%9D%80-%EA%B8%B0%EC%97%85-%EB%A7%9E%EC%B6%A4-%EB%A9%94%EB%89%B4%ED%8C%90%EC%9D%B4%EB%8B%A4/)에서 본 모듈과 [A-4](<2026-04-06-A-4-제품이 팔린 뒤가 더 무섭다.md>)에서 본 시장감시가 AI에도 작동하는 것이다.
+[A-2](<2026-04-06-A-2-인증 모듈(A~H)은 기업 맞춤 메뉴판이다.md>)에서 본 모듈과 [A-4](<2026-04-06-A-4-제품이 팔린 뒤가 더 무섭다.md>)에서 본 시장감시가 AI에도 작동하는 것이다.
 
 **다섯째, 경제적 운영자 책임.**
 
@@ -277,7 +277,7 @@ EU가 AI Act를 빠르게 구현할 수 있는 이유는, 40년간 기초를 다
 주석 :
 [^1]: EU AI Act Article 49. 고위험 AI 시스템에 CE 마킹 부착 의무.
 [^2]: Regulation (EU) 2024/1689, OJ L 2024-07-12. 2024년 8월 1일 발효, 단계적 시행.
-[^3]: AI Act는 NLF 개념을 정의 없이 참조. Blue Guide 2022 (OJ C 247)가 이 개념들의 실질적 해설서. 위키 분석 [[NLF-Blue-Guide-AI-Act-연계분석]] 참조.
+[^3]: AI Act는 NLF 개념을 정의 없이 참조. Blue Guide 2022 (OJ C 247)가 이 개념들의 실질적 해설서. 위키 분석 NLF-Blue-Guide-AI-Act-연계분석 참조.
 [^4]: AI Act Article 15. 정확성(Accuracy), 견고성(Robustness), 사이버보안(Cybersecurity) 요건.
 [^5]: AI Act Article 40. CEN-CENELEC JTC 21이 AI 조화표준 개발. 최초 공개심의 표준 prEN 18286 (AI QMS, 2025.10).
 [^6]: AI Act Article 16(공급자), Article 23(수입업자), Article 24(배포자).
