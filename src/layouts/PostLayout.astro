@@ -17,9 +17,16 @@ interface Props {
 
 const { title, description, pubDate, lastModified, categories = [], tags = [], toc = false, routePath } = Astro.props;
 
+function safeIsoString(d: Date | string | null | undefined): string | undefined {
+  if (!d) return undefined;
+  const date = d instanceof Date ? d : new Date(d as string);
+  if (isNaN(date.getTime())) return undefined;
+  return date.toISOString();
+}
+
 const canonicalPath = routePath ? `/${routePath}/` : Astro.url.pathname;
-const publishedTime = pubDate ? new Date(pubDate).toISOString() : undefined;
-const modifiedTime = lastModified ? new Date(lastModified).toISOString() : undefined;
+const publishedTime = safeIsoString(pubDate);
+const modifiedTime = safeIsoString(lastModified);
 
 function formatDate(d: Date | string | null | undefined): string {
   if (!d) return '';
