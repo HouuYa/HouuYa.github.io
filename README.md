@@ -1,4 +1,4 @@
-# AI Product Safety & Governance Architect
+# Product Safety & Governance Architect
 
 Personal website documenting real-world AI systems
 for product safety, regulation, and operational governance.
