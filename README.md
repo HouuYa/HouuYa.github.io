@@ -10,7 +10,7 @@ This site focuses on:
 
 ## Featured series
 
-**규제 읽는 사람 — EU AI Act와 한국 AI 기본법을 비교하는 연재**
+**EU AI Act와 한국 AI 기본법을 비교하는 연재**
 전체 목차: https://houuya.github.io/ai-regulation-series/
 
 ## Built with
