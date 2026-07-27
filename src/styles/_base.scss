@@ -1,0 +1,290 @@
+// =============================================================================
+// BASE — 리셋, body, 기본 타이포그래피
+// =============================================================================
+@use 'tokens' as *;
+
+// -----------------------------------------------------------------------------
+// CSS Custom Properties (JS에서 접근 필요한 토큰만)
+// -----------------------------------------------------------------------------
+:root {
+  --color-primary:      #{$color-primary};
+  --color-canvas:       #{$color-canvas};
+  --color-surface-dark: #{$color-surface-dark};
+  --nav-height:         #{$nav-height};
+}
+
+// -----------------------------------------------------------------------------
+// Box sizing reset
+// -----------------------------------------------------------------------------
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// -----------------------------------------------------------------------------
+// Body — 크림 캔버스
+// -----------------------------------------------------------------------------
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: $color-canvas;
+  color: $color-body;
+  font-family: $font-body;
+  font-size: $text-body-md-size;
+  font-weight: 400;
+  line-height: $text-body-md-lh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// -----------------------------------------------------------------------------
+// 헤드라인 — Cormorant Garamond, weight 500(DESIGN.md 폰트 대체 노트), 음수 letter-spacing 필수
+// -----------------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display;
+  font-weight: $font-display-weight;
+  color: $color-ink;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: $text-display-xl-size;
+  line-height: $text-display-xl-lh;
+  letter-spacing: $text-display-xl-ls;
+}
+
+h2 {
+  font-size: $text-display-lg-size;
+  line-height: $text-display-lg-lh;
+  letter-spacing: $text-display-lg-ls;
+}
+
+h3 {
+  font-size: $text-display-md-size;
+  line-height: $text-display-md-lh;
+  letter-spacing: $text-display-md-ls;
+}
+
+h4 {
+  font-size: $text-display-sm-size;
+  line-height: $text-display-sm-lh;
+  letter-spacing: $text-display-sm-ls;
+}
+
+h5 {
+  font-family: $font-body;
+  font-size: $text-title-md-size;
+  font-weight: 500;
+  line-height: $text-title-md-lh;
+  letter-spacing: 0;
+  color: $color-ink;
+}
+
+h6 {
+  font-family: $font-body;
+  font-size: $text-title-sm-size;
+  font-weight: 500;
+  line-height: $text-title-sm-lh;
+  color: $color-ink;
+}
+
+// -----------------------------------------------------------------------------
+// 본문 텍스트
+// -----------------------------------------------------------------------------
+p {
+  color: $color-body;
+  line-height: $text-body-md-lh;
+  margin-bottom: $spacing-md;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 링크
+// -----------------------------------------------------------------------------
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: $color-primary-active;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 코드
+// -----------------------------------------------------------------------------
+code {
+  font-family: $font-code;
+  font-size: $text-code-size;
+  background-color: $color-surface-card;
+  color: $color-body-strong;
+  padding: 2px 6px;
+  border-radius: $rounded-xs;
+}
+
+pre {
+  font-family: $font-code;
+  font-size: $text-code-size;
+  line-height: $text-code-lh;
+  background-color: $color-surface-dark;
+  color: $color-on-dark;
+  padding: $spacing-lg;
+  border-radius: $rounded-lg;
+  overflow-x: auto;
+
+  code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 이미지
+// -----------------------------------------------------------------------------
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// -----------------------------------------------------------------------------
+// 리스트
+// -----------------------------------------------------------------------------
+ul, ol {
+  padding-left: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+li {
+  line-height: $text-body-md-lh;
+  margin-bottom: $spacing-xs;
+}
+
+// -----------------------------------------------------------------------------
+// 블록쿼트
+// -----------------------------------------------------------------------------
+blockquote {
+  border-left: 3px solid $color-hairline;
+  padding-left: $spacing-md;
+  margin: $spacing-xl 0;
+  color: $color-muted;
+  font-style: italic;
+}
+
+// -----------------------------------------------------------------------------
+// 구분선
+// -----------------------------------------------------------------------------
+hr {
+  border: none;
+  border-top: 1px solid $color-hairline;
+  margin: $spacing-xl 0;
+}
+
+// -----------------------------------------------------------------------------
+// 컨테이너 (공통 레이아웃)
+// -----------------------------------------------------------------------------
+.container {
+  max-width: $max-content-width;
+  margin-inline: auto;
+  padding-inline: $spacing-xl;
+
+  @media (max-width: 768px) {
+    padding-inline: $spacing-md;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 한국어 가독성 — 본문 영역에만 적용
+// -----------------------------------------------------------------------------
+.prose,
+.prose p,
+.prose li,
+.prose td,
+.prose th,
+.prose blockquote,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+.prose {
+  // 본문 내 제목 — DESIGN.md의 display-* 스케일(마케팅 히어로/카드용)이 아닌
+  // title-*(Inter sans) 스케일 사용. 세리프 디스플레이는 포스트 h1처럼
+  // "scarce emphasis moment"에만 쓰고, 본문 소제목은 16px 본문과 비례하게 유지한다.
+  h2, h3, h4, h5, h6 {
+    font-family: $font-body;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: $color-ink;
+  }
+
+  h2 {
+    font-size: $text-title-lg-size;
+    line-height: $text-title-lg-lh;
+    margin-top: $spacing-xxl;
+    margin-bottom: $spacing-md;
+  }
+
+  h3 {
+    font-size: $text-title-md-size;
+    line-height: $text-title-md-lh;
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-sm;
+  }
+
+  h4, h5, h6 {
+    font-size: $text-title-sm-size;
+    line-height: $text-title-sm-lh;
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-xs;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 스크롤바
+// -----------------------------------------------------------------------------
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-surface-card;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-hairline;
+  border-radius: $rounded-pill;
+
+  &:hover {
+    background: $color-muted-soft;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 선택 영역
+// -----------------------------------------------------------------------------
+::selection {
+  background: rgba($color-primary, 0.2);
+  color: $color-ink;
+}

@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+import { slugify } from '../../utils/slugify';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts');
+
+  // 슬러그 → { 원본 카테고리명, 해당 포스트 목록 } 맵 구성
+  const map = new Map<string, { name: string; posts: typeof allPosts }>();
+
+  for (const post of allPosts) {
+    if (post.data.hidden) continue;
+    for (const cat of post.data.categories) {
+      const slug = slugify(cat);
+      const entry = map.get(slug);
+      if (entry) {
+        entry.posts.push(post);
+      } else {
+        map.set(slug, { name: cat, posts: [post] });
+      }
+    }
+  }
+
+  return Array.from(map.entries()).map(([slug, { name, posts }]) => ({
+    params: { category: slug },
+    props: { name, posts },
+  }));
+}
+
+const { name, posts } = Astro.props;
+
+function getTime(d: Date | string | null | undefined): number {
+  if (!d) return 0;
+  const t = d instanceof Date ? d.getTime() : new Date(d as string).getTime();
+  return isNaN(t) ? 0 : t;
+}
+
+const sorted = [...posts].sort((a, b) => {
+  const dateA = getTime(a.data.pubDate) || getTime(a.data.last_modified_at);
+  const dateB = getTime(b.data.pubDate) || getTime(b.data.last_modified_at);
+  return dateB - dateA;
+});
+---
+
+<BaseLayout
+  title={`${name} — HouuYa's Blog`}
+  description={`${name} 카테고리의 글 ${sorted.length}개`}
+>
+  <Nav />
+  <main class="category-page">
+    <div class="container">
+      <header class="category-page__header">
+        <p class="category-page__eyebrow">Category</p>
+        <h1 class="category-page__title">{name}</h1>
+        <p class="category-page__sub">{sorted.length}개의 글</p>
+      </header>
+
+      <div class="category-page__grid">
+        {sorted.map(post => (
+          <PostCard
+            title={post.data.title}
+            slug={post.id}
+            pubDate={post.data.pubDate}
+            categories={post.data.categories}
+            description={post.data.description}
+          />
+        ))}
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style lang="scss">
+  @use '../../styles/tokens' as *;
+
+  .category-page {
+    background: $color-canvas;
+    padding: $spacing-section 0;
+    min-height: 60vh;
+
+    &__header {
+      margin-bottom: $spacing-xxl;
+    }
+
+    &__eyebrow {
+      font-family: $font-body;
+      font-size: $text-caption-upper-size;
+      font-weight: 500;
+      letter-spacing: $text-caption-upper-ls;
+      text-transform: uppercase;
+      color: $color-muted;
+      margin: 0 0 $spacing-xs;
+    }
+
+    &__title {
+      font-family: $font-display;
+      font-size: $text-display-lg-size;
+      font-weight: $font-display-weight;
+      letter-spacing: $text-display-lg-ls;
+      color: $color-ink;
+      margin: 0 0 $spacing-xs;
+    }
+
+    &__sub {
+      font-family: $font-body;
+      font-size: $text-body-sm-size;
+      color: $color-muted;
+      margin: 0;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-lg;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .category-page__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 767px) {
+    .category-page__grid { grid-template-columns: 1fr; }
+  }
+</style>

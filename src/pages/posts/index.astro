@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts');
+const posts = allPosts
+  .filter(p => !p.data.hidden)
+  .sort((a, b) => {
+    const getTime = (d: Date | string | null | undefined): number => {
+      if (!d) return 0;
+      const t = d instanceof Date ? d.getTime() : new Date(d as string).getTime();
+      return isNaN(t) ? 0 : t;
+    };
+    const dateA = getTime(a.data.pubDate) || getTime(a.data.last_modified_at);
+    const dateB = getTime(b.data.pubDate) || getTime(b.data.last_modified_at);
+    return dateB - dateA;
+  });
+---
+
+<BaseLayout
+  title="Posts — HouuYa's Blog"
+  description="AI 거버넌스, EU AI Act, 기술 표준, 책 분야의 글 목록"
+>
+  <Nav />
+  <main class="posts-page">
+    <div class="container">
+      <header class="posts-page__header">
+        <h1 class="posts-page__title">Posts</h1>
+        <p class="posts-page__sub">{posts.length}개의 글</p>
+      </header>
+
+      <div class="posts-page__grid">
+        {posts.map(post => (
+          <PostCard
+            title={post.data.title}
+            slug={post.id}
+            pubDate={post.data.pubDate}
+            categories={post.data.categories}
+            description={post.data.description}
+          />
+        ))}
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style lang="scss">
+  @use '../../styles/tokens' as *;
+
+  .posts-page {
+    background: $color-canvas;
+    padding: $spacing-section 0;
+    min-height: 60vh;
+
+    &__header {
+      margin-bottom: $spacing-xxl;
+    }
+
+    &__title {
+      font-family: $font-display;
+      font-size: $text-display-lg-size;
+      font-weight: $font-display-weight;
+      letter-spacing: $text-display-lg-ls;
+      color: $color-ink;
+      margin: 0 0 $spacing-xs;
+    }
+
+    &__sub {
+      font-family: $font-body;
+      font-size: $text-body-sm-size;
+      color: $color-muted;
+      margin: 0;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-lg;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .posts-page__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 767px) {
+    .posts-page__grid { grid-template-columns: 1fr; }
+  }
+</style>

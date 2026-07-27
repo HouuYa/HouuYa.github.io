@@ -1,0 +1,200 @@
+---
+// DESIGN.md: footer — surface-dark bg, on-dark-soft text, padding 64px
+// 오리온 SVG + 태그라인 + 4컬럼 링크 + 저작권
+const year = new Date().getFullYear();
+
+const links = [
+  { group: 'Content', items: [
+    { label: 'Posts', href: '/posts/' },
+    { label: 'Categories', href: '/categories/' },
+    { label: 'About', href: '/about/' },
+  ]},
+  { group: 'Topics', items: [
+    { label: 'EU AI Act', href: '/categories/eu-ai-act/' },
+    { label: 'AI 거버넌스', href: '/categories/ai-regulation/' },
+    { label: '기술 표준', href: '/categories/nlf/' },
+    { label: '책', href: '/categories/book/' },
+  ]},
+];
+---
+
+<footer class="footer">
+  <div class="footer__inner container">
+    <!-- 상단: 로고 + 태그라인 -->
+    <div class="footer__brand">
+      <a href="/" class="footer__logo-link" aria-label="홈으로">
+        <img
+          src="/assets/images/orion-logo.svg"
+          alt="오리온 별자리 로고"
+          class="footer__logo"
+          width="24"
+          height="40"
+        />
+        <span class="footer__name">HouuYa's Blog</span>
+      </a>
+      <p class="footer__tagline">Connecting the constellation of data</p>
+      <p class="footer__tagline-ko">데이터의 별자리를 잇다</p>
+    </div>
+
+    <!-- 링크 컬럼 -->
+    <nav class="footer__nav" aria-label="푸터 메뉴">
+      {links.map(({ group, items }) => (
+        <div class="footer__col">
+          <h3 class="footer__col-title">{group}</h3>
+          <ul class="footer__col-list">
+            {items.map(({ label, href }) => (
+              <li><a href={href} class="footer__link">{label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </nav>
+  </div>
+
+  <!-- 저작권 -->
+  <div class="footer__bottom container">
+    <p class="footer__copy">
+      © {year} Seungho Bae · Deputy Director at KATS
+    </p>
+    <p class="footer__sub">
+      AI Regulation · Product Safety · Technical Standards
+    </p>
+  </div>
+</footer>
+
+<style lang="scss">
+  @use '../styles/tokens' as *;
+
+  .footer {
+    background: $color-surface-dark;
+    padding-top: 64px;
+    padding-bottom: 40px;
+
+    &__inner {
+      display: flex;
+      gap: $spacing-xxl;
+      padding-bottom: $spacing-xxl;
+      border-bottom: 1px solid rgba($color-on-dark-soft, 0.15);
+    }
+
+    &__brand {
+      flex: 0 0 280px;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+
+    &__logo-link {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+      text-decoration: none;
+      margin-bottom: $spacing-xs;
+    }
+
+    &__logo {
+      height: 40px;
+      width: auto;
+      // currentColor 라인/별 → on-dark 톤. Betelgeuse(amber)/Rigel(teal)
+      // 고정 색상은 SVG에 직접 지정되어 있어 color 상속과 무관하게 유지된다.
+      color: $color-on-dark;
+    }
+
+    &__name {
+      font-family: $font-display;
+      font-size: 18px;
+      font-weight: $font-display-weight;
+      color: $color-on-dark;
+    }
+
+    &__tagline {
+      font-family: $font-body;
+      font-size: $text-body-sm-size;
+      color: $color-on-dark-soft;
+      margin: 0;
+    }
+
+    &__tagline-ko {
+      font-family: $font-body;
+      font-size: $text-body-sm-size;
+      color: $color-muted;
+      margin: 0;
+    }
+
+    &__nav {
+      flex: 1;
+      display: flex;
+      gap: $spacing-xxl;
+    }
+
+    &__col {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-md;
+    }
+
+    &__col-title {
+      font-family: $font-body;
+      font-size: $text-caption-upper-size;
+      font-weight: 500;
+      letter-spacing: $text-caption-upper-ls;
+      text-transform: uppercase;
+      color: $color-on-dark-soft;
+      margin: 0;
+      line-height: 1;
+    }
+
+    &__col-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+
+    &__link {
+      font-family: $font-body;
+      font-size: $text-body-sm-size;
+      color: $color-on-dark-soft;
+      text-decoration: none;
+      transition: color 0.15s ease;
+
+      &:hover { color: $color-on-dark; }
+    }
+
+    &__bottom {
+      margin-top: $spacing-xl;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: $spacing-lg;
+    }
+
+    &__copy,
+    &__sub {
+      font-family: $font-body;
+      font-size: $text-body-sm-size;
+      color: $color-muted-soft;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .footer {
+      &__inner {
+        flex-direction: column;
+        gap: $spacing-xl;
+      }
+
+      &__brand { flex: none; }
+
+      &__nav { flex-wrap: wrap; gap: $spacing-xl; }
+
+      &__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+</style>

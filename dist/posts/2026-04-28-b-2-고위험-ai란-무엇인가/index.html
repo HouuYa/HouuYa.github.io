@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v5.18.2"><!-- SEO --><title>[B-2] &#39;고위험 AI&#39;란 무엇인가 — 리스크 평가의 논리 — HouuYa&#39;s Blog</title><meta name="description" content="EU AI Act의 4단계 리스크 분류 피라미드를 해부한다. 금지 AI 8가지, 고위험 AI의 두 갈래, 그리고 8대 기술 요건."><link rel="canonical" href="https://houuya.github.io/posts/2026-04-28-b-2-%EA%B3%A0%EC%9C%84%ED%97%98-ai%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/"><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:title" content="[B-2] '고위험 AI'란 무엇인가 — 리스크 평가의 논리 — HouuYa's Blog"><meta property="og:description" content="EU AI Act의 4단계 리스크 분류 피라미드를 해부한다. 금지 AI 8가지, 고위험 AI의 두 갈래, 그리고 8대 기술 요건."><meta property="og:url" content="https://houuya.github.io/posts/2026-04-28-b-2-%EA%B3%A0%EC%9C%84%ED%97%98-ai%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/"><meta property="og:image" content="https://houuya.github.io/assets/images/seungho1.jpg"><meta property="og:locale" content="ko_KR"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="[B-2] '고위험 AI'란 무엇인가 — 리스크 평가의 논리 — HouuYa's Blog"><meta name="twitter:description" content="EU AI Act의 4단계 리스크 분류 피라미드를 해부한다. 금지 AI 8가지, 고위험 AI의 두 갈래, 그리고 8대 기술 요건."><!-- Site Verification --><meta name="google-site-verification" content="r05ODoVMblC7lIgWjNBap5vAJS4rMOVxk-SvDu0RM70"><meta name="naver-site-verification" content="56ab65727480fc6d0c7aa58f12e5a2421bbb59a4"><!-- Favicon (오리온 SVG) --><link rel="icon" type="image/svg+xml" href="/assets/images/orion-logo.svg"><!-- Google Fonts — preconnect 먼저, 그 다음 실제 로드 --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap"><!-- Google Analytics GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-LJKDH2835N"></script><script type="module">window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a("js",new Date);a("config","G-LJKDH2835N");</script><link rel="stylesheet" href="/_astro/_slug_.DFrtfp2y.css">
+<style>.post-page[data-astro-cid-gjtny2mx]{background:#faf9f5;padding:96px 0;min-height:60vh}.post-layout[data-astro-cid-gjtny2mx]{max-width:720px;margin-inline:auto}.post__header[data-astro-cid-gjtny2mx]{margin-bottom:32px}.post__meta[data-astro-cid-gjtny2mx]{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:24px}.post__badge[data-astro-cid-gjtny2mx]{font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;font-size:13px;font-weight:500;background:#efe9de;color:#141413;border-radius:9999px;padding:4px 12px;text-decoration:none;transition:background .15s ease}.post__badge[data-astro-cid-gjtny2mx]:hover{background:#e8e0d2}.post__date[data-astro-cid-gjtny2mx]{font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;font-size:14px;color:#6c6a64}.post__title[data-astro-cid-gjtny2mx]{font-family:Cormorant Garamond,Tiempos Headline,EB Garamond,Times New Roman,serif;font-size:48px;font-weight:500;line-height:1.1;letter-spacing:-1px;color:#141413;margin:0;word-break:keep-all;overflow-wrap:break-word}.post__lead[data-astro-cid-gjtny2mx]{margin-top:24px;font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;font-size:18px;font-weight:400;line-height:1.6;color:#252523}.post__divider[data-astro-cid-gjtny2mx]{border:none;border-top:1px solid #e6dfd8;margin:32px 0}.post__body[data-astro-cid-gjtny2mx]{font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;font-size:16px;line-height:1.75;color:#3d3d3a}.post__body[data-astro-cid-gjtny2mx] p[data-astro-cid-gjtny2mx],.post__body[data-astro-cid-gjtny2mx] li[data-astro-cid-gjtny2mx],.post__body[data-astro-cid-gjtny2mx] td[data-astro-cid-gjtny2mx],.post__body[data-astro-cid-gjtny2mx] th[data-astro-cid-gjtny2mx]{word-break:keep-all;overflow-wrap:break-word;line-break:strict}.post__body[data-astro-cid-gjtny2mx] pre[data-astro-cid-gjtny2mx]{overflow-x:auto;margin:32px 0}.post__body[data-astro-cid-gjtny2mx] img[data-astro-cid-gjtny2mx]{max-width:100%;height:auto;border-radius:12px;margin:32px 0}.post__body[data-astro-cid-gjtny2mx] a[data-astro-cid-gjtny2mx]{color:#cc785c;text-decoration:underline;text-decoration-color:#cc785c66}.post__body[data-astro-cid-gjtny2mx] a[data-astro-cid-gjtny2mx]:hover{text-decoration-color:#cc785c}.post__body[data-astro-cid-gjtny2mx] table[data-astro-cid-gjtny2mx]{width:100%;border-collapse:collapse;margin:32px 0;font-size:14px}.post__body[data-astro-cid-gjtny2mx] table[data-astro-cid-gjtny2mx] th[data-astro-cid-gjtny2mx]{background:#efe9de;padding:12px 16px;text-align:left;border-bottom:2px solid #e6dfd8}.post__body[data-astro-cid-gjtny2mx] table[data-astro-cid-gjtny2mx] td[data-astro-cid-gjtny2mx]{padding:12px 16px;border-bottom:1px solid #ebe6df}.post__body[data-astro-cid-gjtny2mx] blockquote[data-astro-cid-gjtny2mx]{margin:32px 0}.post__footer[data-astro-cid-gjtny2mx]{margin-top:48px;padding-top:32px;border-top:1px solid #e6dfd8}.post__tags[data-astro-cid-gjtny2mx]{display:flex;flex-wrap:wrap;gap:8px}.post__tag[data-astro-cid-gjtny2mx]{font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;font-size:13px;color:#6c6a64;background:#f5f0e8;border-radius:9999px;padding:4px 12px}@media(max-width:767px){.post__title[data-astro-cid-gjtny2mx]{font-size:36px;letter-spacing:-.5px}}
+</style></head> <body>  <div class="post-page" data-astro-cid-gjtny2mx> <div class="container" data-astro-cid-gjtny2mx> <div class="post-layout" data-astro-cid-gjtny2mx> <!-- 메인 콘텐츠 --> <article class="post" data-astro-cid-gjtny2mx> <!-- 헤더 --> <header class="post__header" data-astro-cid-gjtny2mx> <div class="post__meta" data-astro-cid-gjtny2mx> <a href="/categories/eu-ai-act/" class="post__badge" data-astro-cid-gjtny2mx>EU-AI-Act</a><a href="/categories/nlf/" class="post__badge" data-astro-cid-gjtny2mx>NLF</a><a href="/categories/ai-regulation/" class="post__badge" data-astro-cid-gjtny2mx>AI Regulation</a><a href="/categories/product-safety/" class="post__badge" data-astro-cid-gjtny2mx>Product Safety</a> <time class="post__date" data-astro-cid-gjtny2mx>2026년 4월 28일</time> </div> <h1 class="post__title" data-astro-cid-gjtny2mx>[B-2] &#39;고위험 AI&#39;란 무엇인가 — 리스크 평가의 논리</h1> <p class="post__lead" data-astro-cid-gjtny2mx>EU AI Act의 4단계 리스크 분류 피라미드를 해부한다. 금지 AI 8가지, 고위험 AI의 두 갈래, 그리고 8대 기술 요건.</p> </header> <!-- 구분선 --> <hr class="post__divider" data-astro-cid-gjtny2mx> <!-- 본문 --> <div class="post__body prose" data-astro-cid-gjtny2mx>  <p><strong>— EU는 어떻게 AI의 위험을 분류하는가</strong></p>
+<p><em>Series B. EU AI Act: 새 법인가, 기존 법의 확장인가 | B-2</em>
+<em>이전 글: <a href="2026-04-28-B-1-AI%20Act%EB%8A%94%20NLF%20%EC%9C%84%EC%97%90%20AI%20%EC%B1%95%ED%84%B0%EB%A5%BC%20%EC%96%B9%EC%9D%80%20%EA%B2%83%EC%9D%B4%EB%8B%A4.md">B-1</a> AI Act는 NLF 위에 AI 챕터를 얹은 것이다</em>
+<em>다음 글: <a href="2026-04-28-B-3-AI%EA%B0%80%20%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%EB%90%98%EB%A9%B4%20%EC%9D%B8%EC%A6%9D%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EB%B0%9B%EC%95%84%EC%95%BC%20%ED%95%98%EB%82%98.md">B-3</a> AI가 업데이트되면 인증을 다시 받아야 하나</em></p>
+<blockquote>
+<p>A-5에서 본 비례성 원칙이 AI Act에서 어떻게 구현되는지 추적한다. 4단계 피라미드의 논리.</p>
+</blockquote>
+<hr>
+<p>응급실의 문이 열리면 의사가 하는 첫 번째 일은 치료가 아니다.</p>
+<p><strong>분류다.</strong></p>
+<p>이 환자는 지금 당장 수술실에 가야 하는가. 저 환자는 30분 기다려도 되는가. 그 환자는 집에 가서 쉬면 낫는가. 의학에서 이를 트리아지(Triage)라 부른다. 자원은 한정되어 있고, 환자는 계속 온다. 모든 환자를 같은 강도로 치료하는 것은 불가능하다. 그래서 위험의 크기에 따라 분류한다.</p>
+<br>
+<p>EU AI Act는 AI에 대해 정확히 같은 일을 한다.</p>
+<p>모든 AI를 같은 강도로 규제하는 것은 불가능하다. 음악 추천 AI와 범죄 예측 AI를 같은 잣대로 다루는 것은 비합리적이다. 그래서 EU는 <strong>위험의 크기에 따라 AI를 분류하고, 분류에 비례하는 규제를 부과한다.</strong></p>
+<p>A-5에서 우리가 확인한 비례성 원칙이 여기서 작동한다.</p>
+<hr>
+<h2 id="피라미드-네-개의-층">피라미드: 네 개의 층</h2>
+<p>AI Act의 리스크 분류는 피라미드 형태다.<sup><a href="#user-content-fn-1" id="user-content-fnref-1" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup> 꼭대기로 갈수록 위험이 크고, 규제가 강하다.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>        ▲</span></span>
+<span class="line"><span>       /  \         [금지] 허용 불가 리스크</span></span>
+<span class="line"><span>      /    \        → 시장 진입 자체 금지</span></span>
+<span class="line"><span>     /------\</span></span>
+<span class="line"><span>    /        \      [고위험] 높은 리스크</span></span>
+<span class="line"><span>   /          \     → 요건 + 적합성 평가 + CE 마킹</span></span>
+<span class="line"><span>  /------------\</span></span>
+<span class="line"><span> /              \   [제한적 리스크] 투명성 의무</span></span>
+<span class="line"><span>/                \  → 사용자에게 AI임을 고지</span></span>
+<span class="line"><span>------------------</span></span>
+<span class="line"><span>[최소 리스크] 규제 없음</span></span>
+<span class="line"><span>→ 자유로운 개발·사용</span></span></code></pre>
+<p><strong>꼭대기: 금지.</strong> 아예 만들거나 사용할 수 없다. 가장 극단적인 조치.</p>
+<p><strong>두 번째 층: 고위험.</strong> 만들 수는 있지만, 엄격한 요건을 충족하고 적합성 평가를 통과해야 한다.</p>
+<p><strong>세 번째 층: 제한적 리스크.</strong> 대부분 자유롭지만, 사용자에게 “이것은 AI입니다”라고 알려야 한다.</p>
+<p><strong>바닥: 최소 리스크.</strong> 아무 규제 없이 자유롭게. 대부분의 AI가 여기에 해당한다. 스팸 필터, 게임 AI, 재고 관리 AI.</p>
+<p>이 피라미드가 비례성 원칙의 AI 버전이다. A-5에서 본 NLF의 원리 — 위험이 클수록 인증이 복잡해지고, NB가 개입하고, 감시가 강해지는 것 — 가 AI에도 그대로 적용된다.</p>
+<hr>
+<h2 id="꼭대기-eu가-선을-그은-8가지">꼭대기: EU가 선을 그은 8가지</h2>
+<p>피라미드 꼭대기에는 <strong>절대 허용하지 않는 AI</strong>가 놓인다. Article 5가 규정하는 8가지 금지 관행이다.<sup><a href="#user-content-fn-2" id="user-content-fnref-2" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup></p>
+<p>하나. <strong>잠재의식 조작(Subliminal techniques)</strong>. 사람이 인식하지 못하는 방식으로 행동을 조작하는 AI.</p>
+<p>둘. <strong>취약성 악용(Exploiting vulnerabilities)</strong>. 나이, 장애, 사회·경제적 상황 등 취약점을 이용해 행동을 왜곡하는 AI.</p>
+<p>셋. <strong>사회적 평점(Social scoring)</strong>. 사회적 행동이나 성격 특성에 기반해 점수를 매기고 불이익을 주는 AI.</p>
+<p>넷. <strong>개인 범죄 리스크 예측</strong>. 프로파일링만으로 특정 개인의 범죄 가능성을 예측하는 AI.</p>
+<p>다섯. <strong>무차별 얼굴 DB 구축</strong>. 인터넷이나 CCTV에서 무차별적으로 얼굴 이미지를 수집해 데이터베이스를 만드는 AI.</p>
+<p>여섯. <strong>직장·학교 감정인식</strong>. 업무 현장이나 교육기관에서 감정을 추론하는 AI. 의료·안전 목적은 예외.</p>
+<p>일곱. <strong>민감 특성 기반 생체 분류</strong>. 인종, 정치 성향, 종교 등 민감 속성으로 사람을 분류하는 AI.</p>
+<p>여덟. <strong>공공장소 실시간 원격 생체인식(법집행)</strong>. 법 집행 목적의 실시간 얼굴인식. 극히 제한적 예외만 허용.<sup><a href="#user-content-fn-3" id="user-content-fnref-3" data-footnote-ref="" aria-describedby="footnote-label">3</a></sup></p>
+<p>금지 목록은 “기술의 한계”가 아니라 **“가치의 한계”**를 선언한 것이다. 이 기술이 불가능해서가 아니라, 이 기술이 인간의 존엄을 침해하기 때문에 금지한다.</p>
+<p>2025년 2월 2일부터 이미 시행 중이다.</p>
+<hr>
+<h2 id="두-번째-층-고위험-ai로-가는-두-갈래-길">두 번째 층: 고위험 AI로 가는 두 갈래 길</h2>
+<p>피라미드에서 가장 복잡한 층이 **고위험(High-Risk)**이다. 금지까지는 아니지만, 엄격한 규제를 받는 AI. 여기에 도달하는 길이 두 갈래다.<sup><a href="#user-content-fn-4" id="user-content-fnref-4" data-footnote-ref="" aria-describedby="footnote-label">4</a></sup></p>
+<p><strong>첫째 갈래: 안전 부품 경로 (Annex I).</strong></p>
+<p>이미 EU 제품안전법이 적용되는 제품의 <strong>안전 구성요소로 사용되는 AI</strong>. 예를 들어, 의료기기에 내장된 진단 AI, 자동차의 자율주행 AI, 기계류의 안전 제어 AI.</p>
+<p>이 경우 AI Act만이 아니라, 해당 제품법(MDR, 기계류 규정 등)도 함께 적용된다. A 시리즈에서 본 NLF 체계가 직접 작동하는 영역.</p>
+<p><strong>둘째 갈래: 독립 시스템 경로 (Annex III).</strong></p>
+<p>제품의 부품이 아니라, <strong>독립적으로 운영되는 AI 시스템</strong> 중 8개 카테고리에 해당하는 것.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>카테고리</th><th>예시</th></tr></thead><tbody><tr><td>1. 생체인식</td><td>원격 생체인식 식별 (금지 제외 영역)</td></tr><tr><td>2. 핵심 인프라</td><td>도로교통 안전, 수도·가스·난방·전기</td></tr><tr><td>3. 교육·직업훈련</td><td>입학 심사, 시험 평가, 부정행위 탐지</td></tr><tr><td>4. 고용·인사관리</td><td>채용, 해고, 근무 배정, 성과 평가</td></tr><tr><td>5. 필수 서비스 접근</td><td>대출 심사, 보험 가입, 긴급 서비스 배정</td></tr><tr><td>6. 법 집행</td><td>증거 신뢰성 평가, 재범 예측, 프로파일링</td></tr><tr><td>7. 이민·망명·국경</td><td>비자 심사, 허위 문서 탐지, 위험 평가</td></tr><tr><td>8. 사법·민주주의</td><td>판결 지원, 법률 해석, 분쟁 해결</td></tr></tbody></table>
+<p>이 두 갈래는 <strong>하나의 원리로 연결된다.</strong> 사람의 건강, 안전, 또는 기본권에 중대한 영향을 미칠 수 있는 AI.</p>
+<p>단, Article 6(3)이 하나의 안전장치를 추가한다. Annex III에 해당하더라도 “의사결정에 중요하지 않은 보조적 역할”에 그치는 경우, 고위험에서 제외될 수 있다.<sup><a href="#user-content-fn-5" id="user-content-fnref-5" data-footnote-ref="" aria-describedby="footnote-label">5</a></sup> 비례성 원칙의 마지막 필터다.</p>
+<hr>
+<h2 id="고위험-ai가-지켜야-할-8대-요건">고위험 AI가 지켜야 할 8대 요건</h2>
+<p>고위험으로 분류된 AI는 8가지 기술 요건을 충족해야 한다. Article 8부터 15까지.<sup><a href="#user-content-fn-6" id="user-content-fnref-6" data-footnote-ref="" aria-describedby="footnote-label">6</a></sup></p>
+<p>A-5에서 본 리스크 평가가 첫 번째 요건이 되고, A 시리즈의 NLF 원리들이 나머지를 구성한다.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>[Article 9]  리스크 관리 시스템 (RMS)</span></span>
+<span class="line"><span>             → A-5의 리스크 공식이 여기서 작동</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[Article 10] 데이터 거버넌스</span></span>
+<span class="line"><span>             → 훈련 데이터의 품질·대표성·편향 관리</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[Article 11] 기술 문서화</span></span>
+<span class="line"><span>             → Annex IV. 설계부터 훈련 데이터까지 전수 기록</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[Article 12] 기록 보관 (자동 로그)</span></span>
+<span class="line"><span>             → AI의 결정 과정을 추적 가능하게</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[Article 13] 투명성 · 정보 제공</span></span>
+<span class="line"><span>             → 배치자에게 사용 설명서 제공</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[Article 14] 인간 감독</span></span>
+<span class="line"><span>             → 사람이 AI를 중단·무시할 수 있는 능력 확보</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[Article 15] 정확성 · 견고성 · 사이버보안</span></span>
+<span class="line"><span>             → AI 성능의 최소 기준</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[Article 17] 품질 관리 시스템 (QMS)</span></span>
+<span class="line"><span>             → 위 모든 요건을 관리하는 조직 체계</span></span></code></pre>
+<p>첫 번째 요건인 Article 9의 리스크 관리 시스템(RMS)이 전체의 뼈대다.</p>
+<p>EU 공식 웨비나(2024.5.30)에서 DG CNECT는 이렇게 설명했다.</p>
+<blockquote>
+<p>“RMS는 AI 시스템 전체 라이프사이클에 걸친 지속적 프로세스이며, 4단계 반복 순환 구조를 따른다.”<sup><a href="#user-content-fn-7" id="user-content-fnref-7" data-footnote-ref="" aria-describedby="footnote-label">7</a></sup></p>
+</blockquote>
+<ul>
+<li>1단계: 리스크 식별·분석</li>
+<li>2단계: 리스크 추정·평가</li>
+<li>3단계: 사후 모니터링 데이터 기반 재평가</li>
+<li>4단계: 리스크 관리 조치 채택</li>
+</ul>
+<p>A-5에서 확인한 3단계 저감 우선순위도 Article 9(5)에 그대로 이식되어 있다.</p>
+<p>설계로 제거 → 보호 조치 → 정보 제공 순서.</p>
+<hr>
+<h2 id="필자-분석">[필자 분석]</h2>
+<p>AI Act의 4단계 피라미드와 한국 AI 기본법을 나란히 놓으면, <strong>구조적 비대칭</strong>이 드러난다.</p>
+<p>한국은 <strong>2단계 체계</strong>다. 고영향 AI와 프론티어 AI. 그 사이에 아무것도 없다.</p>
+<p>EU가 금지하는 8가지 관행을 한국은 <strong>하나도 금지하지 않는다</strong>. 사회적 평점, 잠재의식 조작, 무차별 얼굴 수집 — EU에서 불법인 것들이 한국에서는 “고영향 AI”로 분류되어 사업자 책무만 부과된다.<sup><a href="#user-content-fn-8" id="user-content-fnref-8" data-footnote-ref="" aria-describedby="footnote-label">8</a></sup></p>
+<p>EU의 고위험 AI 8대 기술 요건(Art.8-15) 중, 한국 법 제34조가 대응하는 것은 약 절반이다. <strong>데이터 거버넌스(Art.10), 자동 로그(Art.12), 정확성·견고성·사이버보안(Art.15)은 한국에 없다.</strong></p>
+<p>또 하나. EU는 고위험 AI를 두 갈래(Annex I 안전부품 + Annex III 독립시스템)로 나누어, 기존 제품안전법과의 교차를 명확히 설계했다. 한국은 <strong>10개 영역을 단일 목록으로 나열할 뿐</strong>, 제품안전기본법이나 의료기기법과의 교차 규정이 없다.</p>
+<p>비례성 원칙은 <strong>분류의 섬세함</strong>에서 나온다.</p>
+<p>4단계가 2단계보다 정교하고, 8대 요건이 6대 책무보다 촘촘하다.</p>
+<p>한국이 EU 수준의 실효성을 원한다면, 분류 체계 자체를 재설계해야 할 것으로 보인다. [검토 필요]</p>
+<hr>
+<h2 id="마무리--다음-질문">마무리 — 다음 질문</h2>
+<p>피라미드를 세우고, 금지선을 긋고, 고위험을 정의하고, 8대 요건을 부과했다.</p>
+<p>그런데 여기서 한 가지 질문이 남는다. 토스터는 한 번 인증하면 끝이다. 10년을 써도 회로가 스스로 바뀌지 않으니까. 그런데 AI는 배우고, 업데이트되고, 데이터에 따라 행동이 달라진다.</p>
+<p><strong>출시 시점에 적합성 평가를 통과한 AI가, 6개월 후에도 같은 AI인가?</strong></p>
+<p>NLF가 40년간 다루지 않았던 문제. 다음 글에서 이 문을 연다.</p>
+<hr>
+<p><em>이전 글: <a href="2026-04-28-B-1-AI%20Act%EB%8A%94%20NLF%20%EC%9C%84%EC%97%90%20AI%20%EC%B1%95%ED%84%B0%EB%A5%BC%20%EC%96%B9%EC%9D%80%20%EA%B2%83%EC%9D%B4%EB%8B%A4.md">B-1</a> AI Act는 NLF 위에 AI 챕터를 얹은 것이다</em>
+<em>다음 글: <a href="2026-04-28-B-3-AI%EA%B0%80%20%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%EB%90%98%EB%A9%B4%20%EC%9D%B8%EC%A6%9D%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EB%B0%9B%EC%95%84%EC%95%BC%20%ED%95%98%EB%82%98.md">B-3</a> AI가 업데이트되면 인증을 다시 받아야 하나</em></p>
+<hr>
+<p>주석 :</p>
+<section data-footnotes="" class="footnotes"><h2 class="sr-only" id="footnote-label">Footnotes</h2>
+<ol>
+<li id="user-content-fn-1">
+<p>EU AI Act Recital 26 및 DG CNECT 공식 웨비나(2024.05.30). 4단계 리스크 기반 접근(Risk-based Approach). <a href="#user-content-fnref-1" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-2">
+<p>EU AI Act Article 5. 8개 금지 AI 관행. 2025년 2월 2일부터 시행. <a href="#user-content-fnref-2" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-3">
+<p>Article 5(1)(h). 법 집행 목적 실시간 원격 생체인식은 원칙 금지, 예외적으로 실종아동 수색, 테러 위협 등 극히 제한된 경우만 허용. 사법부 사전 승인 필요. <a href="#user-content-fnref-3" data-footnote-backref="" aria-label="Back to reference 3" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-4">
+<p>AI Act Article 6. 두 갈래: Article 6(1) Annex I 경로(안전부품) + Article 6(2) Annex III 경로(독립시스템). <a href="#user-content-fnref-4" data-footnote-backref="" aria-label="Back to reference 4" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-5">
+<p>AI Act Article 6(3). Annex III 해당 AI라도 “의사결정에 대한 보조적 역할”에 그치는 경우 예외 가능. 프로파일링 수행 AI에는 적용 불가. <a href="#user-content-fnref-5" data-footnote-backref="" aria-label="Back to reference 5" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-6">
+<p>AI Act Article 8-15(기술 요건) + Article 17(QMS). 공식 웨비나에서 DG CNECT는 이를 “사전(pre-market) + 사후(post-market) + 지속적(continuous)” 3단계로 구분. <a href="#user-content-fnref-6" data-footnote-backref="" aria-label="Back to reference 6" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-7">
+<p>DG CNECT 웨비나(2024.05.30), Dr. Tatjana Evas. Article 9 para.2의 4단계 반복 프로세스. 위키 [[eu-webinar-2024-0530-risk-management]] 참조. <a href="#user-content-fnref-7" data-footnote-backref="" aria-label="Back to reference 7" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-8">
+<p>한국 AI 기본법 제2조제4호 10영역 vs EU AI Act Article 5 금지 + Annex III 고위험. 위키 [[한국AI기본법-EU-AI-Act-조문대응]] §3 “금지 AI — 한국 대응 없음” 참조. <a href="#user-content-fnref-8" data-footnote-backref="" aria-label="Back to reference 8" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>  </div> <!-- 태그 --> <footer class="post__footer" data-astro-cid-gjtny2mx> <div class="post__tags" data-astro-cid-gjtny2mx> <span class="post__tag" data-astro-cid-gjtny2mx>EU규제</span><span class="post__tag" data-astro-cid-gjtny2mx>AI_Act</span><span class="post__tag" data-astro-cid-gjtny2mx>리스크평가</span><span class="post__tag" data-astro-cid-gjtny2mx>고위험AI</span><span class="post__tag" data-astro-cid-gjtny2mx>금지AI</span><span class="post__tag" data-astro-cid-gjtny2mx>AnnexIII</span> </div> </footer> </article> </div> </div> </div>  <footer class="footer" data-astro-cid-sz7xmlte> <div class="footer__inner container" data-astro-cid-sz7xmlte> <!-- 상단: 로고 + 태그라인 --> <div class="footer__brand" data-astro-cid-sz7xmlte> <a href="/" class="footer__logo-link" aria-label="홈으로" data-astro-cid-sz7xmlte> <img src="/assets/images/orion-logo.svg" alt="오리온 별자리 로고" class="footer__logo" width="24" height="40" data-astro-cid-sz7xmlte> <span class="footer__name" data-astro-cid-sz7xmlte>HouuYa's Blog</span> </a> <p class="footer__tagline" data-astro-cid-sz7xmlte>Connecting the constellation of data</p> <p class="footer__tagline-ko" data-astro-cid-sz7xmlte>데이터의 별자리를 잇다</p> </div> <!-- 링크 컬럼 --> <nav class="footer__nav" aria-label="푸터 메뉴" data-astro-cid-sz7xmlte> <div class="footer__col" data-astro-cid-sz7xmlte> <h3 class="footer__col-title" data-astro-cid-sz7xmlte>Content</h3> <ul class="footer__col-list" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/posts/" class="footer__link" data-astro-cid-sz7xmlte>Posts</a></li><li data-astro-cid-sz7xmlte><a href="/categories/" class="footer__link" data-astro-cid-sz7xmlte>Categories</a></li><li data-astro-cid-sz7xmlte><a href="/about/" class="footer__link" data-astro-cid-sz7xmlte>About</a></li> </ul> </div><div class="footer__col" data-astro-cid-sz7xmlte> <h3 class="footer__col-title" data-astro-cid-sz7xmlte>Topics</h3> <ul class="footer__col-list" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/categories/eu-ai-act/" class="footer__link" data-astro-cid-sz7xmlte>EU AI Act</a></li><li data-astro-cid-sz7xmlte><a href="/categories/ai-regulation/" class="footer__link" data-astro-cid-sz7xmlte>AI 거버넌스</a></li><li data-astro-cid-sz7xmlte><a href="/categories/nlf/" class="footer__link" data-astro-cid-sz7xmlte>기술 표준</a></li><li data-astro-cid-sz7xmlte><a href="/categories/book/" class="footer__link" data-astro-cid-sz7xmlte>책</a></li> </ul> </div> </nav> </div> <!-- 저작권 --> <div class="footer__bottom container" data-astro-cid-sz7xmlte> <p class="footer__copy" data-astro-cid-sz7xmlte>
+© 2026 Seungho Bae · Deputy Director at KATS
+</p> <p class="footer__sub" data-astro-cid-sz7xmlte>
+AI Regulation · Product Safety · Technical Standards
+</p> </div> </footer>  </body></html> 

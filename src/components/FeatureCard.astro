@@ -1,0 +1,67 @@
+---
+// DESIGN.md: feature-card — surface-card bg (#efe9de), rounded-lg, padding 32px
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  href: string;
+  linkLabel?: string;
+}
+
+const { icon, title, description, href, linkLabel = '더 보기 →' } = Astro.props;
+---
+
+<article class="feature-card">
+  <div class="feature-card__icon" aria-hidden="true">{icon}</div>
+  <h3 class="feature-card__title">{title}</h3>
+  <p class="feature-card__desc">{description}</p>
+  <a href={href} class="feature-card__link">{linkLabel}</a>
+</article>
+
+<style lang="scss">
+  @use '../styles/tokens' as *;
+
+  .feature-card {
+    background: $color-surface-card;
+    border-radius: $rounded-lg;
+    padding: $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    &__icon {
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    &__title {
+      font-family: $font-body;
+      font-size: $text-title-md-size;
+      font-weight: 500;
+      line-height: $text-title-md-lh;
+      color: $color-ink;
+      margin: 0;
+    }
+
+    &__desc {
+      font-family: $font-body;
+      font-size: $text-body-md-size;
+      font-weight: 400;
+      line-height: $text-body-md-lh;
+      color: $color-body;
+      margin: 0;
+      flex: 1;
+    }
+
+    &__link {
+      font-family: $font-body;
+      font-size: $text-body-sm-size;
+      font-weight: 500;
+      color: $color-primary;
+      text-decoration: none;
+      margin-top: auto;
+
+      &:hover { color: $color-primary-active; }
+    }
+  }
+</style>
