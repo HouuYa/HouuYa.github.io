@@ -2,20 +2,23 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import { getCollection } from 'astro:content';
-import { slugify } from '../../utils/slugify';
+import { resolveCategory } from '../../utils/slugify';
 
 const allPosts = await getCollection('posts');
 const map = new Map<string, { name: string; count: number }>();
 
 for (const post of allPosts) {
   if (post.data.hidden) continue;
+  const seenSlugs = new Set<string>();
   for (const cat of post.data.categories) {
-    const slug = slugify(cat);
+    const { slug, name } = resolveCategory(cat);
+    if (seenSlugs.has(slug)) continue; // 별칭으로 같은 슬러그에 두 번 태그된 경우 중복 방지
+    seenSlugs.add(slug);
     const entry = map.get(slug);
     if (entry) {
       entry.count += 1;
     } else {
-      map.set(slug, { name: cat, count: 1 });
+      map.set(slug, { name, count: 1 });
     }
   }
 }
