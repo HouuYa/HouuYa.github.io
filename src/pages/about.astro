@@ -13,7 +13,7 @@ import { Content, frontmatter } from '../data/about.md';
     <div class="container">
       <header class="about-page__header">
         <h1 class="about-page__title">{frontmatter.title}</h1>
-        <p class="about-page__lead">{frontmatter.lead}</p>
+        <p class="about-page__lead">{frontmatter.lead ?? frontmatter.excerpt}</p>
       </header>
 
       <div class="about-page__body prose">
