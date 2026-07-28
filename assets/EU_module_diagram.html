@@ -15,6 +15,7 @@
     color: #e8e8f0;
     min-height: 100vh;
     padding: 2rem 1rem;
+    word-break: keep-all;
   }
 
   .container {
@@ -37,15 +38,15 @@
   }
 
   .title-block h2 {
-    font-size: 1.6rem;
+    font-size: 1.85rem;
     font-weight: 700;
     color: #f0f0ff;
     margin-bottom: 0.4rem;
   }
 
   .title-block p {
-    font-size: 0.85rem;
-    color: #888;
+    font-size: 0.98rem;
+    color: #9a9aa8;
   }
 
   /* Axis labels */
@@ -56,11 +57,18 @@
     padding: 0 0.25rem;
   }
 
+  .axis-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+    padding: 0 0 0 60px;
+  }
+
   .axis-label {
-    font-size: 0.7rem;
+    font-size: 0.82rem;
     font-family: 'Space Mono', monospace;
-    letter-spacing: 0.1em;
-    color: #aaa;
+    letter-spacing: 0.08em;
+    color: #b8b8c4;
     text-transform: uppercase;
     flex: 1;
     text-align: center;
@@ -70,23 +78,23 @@
   .module-grid {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
 
   .module-row {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.6rem;
     align-items: stretch;
   }
 
   .module-label {
-    width: 52px;
-    min-width: 52px;
+    width: 60px;
+    min-width: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Space Mono', monospace;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 700;
     border-radius: 8px;
     color: #fff;
@@ -95,7 +103,7 @@
   .card {
     flex: 1;
     border-radius: 8px;
-    padding: 0.75rem 1rem;
+    padding: 0.95rem 1.15rem;
     border: 1px solid transparent;
     transition: border-color 0.2s, transform 0.15s;
     cursor: default;
@@ -107,33 +115,50 @@
   }
 
   .card-title {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 700;
-    margin-bottom: 0.2rem;
-    letter-spacing: 0.02em;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.01em;
   }
 
   .card-en {
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     font-family: 'Space Mono', monospace;
-    opacity: 0.6;
-    margin-bottom: 0.4rem;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
   }
 
   .card-desc {
-    font-size: 0.78rem;
-    color: #ccc;
-    line-height: 1.5;
+    font-size: 0.92rem;
+    color: #dcdce4;
+    line-height: 1.6;
   }
 
   .card-who {
     display: inline-block;
-    margin-top: 0.4rem;
-    font-size: 0.65rem;
+    margin-top: 0.5rem;
+    font-size: 0.78rem;
     font-family: 'Space Mono', monospace;
-    padding: 0.15rem 0.5rem;
+    padding: 0.2rem 0.6rem;
     border-radius: 20px;
     font-weight: 700;
+  }
+
+  /* Narrow viewports (mobile / narrow iframe): stack the 3 cards per module
+     instead of cramming them side by side, so text doesn't shrink to unreadable widths */
+  @media (max-width: 680px) {
+    .module-row {
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .module-label {
+      width: 100%;
+      min-width: unset;
+      padding: 0.35rem 0;
+    }
+    .axis-row {
+      display: none;
+    }
   }
 
   /* Risk level colors */
@@ -172,9 +197,9 @@
   .scale-labels {
     display: flex;
     justify-content: space-between;
-    margin-top: 0.3rem;
-    font-size: 0.65rem;
-    color: #888;
+    margin-top: 0.35rem;
+    font-size: 0.75rem;
+    color: #9a9aa8;
     font-family: 'Space Mono', monospace;
   }
 
@@ -183,14 +208,14 @@
     margin-top: 2rem;
     border: 1px solid #2a2a3a;
     border-radius: 12px;
-    padding: 1.2rem;
+    padding: 1.3rem;
     background: #13131f;
   }
 
   .combo-section h3 {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-family: 'Space Mono', monospace;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
     color: #6ee7b7;
     text-transform: uppercase;
     margin-bottom: 1rem;
@@ -198,39 +223,39 @@
 
   .combo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.85rem;
   }
 
   .combo-card {
     background: #1c1c2e;
     border-radius: 8px;
-    padding: 0.75rem;
+    padding: 0.85rem;
     border: 1px solid #2d2d42;
   }
 
   .combo-badge {
     font-family: 'Space Mono', monospace;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     color: #6ee7b7;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.35rem;
   }
 
   .combo-use {
-    font-size: 0.72rem;
-    color: #aaa;
-    line-height: 1.4;
+    font-size: 0.85rem;
+    color: #c2c2cc;
+    line-height: 1.5;
   }
 
   /* Footnote */
   .footnote {
     margin-top: 1.5rem;
-    font-size: 0.7rem;
-    color: #666;
-    line-height: 1.6;
-    border-top: 1px solid #222;
-    padding-top: 0.75rem;
+    font-size: 0.8rem;
+    color: #888;
+    line-height: 1.65;
+    border-top: 1px solid #2a2a35;
+    padding-top: 0.85rem;
   }
 </style>
 </head>
@@ -243,7 +268,7 @@
     <p>Decision No 768/2008/EC 기반 · 위험도에 비례한 인증 경로 선택 체계</p>
   </div>
 
-  <div style="display:flex; gap:0.5rem; margin-bottom:0.4rem; padding:0 0 0 60px;">
+  <div class="axis-row">
     <div class="axis-label">설계(Design) 단계 검증</div>
     <div class="axis-label">생산(Production) 단계 감시</div>
     <div class="axis-label">적용 상황</div>

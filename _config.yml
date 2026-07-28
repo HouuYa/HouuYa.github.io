@@ -105,8 +105,8 @@ analytics:
 # Site Author
 author:
   name             : "Seungho Bae"
-  avatar           : "/assets/images/seungho1.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Deputy Director at KATS <br> AI governance, product safety systems, and regulatory risk management <br> Lifelong Learner"
+  avatar           : "/assets/images/KOCt0oPim9.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Lifelong Learner"
   location         : "South Korea"
   email            :
   links:
@@ -300,3 +300,4 @@ defaults:
     values:
       layout: single
       author_profile: false # 기본적으로 프로필을 끕니다.
+    
