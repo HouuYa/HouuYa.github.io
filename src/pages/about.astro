@@ -1,162 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
+import { Content, frontmatter } from '../data/about.md';
 ---
 
 <BaseLayout
-  title="About — HouuYa's Blog"
-  description="AI governance and product safety systems in real-world regulatory environments. Deputy Director at KATS."
+  title={`${frontmatter.title} — HouuYa's Blog`}
+  description={frontmatter.description}
 >
   <Nav />
   <main class="about-page">
     <div class="container">
-      <!-- 히어로 헤더 -->
       <header class="about-page__header">
-        <h1 class="about-page__title">About</h1>
-        <p class="about-page__lead">
-          AI systems, regulation, and product safety — from the inside.
-        </p>
+        <h1 class="about-page__title">{frontmatter.title}</h1>
+        <p class="about-page__lead">{frontmatter.lead}</p>
       </header>
 
       <div class="about-page__body prose">
-        <h2>Positioning (TL;DR)</h2>
-
-        <p>I work at the boundary where <strong>AI systems meet real-world regulation</strong>.</p>
-
-        <p>My focus is not model performance, but:</p>
-        <ul>
-          <li>how AI is embedded into public decision systems,</li>
-          <li>how risks are identified before harm occurs,</li>
-          <li>and how accountability is maintained after deployment.</li>
-        </ul>
-
-        <h3>Selected Work</h3>
-
-        <h4>AI-based Product Safety &amp; Recall Information System (2025)</h4>
-        <ul>
-          <li>Context: National market surveillance and product safety regulation</li>
-          <li>Focus: AI-enabled data collection, risk detection, and operational deployment</li>
-          <li>Status: Deployed and used in real government operations</li>
-        </ul>
-
-        <p>
-          📄 Detailed performance report (PDF, 한글):
-          <a href="/assets/pdfs/2025-ai-product-safety-performance.pdf" target="_blank" rel="noopener">
-            2025 AI-based Product Safety System – Performance Report
-          </a>
-        </p>
-
-        <h3>Selected Projects (GitHub)</h3>
-
-        <ul>
-          <li>
-            <strong>AI Product Safety Automation</strong><br />
-            Design and implementation of an AI-assisted system to collect, structure, and analyze product safety and recall information for regulatory and market surveillance environments.<br />
-            Repository: <a href="https://github.com/HouuYa/ai-product-safety-automation" target="_blank" rel="noopener">github.com/HouuYa/ai-product-safety-automation</a>
-          </li>
-          <li>
-            <strong>Vibe-Coded Regulatory Document Parsing (Advanced MVP)</strong><br />
-            Experiments on transforming complex regulatory and standard documents into structured, machine-readable data using document parsing pipelines.<br />
-            Repository: <a href="https://github.com/HouuYa/upstage-docuparse-adv.-mvpv0.1" target="_blank" rel="noopener">github.com/HouuYa/upstage-docuparse-adv.-mvpv0.1</a>
-          </li>
-          <li>
-            <strong>Vibe-Coded Rule-based RAG System (Tennis Mate)</strong><br />
-            An end-to-end prototype built on Supabase integrating structured domain rules with RAG.<br />
-            Repositories:
-            <a href="https://github.com/HouuYa/tennis-mate" target="_blank" rel="noopener">tennis-mate</a> ·
-            <a href="https://github.com/HouuYa/Tennis_Rules_RAG" target="_blank" rel="noopener">Tennis_Rules_RAG</a>
-          </li>
-        </ul>
-
-        <hr />
-
-        <h2>Education</h2>
-
-        <h3>Gwangju Institute of Science and Technology (GIST), Korea, 2004–2006</h3>
-        <ul>
-          <li>M.S. in Information and Communications</li>
-          <li>Thesis: Empirical Strategies based on the Histogram Information for Decentralized Detection in Wireless Sensor Networks</li>
-        </ul>
-
-        <h3>Ajou University, Korea, 1997–2004</h3>
-        <ul>
-          <li>B.S. in Electronics Engineering</li>
-        </ul>
-
-        <hr />
-
-        <h2>Work Experience</h2>
-
-        <h3>KATS (Korean Agency for Technology and Standards)</h3>
-
-        <h4>Deputy Director (공업연구관), December 2021 – Present</h4>
-
-        <p><strong>Product Safety Information Division (제품안전정보과)</strong></p>
-        <ul>
-          <li>제품안전 정보 포털 시스템 고도화</li>
-          <li>AI기반 제품안전 관리업무 자동화</li>
-          <li>제품안전 정보 오픈포럼 구성 및 운영</li>
-          <li>제품 사고조사</li>
-        </ul>
-
-        <p><strong>Product Safety Surveillance Division (제품시장관리과)</strong></p>
-        <ul>
-          <li>불법제품 조사 정책</li>
-          <li>리콜 사업자 이행 지원 정책</li>
-          <li>불법·불량제품 유통 모니터링 정책</li>
-        </ul>
-
-        <h4>Technical Research Officer (공업연구사), February 2013 – December 2021</h4>
-
-        <p><strong>Technical Regulation Policy Division (기술규제정책과)</strong></p>
-        <ul>
-          <li>해외 기술규제(TBT) 정보시스템 운영 및 고도화</li>
-          <li>Overhaul TBT information system (www.knowTBT.kr) and secured 1,560 million KRW implementation budget, December 2021</li>
-        </ul>
-
-        <p><strong>Metrology &amp; Measurement Division (계량측정제도과)</strong></p>
-        <ul>
-          <li>법정 계량 정보시스템 운영 및 고도화</li>
-          <li>스마트미터링(융복합 계량 시스템) 대응</li>
-          <li>국제법정계량기구 상호인증 인정 프로그램 국가 대표</li>
-        </ul>
-
-        <h3>TTA (Telecommunications Technology Associations)</h3>
-        <h4>Senior Research Engineer (선임연구원), April 2006 – February 2013</h4>
-        <ul>
-          <li>GSM/WCDMA Protocol testing (3GPP, ETSI)</li>
-          <li>Mobile WiMAX Validation — Dispatched to AT4wireless, Spain (Nov 2006 – Apr 2008)</li>
-          <li>LTE testing and standardization (3GPP, ETSI)</li>
-        </ul>
-
-        <hr />
-
-        <h2>Current Interests</h2>
-        <ul>
-          <li>AGI</li>
-          <li>Integration Platform as a Service (iPaaS): Workflow Automation</li>
-          <li>Certification/Validation Framework for reliable/safe AI products</li>
-          <li>PKM (Personal Knowledge Management) — Obsidian</li>
-        </ul>
-
-        <h2>Specialties</h2>
-        <ul>
-          <li>Regulation: Product Safety/Conformity — Market Surveillance, Recall</li>
-          <li>Standards: IEEE 802.16e, 3GPP (WCDMA/LTE), IETF RFCs</li>
-          <li>Programming: Python, C/C++, SQL</li>
-          <li>Workflow Automation: n8n, Make (formerly Integromat)</li>
-          <li>DB: PostgreSQL (Supabase)</li>
-        </ul>
-
-        <hr />
-
-        <h2>Honors &amp; Awards</h2>
-        <ul>
-          <li>Exemplary Case of Proactive Public Administration (Ministry of Trade, Industry and Resources, January 2026) — Recognized for deploying AI-based product safety systems in real regulatory operations.</li>
-          <li>Commendation for Exemplary Official 2021 (The Prime Minister's Office, June 2021)</li>
-          <li>Commendation for Excellent Official 2018 (Ministry of Trade, Industry and Energy, December 2018)</li>
-          <li>Commendation for KATS Standardization Person of the Year 2014</li>
-        </ul>
+        <Content />
       </div>
     </div>
   </main>
