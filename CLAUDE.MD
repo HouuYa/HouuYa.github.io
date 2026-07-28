@@ -1,214 +1,247 @@
-# CLAUDE.MD - HouuYa's Blog 프로젝트 가이드
+# CLAUDE.MD — HouuYa's Blog AI 협업 가이드
+
+> 소유자: Seungho Bae (배승호)  
+> URL: https://houuya.github.io  
+> 언어: 한국어 (ko-KR)  
+> 마지막 업데이트: 2026-06-24
+
+---
+
+## 현재 작업 상태
+
+**Astro 전환 진행 중** — Jekyll + Minimal Mistakes → Astro 5.x 마이그레이션
+
+| 문서 | 역할 |
+|---|---|
+| **[ASTRO_PLAN.md](ASTRO_PLAN.md)** | 전환 실행 계획 전체 (확정된 결정사항, 구조, 타임라인) |
+| **[TODO.MD](TODO.MD)** | Phase별 작업 체크리스트 (현재 진행 상태 추적) |
+| **[DESIGN.md](DESIGN.md)** | 디자인 시스템 원본 — 토큰, 컴포넌트, 규칙 (변경 금지) |
+
+**작업 시작 전 반드시 위 세 문서를 읽을 것.**
+
+---
 
 ## 프로젝트 개요
 
-**HouuYa's Blog**는 Jekyll 기반의 개인 블로그로, AI 규제, 제품 안전, 기술 표준 분야의 전문 지식을 공유하는 플랫폼입니다.
-
-- **URL**: https://houuya.github.io
-- **테마**: Minimal Mistakes 4.24.0 (Dark Skin)
-- **소유자**: Seungho Bae (배승호)
-- **언어**: 한국어 (ko-KR)
+**HouuYa's Blog**는 AI 규제, 제품 안전, 기술 표준 분야의 전문 지식을 공유하는 개인 블로그입니다.  
+현재 **Astro 5.x로 전환 중**이며, DESIGN.md 기반 에디토리얼 디자인 시스템을 새롭게 적용합니다.
 
 ---
 
-## 기술 스택
+## 기술 스택 (전환 목표)
 
-| 구분 | 기술 |
-|------|------|
-| 정적 생성기 | Jekyll 4.x |
-| 테마 | Minimal Mistakes 4.24.0 |
-| CSS 전처리기 | SCSS/SASS |
-| 그리드 시스템 | Susy 3.x |
-| JavaScript | jQuery 3.6.0 |
-| 검색 | Lunr.js (클라이언트 측) |
-| 호스팅 | GitHub Pages |
-| 분석 | Google Analytics (GA4) |
+| 구분 | 기술 | 비고 |
+|------|------|------|
+| 정적 생성기 | **Astro 5.x** | Jekyll 대체 |
+| 스타일 | **SCSS** (토큰 기반) | Minimal Mistakes 제거 |
+| 디스플레이 폰트 | **Cormorant Garamond** | Copernicus 대체 (Google Fonts) |
+| 본문/UI 폰트 | **Inter** | StyreneB 대체 (Google Fonts) |
+| 코드 폰트 | **JetBrains Mono** | Google Fonts |
+| 검색 | **Pagefind** | 정적 빌드 인덱스 |
+| 호스팅 | **GitHub Pages** | GitHub Actions 배포 |
+| 분석 | Google Analytics GA4 | `G-LJKDH2835N` |
+| 로고 | **오리온 별자리 SVG** | `public/assets/images/orion-logo.svg` |
+| 태그라인 | "Connecting the constellation of data" | 한국어: "데이터의 별자리를 잇다" |
 
 ---
 
-## 디렉토리 구조
+## 목표 디렉토리 구조 (Astro)
 
 ```
 HouuYa.github.io/
-├── _config.yml          # 메인 설정 파일 (★ 핵심)
-├── _data/               # 데이터 파일
-│   ├── navigation.yml   # 네비게이션 메뉴 설정
-│   └── ui-text.yml      # UI 텍스트 (다국어)
-├── _includes/           # HTML 컴포넌트 (51개)
-│   ├── head.html        # <head> 섹션
-│   ├── masthead.html    # 상단 네비게이션
-│   ├── footer.html      # 푸터
-│   ├── author-profile.html # 저자 프로필
-│   └── ...
-├── _layouts/            # 레이아웃 템플릿 (14개)
-│   ├── default.html     # 기본 레이아웃
-│   ├── home.html        # 홈페이지 레이아웃
-│   ├── single.html      # 개별 포스트
-│   ├── splash.html      # 스플래시 페이지
-│   └── ...
-├── _pages/              # 정적 페이지 (25개)
-│   ├── home.md          # 홈페이지
-│   ├── about.md         # 소개 페이지
-│   └── ...
-├── _posts/              # 블로그 포스트 (41개)
-├── _sass/               # SCSS 스타일
-│   └── minimal-mistakes/
-│       ├── _variables.scss    # 변수 정의
-│       ├── skins/_dark.scss   # 다크 테마 색상
-│       └── ...
-├── assets/
-│   ├── css/main.scss    # 커스텀 스타일 진입점 (★ 중요)
-│   ├── js/              # JavaScript
-│   └── images/          # 이미지 (89개)
-├── Gemfile              # Ruby 의존성
-└── package.json         # NPM 설정
+├── src/
+│   ├── content/
+│   │   ├── config.ts             # Content Collection 스키마
+│   │   └── posts/                # _posts/*.md → 이동
+│   ├── layouts/
+│   │   ├── BaseLayout.astro      # head, Nav, Footer, GA4
+│   │   └── PostLayout.astro      # 포스트 헤더, TOC, 본문
+│   ├── components/
+│   │   ├── Nav.astro             # top-nav 64px, 크림, 오리온 SVG 워드마크
+│   │   ├── Hero.astro            # 6/6 그리드 히어로
+│   │   ├── FeatureCard.astro     # 크림카드
+│   │   ├── CodeWindowCard.astro  # 다크 코드 윈도우
+│   │   ├── PostCard.astro        # 아카이브 리스트 카드
+│   │   ├── CtaBand.astro         # 코랄 CTA 밴드
+│   │   └── Footer.astro          # 다크 네이비 푸터
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── about.astro
+│   │   ├── search.astro
+│   │   ├── posts/[slug].astro
+│   │   ├── categories/[category].astro
+│   │   └── tags/[tag].astro
+│   └── styles/
+│       ├── _tokens.scss          # ★ DESIGN.md 전체 토큰
+│       ├── _base.scss
+│       ├── _nav.scss
+│       ├── _hero.scss
+│       ├── _cards.scss
+│       ├── _post.scss
+│       ├── _footer.scss
+│       ├── _responsive.scss
+│       └── global.scss           # 전체 @import 진입점
+├── public/
+│   ├── assets/images/            # 이미지 자산
+│   ├── assets/pdfs/              # PDF 자산
+│   └── 404.html                  # Jekyll URL 리다이렉트
+├── .github/workflows/deploy.yml  # Astro 공식 GitHub Actions
+├── astro.config.mjs
+├── ASTRO_PLAN.md                 # 실행 계획
+├── TODO.MD                       # 작업 체크리스트
+├── DESIGN.md                     # 디자인 시스템 (변경 금지)
+└── CLAUDE.MD                     # 이 파일
 ```
 
 ---
 
-## 주요 설정 파일
+## 디자인 시스템 핵심 규칙
 
-### _config.yml
-```yaml
-# 테마 스킨 변경
-minimal_mistakes_skin: "dark"  # 가능: default, air, aqua, contrast, dark, dirt, mint, neon, plum, sunrise
+원본: [DESIGN.md](DESIGN.md) — 모든 세부 토큰과 컴포넌트 스펙은 이 파일을 참조.
 
-# 사이트 기본 정보
-title: "HouuYa's Blog"
-subtitle: "AI Regulation & Product Safety Insights"
-locale: "ko-KR"
-url: "https://HouuYa.github.io"
-
-# 저자 정보
-author:
-  name: "Seungho Bae"
-  avatar: "/assets/images/seungho1.jpg"
-  bio: "Deputy Director at **KATS**"
-```
-
-### assets/css/main.scss
-- 커스텀 스타일의 진입점
-- 테마 스킨 import 후 커스텀 CSS 추가
-- **현재 커스터마이징**:
-    - **Premium Dark Design**: Glassmorphism, Neon Glow, Smooth Animations
-    - **Layout**: Flexbox-based Responsive Grid (fluid width on large screens)
-    - **Typography**: Gradient headings, improved readability
-
-### UI/UX 디자인 가이드라인 (Premium Dark)
-- **Glassmorphism**: `background: rgba(30, 34, 45, 0.6); backdrop-filter: blur(12px);`
-- **Glow Effect**:
-    - Default: `box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);`
-    - Hover: `box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba($accent, 0.15);`
-- **Typography**:
-    - Headings: `background: linear-gradient(135deg, #fff 0%, $accent-light 100%);`
-- **Layout Rule**:
-    - Use `display: flex` for feature rows.
-    - `flex: 1 1 300px` to ensure items grow and shrink properly.
-    - Avoid fixed `max-width` on grid items to prevent shrinking on wide screens.
-
----
-
-## 색상 체계 (Dark Theme)
+### 색상 토큰 (절대 hex 직접 사용 금지, 반드시 SCSS 변수 사용)
 
 ```scss
-// _sass/minimal-mistakes/skins/_dark.scss
-$background-color: #252a34;     // 배경색 (진한 회색-파란색)
-$text-color: #eaeaea;           // 텍스트 (연한 회색)
-$primary-color: #00adb5;        // 주 강조색 (사이안)
-$link-color: mix($primary-color, $text-color, 40%);
+$color-canvas:        #faf9f5;   // 기본 배경 (크림)
+$color-primary:       #cc785c;   // 코랄 CTA
+$color-primary-active:#a9583e;   // 버튼 호버
+$color-surface-card:  #efe9de;   // 피처카드 배경
+$color-surface-dark:  #181715;   // 코드 윈도우, 푸터
+$color-ink:           #141413;   // 기본 텍스트
+$color-on-dark:       #faf9f5;   // 다크 서피스 텍스트
+$color-on-dark-soft:  #a09d96;   // 다크 서피스 보조 텍스트
+$color-hairline:      #e6dfd8;   // 1px 보더
 ```
+
+### 서피스 3단계 페이징 리듬 (엄수)
+
+```
+크림 캔버스 → 크림 카드 → 다크 네이비
+```
+
+동일 서피스 2개를 연속 배치하지 않는다.
+
+### 폰트 계층 규칙 (엄수)
+
+- `h1, h2, h3` → **Cormorant Garamond, weight 400**, 음수 letter-spacing 필수
+- `body, nav, button, label` → **Inter, weight 400/500**
+- `code, pre` → **JetBrains Mono, weight 400**
+- **세리프 헤드라인에 bold(700) 절대 금지**
+
+### 오리온 로고 사용 규칙
+
+**파일:** `public/assets/images/orion-logo.svg`  
+로고 SVG는 `currentColor`를 사용하므로 부모 요소의 `color`로 별/선 색상이 결정된다.
+
+```css
+/* 크림 배경 (Nav): 어두운 별자리 */
+.nav-logo { color: #141413; }
+
+/* 다크 배경 (Footer/Hero): 밝은 별자리 */
+.footer-logo { color: #faf9f5; }
+```
+
+- Betelgeuse(좌상, 큰 별) = 앰버 `#e8a55a` (`$color-accent-amber`) — 고정
+- Rigel(우하, 큰 별) = 틸 `#5db8a6` (`$color-accent-teal`) — 고정
+- 나머지 6개 별 + 연결선 = `currentColor`로 배경에 따라 자동 전환
+
+### 브레이크포인트
+
+| 구간 | 핵심 변경 |
+|---|---|
+| `< 768px` | 햄버거 메뉴, 1컬럼, 카드 1-up |
+| `768–1024px` | 카드 2-up |
+| `> 1024px` | 카드 4-up, 전체 nav, 히어로 6/6 |
+| `> 1440px` | 콘텐츠 max-width: 1200px |
 
 ---
 
-## 빌드 및 배포
+## 포스트 작성법 (Astro)
 
-### 로컬 개발
-```bash
-# 의존성 설치
-bundle install
-
-# 로컬 서버 실행
-bundle exec jekyll serve --livereload
-
-# 접속: http://localhost:4000
-```
-
-### 배포
-- GitHub Pages 자동 배포 (main 브랜치 push 시)
-- GitHub Actions 워크플로우 사용
-
----
-
-## 레이아웃 사용법
-
-### 포스트 작성
 ```yaml
 ---
 title: "포스트 제목"
+description: "포스트 설명 (OG 메타태그에 사용)"
 categories:
-  - Category Name
+  - AI Regulation
 tags:
-  - tag1
-  - tag2
-layout: single
-author_profile: true
-toc: true              # 목차 표시
-toc_sticky: true       # 스티키 목차
+  - EU AI Act
+pubDate: 2026-06-24
+toc: true           # 목차 표시 여부 (PostLayout에서 처리)
 ---
 
 본문 내용...
 ```
 
-### 페이지 작성
-```yaml
+**주의사항:**
+- `layout`, `author_profile`, `toc_sticky`, `read_time`, `comments`, `share` → Astro에서 불필요, 작성 금지
+- 한국어 본문: CSS `word-break: keep-all` 자동 적용 (`_post.scss`)
+- 코드블록: JetBrains Mono + `$color-surface-dark` 배경 자동 적용
+
 ---
-title: "페이지 제목"
-layout: single         # 또는 splash, archive 등
-permalink: /page-url/
----
+
+## 로컬 개발 (Astro)
+
+```bash
+# 의존성 설치
+npm install
+
+# 로컬 개발 서버
+npm run dev
+# 접속: http://localhost:4321
+
+# 프로덕션 빌드 (Pagefind 포함)
+npm run build
+
+# 빌드 결과 미리보기
+npm run preview
 ```
 
 ---
 
-## 현재 문제점 요약
+## 배포
 
-### 1. 홈페이지 UI/UX
-- 프로필, 카드, 포스트 목록이 과밀하게 배치됨
-- 카드 텍스트 가독성 저하 (폰트 크기, 행간)
-- 레이아웃 정돈 필요
-
-### 2. 디자인 일관성
-- 섹션 간 여백 불균형
-- 카드 크기/스타일 불일치
-- 반응형 대응 미흡
-
-### 3. 기능적 문제
-- 불필요한 테스트 페이지 존재
-- 소셜 링크 미설정
-- 댓글 시스템 미활성화
-
-### 4. 성능
-- JavaScript 번들 크기 (119.5KB)
-- 이미지 최적화 필요
+- **방식**: GitHub Actions (`withastro/action@v3`) → GitHub Pages 정적 배포
+- **트리거**: `master` 브랜치 push 시 자동 빌드/배포
+- **설정 위치**: `.github/workflows/deploy.yml`
+- **GitHub 설정**: Repository Settings → Pages → Source: **GitHub Actions**
+- **라이브 URL**: https://houuya.github.io
 
 ---
 
-## 개발 시 주의사항
+## AI 협업 주의사항
 
-1. **커스텀 스타일**: `assets/css/main.scss`에서만 추가
-2. **테마 파일 수정 금지**: `_sass/minimal-mistakes/` 직접 수정 지양
-3. **이미지 최적화**: WebP 포맷 권장, 적절한 크기로 리사이징
-4. **Liquid 문법**: `{ %` ` % }` 태그 사용 시 공백 주의 (Jekyll 파싱 방지 위해 분리 표기)
-5. **YAML Front Matter**: 들여쓰기 2칸 사용
+1. **작업 시작 전**: [ASTRO_PLAN.md](ASTRO_PLAN.md)와 [TODO.MD](TODO.MD) 먼저 확인
+2. **디자인 결정**: [DESIGN.md](DESIGN.md)를 단일 진실 원천으로 사용 — 임의 색상/폰트 변경 금지
+3. **SCSS 토큰**: hex 직접 사용 금지, 반드시 `$color-*` 변수 사용
+4. **서피스 리듬**: 크림 → 크림카드 → 다크 네이비 순서 준수
+5. **세리프 폰트**: Cormorant Garamond는 weight 400만 사용, bold 금지
+6. **한국어 가독성**: `word-break: keep-all`, `overflow-wrap: break-word` 본문 필수
+7. **DESIGN.md 수정 금지**: 이 파일은 디자인 시스템 원본이므로 절대 변경하지 않음
+
+---
+
+## 레거시 참고 (전환 전 Jekyll 구조)
+
+전환 완료 후 삭제 예정. 현재는 루트에 Jekyll 파일들이 공존.
+
+| Jekyll 파일 | 상태 |
+|---|---|
+| `_config.yml` | 레거시 — 참조용 보존 |
+| `_posts/*.md` | `src/content/posts/`로 이동 중 |
+| `assets/css/main.scss` | 레거시 — 새 스타일로 대체 |
+| `Gemfile` | 레거시 — 전환 후 삭제 |
+| `_includes/`, `_layouts/` | 레거시 — Astro 컴포넌트로 대체 |
 
 ---
 
 ## 참고 자료
 
-- [Minimal Mistakes 공식 문서](https://mmistakes.github.io/minimal-mistakes/)
-- [Jekyll 공식 문서](https://jekyllrb.com/docs/)
-- [Liquid 템플릿 문법](https://shopify.github.io/liquid/)
+- [Astro 공식 문서](https://docs.astro.build)
+- [Astro Content Collections](https://docs.astro.build/en/guides/content-collections/)
+- [Pagefind 검색 문서](https://pagefind.app)
+- [GitHub Pages + Astro 배포 가이드](https://docs.astro.build/en/guides/deploy/github/)
 
 ---
 
-*마지막 업데이트: 2026-02-05 (Liquid 오류 수정 및 Premium Dark UI 적용)*
+*마지막 업데이트: 2026-06-24 (Astro 전환 계획 확정)*

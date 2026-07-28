@@ -1,0 +1,168 @@
+---
+// DESIGN.md: top-nav — canvas bg, 64px, nav-link 14px/500, hairline bottom
+const navLinks = [
+  { label: 'Posts', href: '/posts/' },
+  { label: 'Categories', href: '/categories/' },
+  { label: 'About', href: '/about/' },
+];
+---
+
+<header class="nav">
+  <div class="nav__inner container">
+    <a href="/" class="nav__brand" aria-label="HouuYa's Blog 홈">
+      <img
+        src="/assets/images/orion-logo.svg"
+        alt="오리온 별자리 로고"
+        class="nav__logo"
+        width="29"
+        height="48"
+      />
+      <span class="nav__title">HouuYa's Blog</span>
+    </a>
+
+    <nav class="nav__links" aria-label="주요 메뉴">
+      {navLinks.map(({ label, href }) => (
+        <a href={href} class="nav__link">{label}</a>
+      ))}
+    </nav>
+
+    <!-- 모바일 햄버거 -->
+    <button class="nav__hamburger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- 모바일 드로어 -->
+<div class="nav__drawer" id="mobile-menu" aria-hidden="true">
+  <nav class="nav__drawer-links" aria-label="모바일 메뉴">
+    {navLinks.map(({ label, href }) => (
+      <a href={href} class="nav__drawer-link">{label}</a>
+    ))}
+  </nav>
+</div>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.nav__hamburger');
+  const drawer = document.querySelector<HTMLElement>('.nav__drawer');
+  btn?.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    drawer?.setAttribute('aria-hidden', String(open));
+    drawer?.classList.toggle('is-open', !open);
+  });
+</script>
+
+<style lang="scss">
+  @use '../styles/tokens' as *;
+
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: $color-canvas;
+    border-bottom: 1px solid $color-hairline-soft;
+    height: $nav-height;
+    display: flex;
+    align-items: center;
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &__brand {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+      text-decoration: none;
+      color: $color-ink;
+    }
+
+    &__logo {
+      height: 48px;
+      width: auto;
+      color: $color-ink;
+    }
+
+    &__title {
+      font-family: $font-display;
+      font-size: 20px;
+      font-weight: $font-display-weight;
+      letter-spacing: -0.3px;
+      color: $color-ink;
+    }
+
+    &__links {
+      display: flex;
+      align-items: center;
+      gap: $spacing-lg;
+    }
+
+    &__link {
+      font-family: $font-body;
+      font-size: $text-nav-size;
+      font-weight: 500;
+      color: $color-muted;
+      text-decoration: none;
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: $color-ink;
+      }
+    }
+
+    &__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: $spacing-xs;
+
+      span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: $color-ink;
+        border-radius: 2px;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+    }
+  }
+
+  // 모바일 드로어
+  .nav__drawer {
+    display: none;
+    position: fixed;
+    inset: $nav-height 0 0;
+    background: $color-canvas;
+    z-index: 99;
+    padding: $spacing-xxl $spacing-xl;
+    flex-direction: column;
+    gap: $spacing-xl;
+
+    &.is-open {
+      display: flex;
+    }
+  }
+
+  .nav__drawer-link {
+    font-family: $font-display;
+    font-size: $text-display-sm-size;
+    font-weight: $font-display-weight;
+    letter-spacing: $text-display-sm-ls;
+    color: $color-ink;
+    text-decoration: none;
+  }
+
+  @media (max-width: 767px) {
+    .nav__links { display: none; }
+    .nav__hamburger { display: flex; }
+  }
+</style>

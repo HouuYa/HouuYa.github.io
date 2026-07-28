@@ -1,0 +1,110 @@
+---
+// DESIGN.md: code-window-card — surface-dark bg, JetBrains Mono, rounded-lg, padding 24px
+---
+
+<div class="code-window">
+  <!-- 윈도우 크롬 바 -->
+  <div class="code-window__bar">
+    <span class="code-window__dot code-window__dot--red"></span>
+    <span class="code-window__dot code-window__dot--amber"></span>
+    <span class="code-window__dot code-window__dot--green"></span>
+    <span class="code-window__bar-label">analysis.py</span>
+  </div>
+
+  <!-- 코드 본문 -->
+  <div class="code-window__body">
+    <pre class="code-window__pre"><code><span class="t-muted">1  </span><span class="t-teal">import</span> <span class="t-on-dark"> ai_regulation </span><span class="t-teal">as</span><span class="t-on-dark"> reg</span>
+<span class="t-muted">2  </span>
+<span class="t-muted">3  </span><span class="t-comment"># EU AI Act 리스크 분류 분석</span>
+<span class="t-muted">4  </span><span class="t-on-dark">system </span><span class="t-coral">=</span><span class="t-on-dark"> reg.System(</span>
+<span class="t-muted">5  </span><span class="t-on-dark">    domain</span><span class="t-coral">=</span><span class="t-amber">"critical infrastructure"</span><span class="t-on-dark">,</span>
+<span class="t-muted">6  </span><span class="t-on-dark">    uses_biometrics</span><span class="t-coral">=</span><span class="t-teal">True</span><span class="t-on-dark">,</span>
+<span class="t-muted">7  </span><span class="t-on-dark">)</span>
+<span class="t-muted">8  </span>
+<span class="t-muted">9  </span><span class="t-on-dark">risk </span><span class="t-coral">=</span><span class="t-on-dark"> system.classify_risk()</span>
+<span class="t-muted">10 </span><span class="t-comment"># → RiskLevel.HIGH</span>
+<span class="t-muted">11 </span>
+<span class="t-muted">12 </span><span class="t-on-dark">obligations </span><span class="t-coral">=</span><span class="t-on-dark"> reg.get_obligations(risk)</span>
+<span class="t-muted">13 </span><span class="t-comment"># → ['conformity_assessment',</span>
+<span class="t-muted">14 </span><span class="t-comment">#     'technical_documentation',</span>
+<span class="t-muted">15 </span><span class="t-comment">#     'human_oversight']</span></code></pre>
+  </div>
+
+  <!-- 상태 바 -->
+  <div class="code-window__statusbar">
+    <span class="code-window__status-dot"></span>
+    <span class="t-muted-soft">EU AI Act · Art. 6-7 분석 완료</span>
+  </div>
+</div>
+
+<style lang="scss">
+  @use '../styles/tokens' as *;
+
+  .code-window {
+    background: $color-surface-dark;
+    border-radius: $rounded-lg;
+    overflow: hidden;
+    font-family: $font-code;
+    font-size: $text-code-size;
+    line-height: $text-code-lh;
+
+    &__bar {
+      background: $color-surface-dark-elevated;
+      padding: $spacing-sm $spacing-lg;
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+    }
+
+    &__dot {
+      width: 12px;
+      height: 12px;
+      border-radius: $rounded-full;
+
+      &--red   { background: #ff6058; }
+      &--amber { background: #ffbd2e; }
+      &--green { background: #29cb42; }
+    }
+
+    &__bar-label {
+      margin-left: $spacing-xs;
+      font-size: 12px;
+      color: $color-on-dark-soft;
+    }
+
+    &__body {
+      padding: $spacing-lg;
+      overflow-x: auto;
+    }
+
+    &__pre {
+      margin: 0;
+      white-space: pre;
+    }
+
+    &__statusbar {
+      background: $color-surface-dark-elevated;
+      padding: $spacing-xs $spacing-lg;
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+      font-size: 12px;
+    }
+
+    &__status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: $rounded-full;
+      background: $color-accent-teal;
+    }
+  }
+
+  // 신택스 컬러 유틸
+  .t-teal     { color: $color-accent-teal; }
+  .t-amber    { color: $color-accent-amber; }
+  .t-coral    { color: $color-primary; }
+  .t-on-dark  { color: $color-on-dark; }
+  .t-muted    { color: $color-on-dark-soft; user-select: none; }
+  .t-muted-soft { color: $color-on-dark-soft; }
+  .t-comment  { color: $color-muted; }
+</style>

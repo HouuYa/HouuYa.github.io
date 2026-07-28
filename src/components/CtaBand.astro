@@ -1,0 +1,126 @@
+---
+// DESIGN.md: cta-band-coral — primary bg, on-primary text, rounded-lg, padding 64px
+interface Props {
+  headline?: string;
+  sub?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}
+
+const {
+  headline = '규제와 기술 사이,\n실무 관점의 이야기',
+  sub = 'EU AI Act · AI 거버넌스 · 기술 표준 분야의 글을 모아 두었습니다.',
+  primaryLabel = '글 전체 보기 →',
+  primaryHref = '/posts/',
+  secondaryLabel = 'About',
+  secondaryHref = '/about/',
+} = Astro.props;
+---
+
+<section class="cta-band">
+  <div class="cta-band__inner container">
+    <div class="cta-band__copy">
+      <h2 class="cta-band__headline">{headline}</h2>
+      <p class="cta-band__sub">{sub}</p>
+    </div>
+    <div class="cta-band__actions">
+      <a href={primaryHref} class="cta-band__btn cta-band__btn--cream">{primaryLabel}</a>
+      <a href={secondaryHref} class="cta-band__btn cta-band__btn--outline">{secondaryLabel}</a>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use '../styles/tokens' as *;
+
+  .cta-band {
+    padding: $spacing-section 0;
+
+    &__inner {
+      background: $color-primary;
+      border-radius: $rounded-lg;
+      padding: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: $spacing-xxl;
+    }
+
+    &__copy {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-md;
+    }
+
+    &__headline {
+      font-family: $font-display;
+      font-size: $text-display-sm-size;
+      font-weight: $font-display-weight;
+      line-height: $text-display-sm-lh;
+      letter-spacing: $text-display-sm-ls;
+      color: $color-on-primary;
+      margin: 0;
+      white-space: pre-line;
+    }
+
+    &__sub {
+      font-family: $font-body;
+      font-size: $text-body-md-size;
+      color: rgba($color-on-primary, 0.8);
+      margin: 0;
+      max-width: 480px;
+    }
+
+    &__actions {
+      display: flex;
+      gap: $spacing-md;
+      flex-shrink: 0;
+    }
+
+    &__btn {
+      display: inline-flex;
+      align-items: center;
+      font-family: $font-body;
+      font-size: $text-button-size;
+      font-weight: 500;
+      padding: 12px 20px;
+      height: 40px;
+      border-radius: $rounded-md;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.15s ease;
+
+      &--cream {
+        background: $color-canvas;
+        color: $color-ink;
+
+        &:hover { background: $color-surface-soft; }
+      }
+
+      &--outline {
+        background: transparent;
+        color: $color-on-primary;
+        border: 1px solid rgba($color-on-primary, 0.4);
+
+        &:hover { background: rgba($color-on-primary, 0.1); }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cta-band__inner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 40px 24px;
+    }
+
+    .cta-band__actions {
+      flex-direction: column;
+      width: 100%;
+
+      .cta-band__btn { justify-content: center; }
+    }
+  }
+</style>
