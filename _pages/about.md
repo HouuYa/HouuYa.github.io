@@ -39,7 +39,7 @@ My focus is not model performance, but:
 - **Vibe-Coded Regulatory Document Parsing (Advanced MVP)**  
   Experiments on transforming complex regulatory and standard documents into structured, machine-readable data using document parsing pipelines.  
   The focus is on enabling downstream AI systems to reliably consume policy and technical texts.  
-  Repository: https://github.com/HouuYa/upstage-docuparse-adv.-mvpv0.1
+  Repository: https://github.com/HouuYa/HWP-documents-AI-parser-MVP
 
 - **Vibe-Coded Rule-based RAG System (Tennis Mate)**  
   An end-to-end prototype built on Supabase that integrates structured domain rules with Retrieval-Augmented Generation (RAG).  
@@ -345,6 +345,6 @@ Study on the lower power communications and networking techniques for Massively 
 
 ### Professional(<em>to be updated</em>)
 
-2015년 7월 22일 스마트공장 표준 심포지움 ‘스마트공장 표준화 추진 전략’(https://kidd.co.kr/news/181038, https://www.electimes.com/news/articleView.html?idxno=125723)
+2015년 7월 22일 스마트공장 표준 심포지움 ‘스마트공장 표준화 추진 전략’ [Press Release 1](https://kidd.co.kr/news/181038), [Press Release 2](https://www.electimes.com/news/articleView.html?idxno=125723)
 
 ---
