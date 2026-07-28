@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+// 최근 포스트 6개 — pubDate 또는 last_modified_at 기준 최신순
+const allPosts = await getCollection('posts');
+const sorted = allPosts
+  .filter(p => !p.data.hidden)
+  .sort((a, b) => {
+    const getTime = (d: Date | string | null | undefined): number => {
+      if (!d) return 0;
+      const t = d instanceof Date ? d.getTime() : new Date(d as string).getTime();
+      return isNaN(t) ? 0 : t;
+    };
+    const dateA = getTime(a.data.pubDate) || getTime(a.data.last_modified_at);
+    const dateB = getTime(b.data.pubDate) || getTime(b.data.last_modified_at);
+    return dateB - dateA;
+  })
+  .slice(0, 6);
+
+// DESIGN.md 피처카드 4개 — 실제 포스트 카테고리 슬러그로 연결
+const features = [
+  {
+    icon: '⚖️',
+    title: 'EU AI Act',
+    description: '유럽 AI 규제 체계와 고위험 AI 분류, 인증 의무를 분석합니다.',
+    href: '/categories/eu-ai-act/',
+  },
+  {
+    icon: '🏛️',
+    title: 'AI 거버넌스',
+    description: 'AI 시스템의 책임·투명성·감사 체계를 실무 관점으로 기록합니다.',
+    href: '/categories/ai-regulation/',
+  },
+  {
+    icon: '📐',
+    title: '기술 표준',
+    description: '국제 기술 표준, KC·CE 인증, 규제 간 정합성을 다룹니다.',
+    href: '/categories/nlf/',
+  },
+  {
+    icon: '📚',
+    title: '책',
+    description: 'AI, 규제, 지식관리 분야의 독서 기록과 인사이트를 공유합니다.',
+    href: '/categories/book/',
+  },
+];
+---
+
+<BaseLayout
+  title="HouuYa's Blog"
+  description="데이터의 별자리를 잇다 — AI 거버넌스, 제품 안전, EU·한국 기술 규제의 실무 관점"
+>
+  <Nav />
+  <main>
+    <!-- Hero: canvas + 6/6 그리드 -->
+    <Hero />
+
+    <!-- Feature Cards: surface-card 4-up -->
+    <section class="features">
+      <div class="container">
+        <h2 class="features__title">주요 주제</h2>
+        <div class="features__grid">
+          {features.map(f => (
+            <FeatureCard
+              icon={f.icon}
+              title={f.title}
+              description={f.description}
+              href={f.href}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA 밴드: coral -->
+    <CtaBand />
+
+    <!-- 최근 포스트 6개 -->
+    <section class="recent-posts">
+      <div class="container">
+        <div class="recent-posts__header">
+          <h2 class="recent-posts__title">최근 글</h2>
+          <a href="/posts/" class="recent-posts__all">전체 보기 →</a>
+        </div>
+        <div class="recent-posts__grid">
+          {sorted.map(post => (
+            <PostCard
+              title={post.data.title}
+              slug={post.id}
+              href={post.data.permalink ? post.data.permalink : undefined}
+              pubDate={post.data.pubDate}
+              categories={post.data.categories}
+              description={post.data.description}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style lang="scss">
+  @use '../styles/tokens' as *;
+
+  // Features 섹션 — surface-soft 배경으로 캔버스와 구분
+  .features {
+    background: $color-surface-soft;
+    padding: $spacing-section 0;
+
+    &__title {
+      font-family: $font-display;
+      font-size: $text-display-md-size;
+      font-weight: $font-display-weight;
+      letter-spacing: $text-display-md-ls;
+      line-height: $text-display-md-lh;
+      color: $color-ink;
+      margin: 0 0 $spacing-xxl;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: $spacing-lg;
+    }
+  }
+
+  // 최근 포스트 섹션
+  .recent-posts {
+    background: $color-canvas;
+    padding: $spacing-section 0;
+
+    &__header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: $spacing-xxl;
+    }
+
+    &__title {
+      font-family: $font-display;
+      font-size: $text-display-md-size;
+      font-weight: $font-display-weight;
+      letter-spacing: $text-display-md-ls;
+      color: $color-ink;
+      margin: 0;
+    }
+
+    &__all {
+      font-family: $font-body;
+      font-size: $text-body-sm-size;
+      font-weight: 500;
+      color: $color-primary;
+      text-decoration: none;
+
+      &:hover { color: $color-primary-active; }
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-lg;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .features__grid { grid-template-columns: repeat(2, 1fr); }
+    .recent-posts__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 767px) {
+    .features__grid { grid-template-columns: 1fr; }
+    .recent-posts__grid { grid-template-columns: 1fr; }
+  }
+</style>

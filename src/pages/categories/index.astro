@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import { getCollection } from 'astro:content';
+import { slugify } from '../../utils/slugify';
+
+const allPosts = await getCollection('posts');
+const map = new Map<string, { name: string; count: number }>();
+
+for (const post of allPosts) {
+  if (post.data.hidden) continue;
+  for (const cat of post.data.categories) {
+    const slug = slugify(cat);
+    const entry = map.get(slug);
+    if (entry) {
+      entry.count += 1;
+    } else {
+      map.set(slug, { name: cat, count: 1 });
+    }
+  }
+}
+
+const categories = Array.from(map.entries())
+  .map(([slug, { name, count }]) => ({ slug, name, count }))
+  .sort((a, b) => b.count - a.count);
+---
+
+<BaseLayout
+  title="Categories — HouuYa's Blog"
+  description="전체 카테고리 목록"
+>
+  <Nav />
+  <main class="categories-page">
+    <div class="container">
+      <header class="categories-page__header">
+        <h1 class="categories-page__title">Categories</h1>
+        <p class="categories-page__sub">{categories.length}개의 카테고리</p>
+      </header>
+
+      <div class="categories-page__list">
+        {categories.map(({ slug, name, count }) => (
+          <a href={`/categories/${slug}/`} class="categories-page__item">
+            <span class="categories-page__name">{name}</span>
+            <span class="categories-page__count">{count}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style lang="scss">
+  @use '../../styles/tokens' as *;
+
+  .categories-page {
+    background: $color-canvas;
+    padding: $spacing-section 0;
+    min-height: 60vh;
+
+    &__header {
+      margin-bottom: $spacing-xxl;
+    }
+
+    &__title {
+      font-family: $font-display;
+      font-size: $text-display-lg-size;
+      font-weight: $font-display-weight;
+      letter-spacing: $text-display-lg-ls;
+      color: $color-ink;
+      margin: 0 0 $spacing-xs;
+    }
+
+    &__sub {
+      font-family: $font-body;
+      font-size: $text-body-sm-size;
+      color: $color-muted;
+      margin: 0;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-sm;
+    }
+
+    &__item {
+      display: inline-flex;
+      align-items: center;
+      gap: $spacing-xs;
+      background: $color-surface-card;
+      border-radius: $rounded-pill;
+      padding: $spacing-xs $spacing-md;
+      text-decoration: none;
+      transition: background 0.15s ease;
+
+      &:hover { background: $color-surface-cream-strong; }
+    }
+
+    &__name {
+      font-family: $font-body;
+      font-size: $text-body-sm-size;
+      font-weight: 500;
+      color: $color-ink;
+    }
+
+    &__count {
+      font-family: $font-body;
+      font-size: $text-caption-size;
+      color: $color-muted;
+    }
+  }
+</style>

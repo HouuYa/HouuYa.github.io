@@ -15,6 +15,6 @@ This site focuses on:
 
 ## Built with
 
-[Jekyll](https://jekyllrb.com/) + [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes), hosted on GitHub Pages.
+Astro osted on GitHub Pages.
 
 📌 Website: https://houuya.github.io

@@ -1,0 +1,5 @@
+
+import __ASTRO_IMAGE_IMPORT_MbLOu from "assets/eu_cab_l2_l4_fixed.svg?astroContentImageFlag=&importer=_posts%2F2026-04-06-A-3-Notified+Body%EB%8A%94+%EC%8B%AC%ED%8C%90%EC%9D%B8%EA%B0%80%2C+%EC%BD%94%EC%B9%98%EC%9D%B8%EA%B0%80.md";
+import __ASTRO_IMAGE_IMPORT_Z2r5Icn from "assets/nb_designation_procedure_flowchart.svg?astroContentImageFlag=&importer=_posts%2F2026-04-28-A-3-1-NB%EB%8A%94+%EC%96%B4%EB%96%BB%EA%B2%8C+%ED%83%84%EC%83%9D%ED%95%98%EB%8A%94%EA%B0%80.md";
+export default new Map([["assets/eu_cab_l2_l4_fixed.svg?astroContentImageFlag=&importer=_posts%2F2026-04-06-A-3-Notified+Body%EB%8A%94+%EC%8B%AC%ED%8C%90%EC%9D%B8%EA%B0%80%2C+%EC%BD%94%EC%B9%98%EC%9D%B8%EA%B0%80.md", __ASTRO_IMAGE_IMPORT_MbLOu], ["assets/nb_designation_procedure_flowchart.svg?astroContentImageFlag=&importer=_posts%2F2026-04-28-A-3-1-NB%EB%8A%94+%EC%96%B4%EB%96%BB%EA%B2%8C+%ED%83%84%EC%83%9D%ED%95%98%EB%8A%94%EA%B0%80.md", __ASTRO_IMAGE_IMPORT_Z2r5Icn]]);
+		

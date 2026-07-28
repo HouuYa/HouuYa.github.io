@@ -1,0 +1,260 @@
+---
+// DESIGN.md: single 포스트 — canvas bg, Cormorant Garamond display-lg h1
+// 한국어 word-break: keep-all 필수
+import BaseLayout from './BaseLayout.astro';
+import { slugify } from '../utils/slugify';
+
+interface Props {
+  title: string;
+  description?: string | null;
+  pubDate?: Date | string | null;
+  lastModified?: Date | string | null;
+  categories?: string[];
+  tags?: string[];
+  toc?: boolean;
+  routePath?: string;
+}
+
+const { title, description, pubDate, lastModified, categories = [], tags = [], toc = false, routePath } = Astro.props;
+
+function safeIsoString(d: Date | string | null | undefined): string | undefined {
+  if (!d) return undefined;
+  const date = d instanceof Date ? d : new Date(d as string);
+  if (isNaN(date.getTime())) return undefined;
+  return date.toISOString();
+}
+
+const canonicalPath = routePath ? `/${routePath}/` : Astro.url.pathname;
+const publishedTime = safeIsoString(pubDate);
+const modifiedTime = safeIsoString(lastModified);
+
+function formatDate(d: Date | string | null | undefined): string {
+  if (!d) return '';
+  const date = d instanceof Date ? d : new Date(d as string);
+  if (isNaN(date.getTime())) return '';
+  return date.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+const dateStr = formatDate(pubDate) || formatDate(lastModified);
+---
+
+<BaseLayout
+  title={title}
+  description={description ?? undefined}
+  type="article"
+  canonicalUrl={canonicalPath}
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+>
+  <div class="post-page">
+    <div class="container">
+      <div class="post-layout" class:list={[toc && 'post-layout--toc']}>
+        <!-- 메인 콘텐츠 -->
+        <article class="post">
+          <!-- 헤더 -->
+          <header class="post__header">
+            <div class="post__meta">
+              {categories.map(cat => (
+                <a href={`/categories/${slugify(cat)}/`} class="post__badge">{cat}</a>
+              ))}
+              {dateStr && <time class="post__date">{dateStr}</time>}
+            </div>
+            <h1 class="post__title">{title}</h1>
+            {description && <p class="post__lead">{description}</p>}
+          </header>
+
+          <!-- 구분선 -->
+          <hr class="post__divider" />
+
+          <!-- 본문 -->
+          <div class="post__body prose">
+            <slot />
+          </div>
+
+          <!-- 태그 -->
+          {tags.length > 0 && (
+            <footer class="post__footer">
+              <div class="post__tags">
+                {tags.map(tag => (
+                  <span class="post__tag">{tag}</span>
+                ))}
+              </div>
+            </footer>
+          )}
+        </article>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  @use '../styles/tokens' as *;
+
+  .post-page {
+    background: $color-canvas;
+    padding: $spacing-section 0;
+    min-height: 60vh;
+  }
+
+  .post-layout {
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  .post {
+    &__header {
+      margin-bottom: $spacing-xl;
+    }
+
+    &__meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: $spacing-xs;
+      margin-bottom: $spacing-lg;
+    }
+
+    &__badge {
+      font-family: $font-body;
+      font-size: $text-caption-size;
+      font-weight: 500;
+      background: $color-surface-card;
+      color: $color-ink;
+      border-radius: $rounded-pill;
+      padding: 4px 12px;
+      text-decoration: none;
+      transition: background 0.15s ease;
+
+      &:hover { background: $color-surface-cream-strong; }
+    }
+
+    &__date {
+      font-family: $font-body;
+      font-size: $text-body-sm-size;
+      color: $color-muted;
+    }
+
+    &__title {
+      font-family: $font-display;
+      font-size: $text-display-lg-size;
+      font-weight: $font-display-weight;
+      line-height: $text-display-lg-lh;
+      letter-spacing: $text-display-lg-ls;
+      color: $color-ink;
+      margin: 0;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    &__lead {
+      margin-top: $spacing-lg;
+      font-family: $font-body;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: $color-body-strong;
+    }
+
+    &__divider {
+      border: none;
+      border-top: 1px solid $color-hairline;
+      margin: $spacing-xl 0;
+    }
+
+    // 본문 — 한국어 가독성 포함
+    &__body {
+      font-family: $font-body;
+      font-size: $text-body-md-size;
+      line-height: 1.75;
+      color: $color-body;
+
+      // 한국어 단어 단위 줄바꿈
+      p, li, td, th {
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        line-break: strict;
+      }
+
+      // 본문 내 제목 크기는 전역 .prose 클래스(_base.scss)에서 일괄 관리
+      // (title-* sans 스케일 — DESIGN.md 마케팅 display 스케일과 분리)
+
+      // 코드블록
+      pre {
+        overflow-x: auto;
+        margin: $spacing-xl 0;
+      }
+
+      // 인라인 이미지
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: $rounded-lg;
+        margin: $spacing-xl 0;
+      }
+
+      // 링크
+      a {
+        color: $color-primary;
+        text-decoration: underline;
+        text-decoration-color: rgba($color-primary, 0.4);
+
+        &:hover {
+          text-decoration-color: $color-primary;
+        }
+      }
+
+      // 표
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: $spacing-xl 0;
+        font-size: $text-body-sm-size;
+
+        th {
+          background: $color-surface-card;
+          padding: $spacing-sm $spacing-md;
+          text-align: left;
+          border-bottom: 2px solid $color-hairline;
+        }
+
+        td {
+          padding: $spacing-sm $spacing-md;
+          border-bottom: 1px solid $color-hairline-soft;
+        }
+      }
+
+      // 인용
+      blockquote {
+        margin: $spacing-xl 0;
+      }
+    }
+
+    &__footer {
+      margin-top: $spacing-xxl;
+      padding-top: $spacing-xl;
+      border-top: 1px solid $color-hairline;
+    }
+
+    &__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-xs;
+    }
+
+    &__tag {
+      font-family: $font-body;
+      font-size: $text-caption-size;
+      color: $color-muted;
+      background: $color-surface-soft;
+      border-radius: $rounded-pill;
+      padding: 4px 12px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .post__title {
+      font-size: $text-display-md-size;
+      letter-spacing: $text-display-md-ls;
+    }
+  }
+</style>

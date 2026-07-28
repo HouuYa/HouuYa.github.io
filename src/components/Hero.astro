@@ -1,0 +1,146 @@
+---
+// DESIGN.md: hero-band — canvas, padding 96px, 6-6 grid, display-xl 64px
+import CodeWindowCard from './CodeWindowCard.astro';
+---
+
+<section class="hero">
+  <div class="hero__inner container">
+    <!-- 좌측: 헤드라인 + 버튼 -->
+    <div class="hero__copy">
+      <p class="hero__eyebrow">AI Governance · Product Safety · Technical Standards</p>
+      <h1 class="hero__headline">
+        규제의 언어로<br />쓰는 AI 이야기
+      </h1>
+      <p class="hero__sub">
+        데이터의 별자리를 잇다 —<br class="hero__br-mobile" />
+        EU AI Act부터 한국 기술 기준까지,<br />
+        현장 실무자의 시선으로 기록합니다.
+      </p>
+      <div class="hero__cta">
+        <a href="/posts/" class="btn btn--primary">최신 글 읽기 →</a>
+        <a href="/about/" class="btn btn--secondary">About me</a>
+      </div>
+    </div>
+
+    <!-- 우측: 코드 윈도우 카드 -->
+    <div class="hero__card">
+      <CodeWindowCard />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use '../styles/tokens' as *;
+
+  .hero {
+    background: $color-canvas;
+    padding: $spacing-section 0;
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-xxl;
+      align-items: center;
+    }
+
+    &__copy {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+    }
+
+    &__eyebrow {
+      font-family: $font-body;
+      font-size: $text-caption-upper-size;
+      font-weight: 500;
+      letter-spacing: $text-caption-upper-ls;
+      text-transform: uppercase;
+      color: $color-muted;
+    }
+
+    &__headline {
+      font-family: $font-display;
+      font-size: $text-display-xl-size;
+      font-weight: $font-display-weight;
+      line-height: $text-display-xl-lh;
+      letter-spacing: $text-display-xl-ls;
+      color: $color-ink;
+      margin: 0;
+    }
+
+    &__sub {
+      font-family: $font-body;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: $color-body;
+      margin: 0;
+    }
+
+    &__cta {
+      display: flex;
+      gap: $spacing-md;
+      flex-wrap: wrap;
+      margin-top: $spacing-xs;
+    }
+
+    &__card {
+      border-radius: $rounded-xl;
+      overflow: hidden;
+    }
+
+    &__br-mobile { display: none; }
+  }
+
+  // 버튼 — DESIGN.md button-primary / button-secondary
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-body;
+    font-size: $text-button-size;
+    font-weight: 500;
+    line-height: 1;
+    padding: 12px 20px;
+    height: 40px;
+    border-radius: $rounded-md;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+
+    &--primary {
+      background: $color-primary;
+      color: $color-on-primary;
+
+      &:hover { background: $color-primary-active; }
+    }
+
+    &--secondary {
+      background: $color-canvas;
+      color: $color-ink;
+      border-color: $color-hairline;
+
+      &:hover { background: $color-surface-card; }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .hero__headline { font-size: 48px; }
+  }
+
+  @media (max-width: 767px) {
+    .hero__inner {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+
+    .hero__headline {
+      font-size: $text-display-lg-size;
+      letter-spacing: $text-display-lg-ls;
+    }
+
+    .hero__card { order: -1; }
+    .hero__br-mobile { display: block; }
+  }
+</style>
