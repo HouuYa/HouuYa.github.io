@@ -95,6 +95,8 @@ const navLinks = [
       font-weight: $font-display-weight;
       letter-spacing: -0.3px;
       color: $color-ink;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
 
     &__links {
@@ -110,6 +112,8 @@ const navLinks = [
       color: $color-muted;
       text-decoration: none;
       transition: color 0.15s ease;
+      word-break: keep-all;
+      overflow-wrap: break-word;
 
       &:hover {
         color: $color-ink;
@@ -159,6 +163,8 @@ const navLinks = [
     letter-spacing: $text-display-sm-ls;
     color: $color-ink;
     text-decoration: none;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   @media (max-width: 767px) {

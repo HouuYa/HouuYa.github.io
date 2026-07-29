@@ -5,8 +5,6 @@ interface Props {
   sub?: string;
   primaryLabel?: string;
   primaryHref?: string;
-  secondaryLabel?: string;
-  secondaryHref?: string;
 }
 
 const {
@@ -14,8 +12,6 @@ const {
   sub = 'EU AI Act · AI 거버넌스 · 기술 표준 분야의 글을 모아 두었습니다.',
   primaryLabel = '글 전체 보기 →',
   primaryHref = '/posts/',
-  secondaryLabel = 'About',
-  secondaryHref = '/about/',
 } = Astro.props;
 ---
 
@@ -27,7 +23,6 @@ const {
     </div>
     <div class="cta-band__actions">
       <a href={primaryHref} class="cta-band__btn cta-band__btn--cream">{primaryLabel}</a>
-      <a href={secondaryHref} class="cta-band__btn cta-band__btn--outline">{secondaryLabel}</a>
     </div>
   </div>
 </section>
@@ -63,6 +58,8 @@ const {
       color: $color-on-primary;
       margin: 0;
       white-space: pre-line;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
 
     &__sub {
@@ -71,6 +68,8 @@ const {
       color: rgba($color-on-primary, 0.8);
       margin: 0;
       max-width: 480px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
 
     &__actions {
@@ -97,14 +96,6 @@ const {
         color: $color-ink;
 
         &:hover { background: $color-surface-soft; }
-      }
-
-      &--outline {
-        background: transparent;
-        color: $color-on-primary;
-        border: 1px solid rgba($color-on-primary, 0.4);
-
-        &:hover { background: rgba($color-on-primary, 0.1); }
       }
     }
   }
