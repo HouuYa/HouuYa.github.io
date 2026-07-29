@@ -6,16 +6,14 @@ excerpt: Work at the intersection of AI systems, regulation, and product safety
 last_modified_at: 2026-02-04T15:18:00+09:00
 author_profile: false
 ---
-
-
 ## Positioning (TL;DR)
 
-I work at the boundary where **AI systems meet real-world regulation**.
+I'm drawn to the intersection of AI systems and real-world regulation..
 
 My focus is not model performance, but:
-- how AI is embedded into public decision systems,
-- how risks are identified before harm occurs,
-- and how accountability is maintained after deployment.
+- how AI gets embedded into everyday product and public-sector decision systems,
+- how risks are identified before harm occurs, and
+- how accountability is maintained after deployment.
 
 ### Selected Work
 
@@ -23,30 +21,29 @@ My focus is not model performance, but:
 
 - Context: National market surveillance and product safety regulation
 - Focus: AI-enabled data collection, risk detection, and operational deployment
-- Status: Deployed and used in real government operations
+- Status: Deployed and in active use within government operations
 
-📄 Detailed performance report (PDF, 한글):  
-  - [2025 AI-based Product Safety System – Performance Report](/assets/pdfs/2025-ai-product-safety-performance.pdf)
+📄 Detailed performance report (PDF, Korean):
+  - [2025 AI-based Product Safety System – Performance Report](/public/assets/pdfs/2025-ai-product-safety-performance.pdf)
 
 ### Selected Projects (GitHub)
 
-- **AI Product Safety Automation**  
-  Design and implementation of an AI-assisted system to collect, structure, and analyze product safety and recall information for regulatory and market surveillance environments.  
-  This project emphasizes practical system design, traceability, and real-world applicability over model-centric experimentation.  
+- **AI Product Safety Automation**
+  Design and implementation of an AI-assisted system to collect, structure, and analyze product safety and recall data for regulatory and market surveillance use cases.
+  The project prioritizes practical system design, traceability, and real-world applicability over model-centric experimentation.
   Repository: https://github.com/HouuYa/ai-product-safety-automation
 
-- **Vibe-Coded Regulatory Document Parsing (Advanced MVP)**  
-  Experiments on transforming complex regulatory and standard documents into structured, machine-readable data using document parsing pipelines.  
-  The focus is on enabling downstream AI systems to reliably consume policy and technical texts.  
+- **Vibe-Coded Regulatory Document Parsing (Advanced MVP)**
+  Experiments in transforming complex regulatory and standards documents into structured, machine-readable data through document parsing pipelines.
+  The goal is to let downstream AI systems reliably consume policy and technical text.
   Repository: https://github.com/HouuYa/HWP-documents-AI-parser-MVP
 
-- **Vibe-Coded Rule-based RAG System (Tennis Mate)**  
-  An end-to-end prototype built on Supabase that integrates structured domain rules with Retrieval-Augmented Generation (RAG).  
-  The project explores *vibe coding* as a way to rapidly iterate from domain intuition to working systems, using formal rule documents as a stand-in for legal and regulatory texts.  
-  Repositories:  
-  - Application & data layer (Supabase-based): https://github.com/HouuYa/tennis-mate  
+- **Vibe-Coded Rule-based RAG System (Tennis Mate)**
+  An end-to-end prototype built on Supabase that combines structured domain rules with Retrieval-Augmented Generation (RAG).
+  The project uses formal rule documents as a stand-in for legal and regulatory text, exploring *vibe coding* as a way to move quickly from domain intuition to a working system.
+  Repositories:
+  - Application & data layer (Supabase-based): https://github.com/HouuYa/tennis-mate
   - Rule-focused RAG experiments: https://github.com/HouuYa/Tennis_Rules_RAG
-
 
 
 <br>
@@ -231,7 +228,8 @@ Study on the lower power communications and networking techniques for Massively 
 
 
 <br>
-----
+
+---
 
 ## CURRENT INTERESTS 
 
@@ -256,6 +254,7 @@ Study on the lower power communications and networking techniques for Massively 
 
 
 <br>
+
 ----
 
 
@@ -277,11 +276,10 @@ Study on the lower power communications and networking techniques for Massively 
 
 
 <br>
+
 ----
 
 ## PERSONAL PARTICULARS
-
-*	Date of Birth: December 19, 1978
 
 *	Citizenship: Korea
 
@@ -294,6 +292,7 @@ Study on the lower power communications and networking techniques for Massively 
 
 
 <br>
+
 ----
 
 ## HONORS AND AWARDS 
