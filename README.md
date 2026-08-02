@@ -15,6 +15,6 @@ This site focuses on:
 
 ## Built with
 
-Astro osted on GitHub Pages.
+Astro posted on GitHub Pages.
 
 📌 Website: https://houuya.github.io
