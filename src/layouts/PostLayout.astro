@@ -51,6 +51,13 @@ const dateStr = formatDate(pubDate) || formatDate(lastModified);
       <div class="post-layout" class:list={[toc && 'post-layout--toc']}>
         <!-- 메인 콘텐츠 -->
         <article class="post">
+          <div class="post__nav">
+            <button type="button" class="post__nav-link" onclick="history.back()">← 뒤로가기</button>
+            <a href="/posts/" class="post__nav-link">목록으로 →</a>
+            <div class="post__progress-track">
+              <div class="post__progress-fill" id="post-progress-fill"></div>
+            </div>
+          </div>
           <!-- 헤더 -->
           <header class="post__header">
             <div class="post__meta">
@@ -87,6 +94,29 @@ const dateStr = formatDate(pubDate) || formatDate(lastModified);
   </div>
 </BaseLayout>
 
+<script>
+  const fill = document.getElementById('post-progress-fill');
+  if (fill) {
+    let ticking = false;
+    const update = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = scrollable > 0
+        ? Math.min(100, Math.max(0, (window.scrollY / scrollable) * 100))
+        : 0;
+      fill.style.width = `${pct}%`;
+      ticking = false;
+    };
+    update();
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+  }
+</script>
+
 <style lang="scss">
   @use '../styles/tokens' as *;
 
@@ -104,6 +134,50 @@ const dateStr = formatDate(pubDate) || formatDate(lastModified);
   .post {
     &__header {
       margin-bottom: $spacing-xl;
+    }
+
+    &__nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background: $color-canvas;
+      border-bottom: 1px solid $color-hairline;
+      padding-block: $spacing-sm;
+      margin-bottom: $spacing-lg;
+    }
+
+    &__nav-link {
+      display: inline-block;
+      font-family: $font-body;
+      font-size: $text-body-sm-size;
+      color: $color-muted;
+      text-decoration: none;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    &__progress-track {
+      flex-basis: 100%;
+      height: 2px;
+      background: $color-hairline;
+      margin-top: $spacing-sm;
+    }
+
+    &__progress-fill {
+      height: 100%;
+      width: 0%;
+      background: $color-primary;
+      transition: width 0.1s ease-out;
     }
 
     &__meta {
@@ -153,6 +227,8 @@ const dateStr = formatDate(pubDate) || formatDate(lastModified);
       font-weight: 400;
       line-height: 1.6;
       color: $color-body-strong;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
 
     &__divider {
