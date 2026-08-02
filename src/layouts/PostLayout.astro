@@ -51,6 +51,7 @@ const dateStr = formatDate(pubDate) || formatDate(lastModified);
       <div class="post-layout" class:list={[toc && 'post-layout--toc']}>
         <!-- 메인 콘텐츠 -->
         <article class="post">
+          <a href="/posts/" class="post__back">← 목록으로</a>
           <!-- 헤더 -->
           <header class="post__header">
             <div class="post__meta">
@@ -106,6 +107,19 @@ const dateStr = formatDate(pubDate) || formatDate(lastModified);
       margin-bottom: $spacing-xl;
     }
 
+    &__back {
+      display: inline-block;
+      font-family: $font-body;
+      font-size: $text-body-sm-size;
+      color: $color-muted;
+      text-decoration: none;
+      margin-bottom: $spacing-lg;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
     &__meta {
       display: flex;
       align-items: center;
@@ -153,6 +167,8 @@ const dateStr = formatDate(pubDate) || formatDate(lastModified);
       font-weight: 400;
       line-height: 1.6;
       color: $color-body-strong;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
 
     &__divider {
