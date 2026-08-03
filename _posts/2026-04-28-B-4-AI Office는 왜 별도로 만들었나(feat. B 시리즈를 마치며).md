@@ -216,11 +216,11 @@ EU의 이 체계를 한국과 나란히 놓으면 무엇이 보이는가. 같은
 ---
 
 *이전 글: [B-3](/b-3-ai가-업데이트되면-인증을-다시-받아야-하나/) AI가 업데이트되면 인증을 다시 받아야 하나*
+
 *다음 글: [C-1](/c-1-안전인증과-ce마킹은-무엇이-다른가/) '안전인증'과 'CE 마킹'은 무엇이 다른가*
 
 ---
 
-주석 :
 
 [^1]: AI Act Article 64. European AI Office 설립 근거. 2024년 8월 1일(AI Act 발효)과 함께 출범.
 [^2]: DG CNECT = Directorate-General for Communications Networks, Content and Technology. EU 집행위원회 내 AI 정책 주관 총국.
