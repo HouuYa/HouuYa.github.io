@@ -12,7 +12,7 @@ tags:
   - EU제품안전
   - CE마킹
   - 규제설계
-last_modified_at: 2026-08-03T15:00:00+09:00
+last_modified_at: 2026-08-05T11:00:00+09:00
 ---
 
 
@@ -126,4 +126,4 @@ Digital Omnibus(Omnibus VII)로 Annex III형 고위험 AI 의무 적용이 2027-
 
 [^1]: The 'Blue Guide' on the implementation of EU product rules 2022, Commission Notice, OJ C 247, 29.6.2022.
 [^2]: Blue Guide 2022는 AI Act 이전 발행이라 AI Act 직접 해설은 없으나, AI Act가 NLF 위에 설계되어 NLF 공통구조 이해에 필수.
-[^3]: Digital Omnibus (Omnibus VII), 유럽의회 1차독회 채택본 P10_TA(2026)0198 (2026-06-16). Annex III형 고위험 AI 의무 적용일 2026-08-02 → 2027-12-02, 제품 내장형 고위험 AI 2027-08-02 → 2028-08-02로 연기. 이사회 공식 채택·관보 게재 절차 잔존(2026-08-03 기준). 위키 Digital-Omnibus-Omnibus-VII 참조.
+[^3]: Digital Omnibus on AI — Regulation (EU) 2026/1744(채택 2026-07-08·관보 게재 2026-07-24·발효 2026-07-27). Annex III형 고위험 AI 의무 적용일 2026-08-02 → 2027-12-02, 제품 내장형 고위험 AI 2027-08-02 → 2028-08-02로 확정 연기. 위키 Digital-Omnibus-Omnibus-VII 참조.
