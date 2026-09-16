@@ -13,9 +13,10 @@ interface Props {
   tags?: string[];
   toc?: boolean;
   routePath?: string;
+  image?: string;
 }
 
-const { title, description, pubDate, lastModified, categories = [], tags = [], toc = false, routePath } = Astro.props;
+const { title, description, pubDate, lastModified, categories = [], tags = [], toc = false, routePath, image } = Astro.props;
 
 function safeIsoString(d: Date | string | null | undefined): string | undefined {
   if (!d) return undefined;
@@ -45,6 +46,7 @@ const dateStr = formatDate(pubDate) || formatDate(lastModified);
   canonicalUrl={canonicalPath}
   publishedTime={publishedTime}
   modifiedTime={modifiedTime}
+  image={image ?? '/assets/images/orion-logo.svg'}
 >
   <div class="post-page">
     <div class="container">
