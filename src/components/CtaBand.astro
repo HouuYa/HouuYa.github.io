@@ -13,6 +13,12 @@ const {
   primaryLabel = '글 전체 보기 →',
   primaryHref = '/posts/',
 } = Astro.props;
+
+const resources = [
+  { label: 'EU AI법과 우리나라 적용 시사점 — 글 전체 목차', href: '/ai-regulation-series/' },
+  { label: 'AI 규제 분석 대응서 — 웹으로 읽기', href: '/ai-regulation-report/' },
+  { label: 'AI 규제 분석 대응서 — PDF 내려받기', href: '/assets/pdfs/신뢰의-설계자들.pdf' },
+];
 ---
 
 <section class="cta-band">
@@ -23,6 +29,11 @@ const {
     </div>
     <div class="cta-band__actions">
       <a href={primaryHref} class="cta-band__btn cta-band__btn--cream">{primaryLabel}</a>
+      <div class="cta-band__resources">
+        {resources.map(r => (
+          <a href={r.href} class="cta-band__pill">{r.label}</a>
+        ))}
+      </div>
     </div>
   </div>
 </section>
@@ -74,8 +85,34 @@ const {
 
     &__actions {
       display: flex;
+      flex-direction: column;
+      align-items: flex-end;
       gap: $spacing-md;
       flex-shrink: 0;
+    }
+
+    &__resources {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    &__pill {
+      display: inline-flex;
+      align-items: center;
+      font-family: $font-body;
+      font-size: $text-caption-upper-size;
+      font-weight: 500;
+      color: $color-ink;
+      background: $color-surface-card;
+      border-radius: $rounded-pill;
+      padding: 4px 12px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.15s ease;
+
+      &:hover { background: $color-canvas; }
     }
 
     &__btn {
@@ -109,9 +146,14 @@ const {
 
     .cta-band__actions {
       flex-direction: column;
+      align-items: stretch;
       width: 100%;
 
       .cta-band__btn { justify-content: center; }
+    }
+
+    .cta-band__resources {
+      align-items: flex-start;
     }
   }
 </style>
