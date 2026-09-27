@@ -14,7 +14,7 @@ tags:
   - CE마킹
   - 규제설계
   - 제품안전
-last_modified_at: 2026-04-28T11:00:00+09:00
+last_modified_at: 2026-09-27T18:00:00+09:00
 ---
 
 **— 새 법인가, 기존 법의 확장인가**
@@ -145,7 +145,7 @@ Article 43이 사전 적합성 평가를, Article 74-79가 사후 시장감시�
 
 [A-4-1(Blue Guide)](/a-4-1-blue-guide는-해설서인가-설계도인가/)에서 확인한 제조사·수입업자·유통업자 의무 체계. 
 
-AI Act도 공급자(Provider), 수입업자(Importer), 배포자(Distributor)에게 각각의 의무를 부여한다.[^6]
+AI Act도 공급자(Provider), 수입업자(Importer), 유통업자(Distributor)에게 각각의 의무를 부여한다.[^6]
 
 <br>
 
@@ -164,7 +164,7 @@ AI Act도 공급자(Provider), 수입업자(Importer), 배포자(Distributor)에
 
 AI Act는 이 네 가지에 대해 NLF를 확장한다.
 
-### 1. 배치자(Deployer)라는 새 행위자
+### 1. 배포자(Deployer)라는 새 행위자
 
 NLF 체계에서 제품이 시장에 출시되면, 이후 사용자는 규제 의무를 지지 않았다.  
 토스터를 산 사람에게 안전 의무가 없듯이.
@@ -173,7 +173,7 @@ AI는 다르다.
 같은 AI 시스템이라도 **누가, 어디에, 어떻게 배치하느냐**에 따라 위험이 완전히 달라진다.  
 채용에 쓰면 고위험이고, 음악 추천에 쓰면 최소 리스크다.
 
-그래서 AI Act는 **배치자(Deployer)** 라는 새로운 규제 대상을 만들었다.[^7] 
+그래서 AI Act는 **배포자(Deployer)** 라는 새로운 규제 대상을 만들었다.[^7] 
 
 NLF 40년 역사에 없던 개념이다. 
 
@@ -181,7 +181,7 @@ NLF 40년 역사에 없던 개념이다.
 
 단순 소비자가 아니라, 업무에 AI를 투입하는 조직이나 사람.
 
-배치자는   
+배포자는   
 AI를 적절히 사용하고,  
 인간 감독을 유지하고,  
 사고를 보고해야 한다.
@@ -256,13 +256,13 @@ EU DoC (자기 선언)                ←→  Art.47 EU 적합성 선언
 CE 마킹                           ←→  Art.49 CE 마킹
 수권대리인                         ←→  Art.22 수권대리인
 수입업자                           ←→  Art.23 수입업자
-유통업자                           ←→  Art.24 배포자
+유통업자                           ←→  Art.24 유통업자
 Notified Body                     ←→  Art.33-36 NB
 인정(Accreditation)                ←→  Art.33 (Reg 765/2008 준용)
 시장감시(Reg 2019/1020)           ←→  Art.74-79 + Reg 2019/1020 준용
 RAPEX/Safety Gate                 ←→  Art.79 중대 리스크 통보
 ─────────────────────────────────────────────
-[NLF에 없음]                       →  Art.26 배치자(Deployer) — 신설
+[NLF에 없음]                       →  Art.26 배포자(Deployer) — 신설
 [NLF에 없음]                       →  Art.72 사후모니터링(PMS) — 강화
 [NLF에 없음]                       →  Art.51-55 GPAI — 신설
 [NLF에 없음]                       →  Art.64 AI Office — 신설
@@ -280,7 +280,7 @@ AI Act를 "세계 최초의 AI 법"이라고 소개하는 것은 맞지만,  절
 이 구별이 왜 중요한가.  
 AI Act 113개 조문 중, 순수하게 AI 고유 논리만으로 설계된 조항은 생각보다 적다.  
 
-배치자(Art.26), GPAI(Art.51-55), AI Office(Art.64), 사후 모니터링(Art.72) 정도다.  
+배포자(Art.26), GPAI(Art.51-55), AI Office(Art.64), 사후 모니터링(Art.72) 정도다.  
 
 나머지 — 적합성 평가, CE 마킹, 기술문서, NB, 시장감시, 경제적 운영자 의무 — 는 모두 NLF에서 가져온 것이다.
 
@@ -333,7 +333,7 @@ NLF가 비례성 원칙으로 작동한다면, AI Act는 무엇을 기준으로 
 [^3]: AI Act는 NLF 개념을 정의 없이 참조. Blue Guide 2022 (OJ C 247)가 이 개념들의 실질적 해설서. 위키 분석 NLF-Blue-Guide-AI-Act-연계분석 참조.
 [^4]: AI Act Article 15. 정확성(Accuracy), 견고성(Robustness), 사이버보안(Cybersecurity) 요건.
 [^5]: AI Act Article 40. CEN-CENELEC JTC 21이 AI 조화표준 개발. 최초 공개심의 표준 prEN 18286 (AI QMS, 2025.10).
-[^6]: AI Act Article 16(공급자), Article 23(수입업자), Article 24(배포자).
+[^6]: AI Act Article 16(공급자), Article 23(수입업자), Article 24(유통업자).
 [^7]: AI Act Article 3(4) + Article 26. Deployer = "자신의 권한 하에 전문적 맥락에서 AI 시스템을 사용하는 자연인 또는 법인."
 [^8]: AI Act Article 72. 의료기기 규정(MDR, Reg 2017/745)의 Post-Market Surveillance 모델을 AI에 적용.
 [^9]: AI Act Article 11 + Annex IV. 기술문서에 훈련·검증·테스트 데이터 세부사항, 사이버보안 조치, 로그 역량 등 포함.
