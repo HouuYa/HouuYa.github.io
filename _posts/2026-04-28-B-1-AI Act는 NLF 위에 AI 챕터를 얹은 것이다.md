@@ -233,7 +233,13 @@ AI는 다르다.
 그래서 AI Act는 **실질적 변경(Substantial Modification, Article 3(23))** 이라는 개념을 도입했다.[^10] 
 
 출시 후 AI가 크게 바뀌면 적합성 평가를 다시 받아야 한다.  
-이 문제는 [B-3](/b-3-ai가-업데이트되면-인증을-다시-받아야-하나/)에서 깊이 다룬다.
+이 주제는 [B-3](/b-3-ai가-업데이트되면-인증을-다시-받아야-하나/)에서 깊이 다룬다.
+
+이 넷과 별도로, AI Act는 NLF에 아예 없던 장치 둘을 새로 만들었다.  
+하나는 **범용 AI 모델(GPAI, Art.51-56)**이다. 완성품이 아니라 수많은 AI 시스템에 들어가는 기반 모델을 내놓는 공급자에게 따로 의무를 지웠다.  
+다른 하나는 **AI Office(Art.64)**다. 범용 AI 모델은 회원국이 아니라 EU가 직접 감독한다. [B-4](/b-4-ai-office는-왜-별도로-만들었나-feat-b-시리즈를-마치며/)에서 다룬다.
+
+정리하면 **새로 만든 것은 셋**(배포자·GPAI·AI Office)이고, **고쳐 쓴 것도 셋**(사후 모니터링·기술문서·실질적 변경)이다. (2026-09-30 보강 — 대응표·필자 분석과 목록을 맞춤)
 
 ---
 
@@ -251,19 +257,21 @@ NLF / Blue Guide                    AI Act
   Module B+D/H (NB 참여)              → 생체인식 등: 제3자 NB 심사
 EU DoC (자기 선언)                ←→  Art.47 EU 적합성 선언
 기술문서                          ←→  Art.11 + Annex IV
-CE 마킹                           ←→  Art.49 CE 마킹
+CE 마킹                           ←→  Art.48 CE 마킹
 수권대리인                         ←→  Art.22 수권대리인
 수입업자                           ←→  Art.23 수입업자
 유통업자                           ←→  Art.24 유통업자
-Notified Body                     ←→  Art.33-36 NB
-인정(Accreditation)                ←→  Art.33 (Reg 765/2008 준용)
+Notified Body                     ←→  Art.28-39 NB
+인정(Accreditation)                ←→  Art.28(2) (Reg 765/2008 준용)
 시장감시(Reg 2019/1020)           ←→  Art.74-79 + Reg 2019/1020 준용
 RAPEX/Safety Gate                 ←→  Art.79 중대 리스크 통보
 ─────────────────────────────────────────────
-[NLF에 없음]                       →  Art.26 배포자(Deployer) — 신설
-[NLF에 없음]                       →  Art.72 사후모니터링(PMS) — 강화
-[NLF에 없음]                       →  Art.51-55 GPAI — 신설
-[NLF에 없음]                       →  Art.64 AI Office — 신설
+[새로 만든 것]                     →  Art.26 배포자(Deployer)
+[새로 만든 것]                     →  Art.51-56 GPAI
+[새로 만든 것]                     →  Art.64 AI Office
+[고쳐 쓴 것]                       →  Art.72-73 사후모니터링(PMS) — 공급자 의무로
+[고쳐 쓴 것]                       →  Annex IV 기술문서 — 훈련 데이터까지
+[고쳐 쓴 것]                       →  Art.3(23)·43(4) 실질적 변경 — 출시 뒤 재평가
 ```
 
 왼쪽 열은 A 시리즈 전체의 요약이다. 오른쪽 열은 B 시리즈의 지도다.
@@ -276,11 +284,13 @@ AI Act를 "세계 최초의 AI 법"이라고 소개하는 것은 맞지만,  절
 **AI Act는 NLF라는 40년 된 건물의 새 층이다.** 새 건물이 아니다.
 
 이 구별이 왜 중요한가.  
-AI Act 113개 조문 중, 순수하게 AI 고유 논리만으로 설계된 조항은 생각보다 적다.  
+AI Act 113개 조문 중, AI 때문에 새로 만든 장치는 생각보다 적다.  
 
-배포자(Art.26), GPAI(Art.51-55), AI Office(Art.64), 사후 모니터링(Art.72) 정도다.  
+배포자(Art.26), GPAI(Art.51-56), AI Office(Art.64) 셋이다.  
 
-나머지 — 적합성 평가, CE 마킹, 기술문서, NB, 시장감시, 경제적 운영자 의무 — 는 모두 NLF에서 가져온 것이다.
+사후 모니터링(Art.72), 기술문서(Annex IV), 실질적 변경(Art.3(23))은 NLF 장치를 AI에 맞게 고쳐 쓴 것이다.  
+
+나머지 — 적합성 평가, CE 마킹, NB, 시장감시, 경제적 운영자 의무 — 는 NLF에서 그대로 가져왔다.
 
 EU 집행위원회의 공식 웨비나(2024.5.30)에서 DG CNECT의 Dr. Tatjana Evas가 명시적으로 밝혔다.  
 "AI Act는 NLF(New Legislative Framework) 체계의 일부다."[^11]
@@ -326,7 +336,7 @@ NLF가 비례성 원칙으로 작동한다면, AI Act는 무엇을 기준으로 
 ---
 
 
-[^1]: EU AI Act Article 49. 고위험 AI 시스템에 CE 마킹 부착 의무.
+[^1]: EU AI Act Article 48. 고위험 AI 시스템에 CE 마킹 부착 의무(Article 49는 EU 데이터베이스 등록 — 2026-09-30 조문 번호 정정).
 [^2]: Regulation (EU) 2024/1689, OJ L 2024-07-12. 2024년 8월 1일 발효, 단계적 시행.
 [^3]: AI Act Article 3(20)·(22)·(26), Article 74(1). 정의는 짧고, 시장감시 자체는 Regulation (EU) 2019/1020을 그대로 적용한다(2026-09-30 원문 대조로 정정 — 초판은 "정의 없이 참조"라고 썼다). Blue Guide 2022 (OJ C 247)가 이 개념들의 실질적 해설서. 위키 분석 NLF-Blue-Guide-AI-Act-연계분석 참조.
 [^4]: AI Act Article 15. 정확성(Accuracy), 견고성(Robustness), 사이버보안(Cybersecurity) 요건.
@@ -335,5 +345,5 @@ NLF가 비례성 원칙으로 작동한다면, AI Act는 무엇을 기준으로 
 [^7]: AI Act Article 3(4) + Article 26. Deployer = "자신의 권한 하에 전문적 맥락에서 AI 시스템을 사용하는 자연인 또는 법인."
 [^8]: AI Act Article 72. 의료기기 규정(MDR, Reg 2017/745)의 Post-Market Surveillance 모델을 AI에 적용.
 [^9]: AI Act Article 11 + Annex IV. 기술문서에 훈련·검증·테스트 데이터 세부사항, 사이버보안 조치, 로그 역량 등 포함.
-[^10]: AI Act Article 3(23). Substantial Modification = "시장 출시 또는 서비스 투입 후 AI 시스템의 변경으로서, 초기 적합성 평가에 반영되지 않았거나 초기 적합성에 영향을 미칠 수 있는 것."
+[^10]: AI Act Article 3(23). Substantial Modification = "시장 출시 또는 서비스 제공 이후의 AI 시스템 변경으로서, 공급자가 최초 적합성평가에서 예상하거나 계획하지 않았고(and), 그 결과 요건 준수에 영향을 주거나 의도된 목적을 바꾸는 변경"(2026-09-30 원문 대조로 정정 — 두 요건은 함께 충족해야 한다).
 [^11]: DG CNECT / European AI Office 웨비나 (2024.05.30), "Risk management logic of the AI Act and related standards." Dr. Tatjana Evas 발표.

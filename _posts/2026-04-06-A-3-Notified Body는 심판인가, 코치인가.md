@@ -51,7 +51,8 @@ NB가 심사를 도와주는 것처럼 느껴질 때도 있고, 냉정한 평가
 
 먼저 정의부터.
 
-Notified Body는 특정 EU 법령 하에서 **적합성 평가(Conformity Assessment)**를 수행하도록 각 회원국 정부가 공식 지정하고, EU 집행위원회에 통보(Notify)한 제3자 기관이다.
+Notified Body는 특정 EU 법령에 따른 **적합성 평가(Conformity Assessment)**를 맡는 제3자 기관이다.  
+각 회원국 정부가 공식 지정하고, EU 집행위원회에 통보(Notify)한다.
 
 세 단어가 중요하다.
 

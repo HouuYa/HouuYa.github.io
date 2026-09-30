@@ -231,7 +231,7 @@ EU의 이 체계를 우리나라와 나란히 놓으면 무엇이 보이는가. 
 [^3]: AI Act Article 88-94. GPAI 모델에 대한 AI Office의 직접 집행 권한. 정보 요청·평가·시정조치·과징금 부과.
 [^4]: AI Act Article 65-66 (AI Board), Article 67 (Advisory Forum). UPCN(Union Product Compliance Network, Reg 2019/1020 Art.29-33)의 AI 확장판.
 [^5]: EU 제품안전 역사에서 중앙 집행 선례: EMA(European Medicines Agency, 의약품), ECHA(European Chemicals Agency, 화학물질). NLF 체계 내에서는 AI Office가 최초에 가까운 중앙 집행 사례.
-[^6]: AI Act Article 51-55 (Chapter V). GPAI 모델 규율. NLF에 대응 개념 없음.
+[^6]: AI Act Article 51-56 (Chapter V). GPAI 모델 규율. NLF에 대응 개념 없음.
 [^7]: AI Act Article 51(2). 시스템적 리스크 GPAI로 추정되는 기준: 모델 훈련에 사용된 누적 연산량이 10²⁵ FLOPs를 초과하는 경우(또는 European Commission이 별도로 지정하는 경우, Article 51(1)(b)). 우리나라 인공지능기본법 법 제32조·시행령 제24조의 프론티어 기준(10²⁶ FLOPs)보다 10배 낮음. 상세는 한국AI기본법-EU-AI-Act-조문대응 §5 참조.
 [^8]: 인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 제12조(인공지능안전연구소)·제32조(프론티어 안전성 확보). 법 제12조제2항 및 시행령 제10조제1항이 정한 임무는 AI 위험 정의·분석, 평가 기준·방법 연구, 법 제32조 이행결과 접수·평가 지원 등 연구·평가·자문 중심이며, AI Office(AI Act Article 88-94)의 정보 요청·시정조치·과징금 부과 같은 직접 집행권은 법령에 명시되어 있지 않음. 상세는 인공지능안전연구소 참조.
 [^9]: Digital Omnibus on AI — Regulation (EU) 2026/1744(채택 2026-07-08·발효 2026-07-27), AI Act Art.75 전면개정 + 신설 Art.75a(조사·현장검사권)·75b(구속력 있는 시정약속)·75c(불이행 결정·과징금·이행강제금, 일일 최대 전세계 매출 5%)·75d(방어권·파일열람권). GDPR·DSA식 집행 아키텍처가 AI Office에 이식된 형태. 위키 regulation-2026-1744-digital-omnibus-ai·European-AI-Office 참조.
