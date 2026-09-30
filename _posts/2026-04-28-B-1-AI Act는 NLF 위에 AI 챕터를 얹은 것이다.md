@@ -68,15 +68,13 @@ EU는 AI를 위한 새 건물을 짓지 않았다.
 <br>
 그런데 이 법을 꼼꼼히 읽으면 이상한 것을 발견한다.  
 
-**핵심 개념들이 정의 없이 등장한다.**
+**핵심 개념의 정의가 짧고, 그 정의가 법 밖을 가리킨다.**
 
-"적합성 평가 절차(conformity assessment procedure)"가 Article 43에 나온다. 
+"적합성 평가(conformity assessment)"는 Article 3(20)에 "요건을 충족했는지 입증하는 절차"라고만 정의된다. 
 
-그런데 적합성 평가가 무엇인지 이 법은 설명하지 않는다. 
+"Notified Body"는 Article 3(22)에 "이 규정과 다른 EU 조화법령에 따라 통보된 적합성평가기관"으로 정의된다. 정의가 다른 법령을 가리킨다. 
 
-"Notified Body"가 Article 33에 나온다. NB가 무엇인지도 설명하지 않는다. 
-
-"시장감시(market surveillance)"가 Article 74에 나온다. 역시 정의 없다.[^3]
+"시장감시(market surveillance)"는 정의조차 없다. 정의된 것은 시장감시당국뿐이고, 그 정의는 "Regulation (EU) 2019/1020에 따라 활동하는 국가 당국"이 전부다.[^3]
 
 <br>
 
@@ -330,7 +328,7 @@ NLF가 비례성 원칙으로 작동한다면, AI Act는 무엇을 기준으로 
 
 [^1]: EU AI Act Article 49. 고위험 AI 시스템에 CE 마킹 부착 의무.
 [^2]: Regulation (EU) 2024/1689, OJ L 2024-07-12. 2024년 8월 1일 발효, 단계적 시행.
-[^3]: AI Act는 NLF 개념을 정의 없이 참조. Blue Guide 2022 (OJ C 247)가 이 개념들의 실질적 해설서. 위키 분석 NLF-Blue-Guide-AI-Act-연계분석 참조.
+[^3]: AI Act Article 3(20)·(22)·(26), Article 74(1). 정의는 짧고, 시장감시 자체는 Regulation (EU) 2019/1020을 그대로 적용한다(2026-09-30 원문 대조로 정정 — 초판은 "정의 없이 참조"라고 썼다). Blue Guide 2022 (OJ C 247)가 이 개념들의 실질적 해설서. 위키 분석 NLF-Blue-Guide-AI-Act-연계분석 참조.
 [^4]: AI Act Article 15. 정확성(Accuracy), 견고성(Robustness), 사이버보안(Cybersecurity) 요건.
 [^5]: AI Act Article 40. CEN-CENELEC JTC 21이 AI 조화표준 개발. 최초 공개심의 표준 prEN 18286 (AI QMS, 2025.10).
 [^6]: AI Act Article 16(공급자), Article 23(수입업자), Article 24(유통업자).
