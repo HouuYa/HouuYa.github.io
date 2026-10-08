@@ -182,7 +182,7 @@ FLOPs(Floating point Operations)는 부동소수점 연산 횟수, 즉 컴퓨터
 
 ---
 
-[필자 분석]
+[한 걸음 더]
 
 AI Office의 탄생은 **NLF 체계의 진화인 동시에 한계의 고백**이다.
 
